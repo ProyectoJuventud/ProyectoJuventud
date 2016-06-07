@@ -22,7 +22,9 @@
 <div class= "option_estudias" style="display:none">  <input type="radio"  name="estudio" value="Secundario"> Secundario </div><br />
 <div class= "option_estudias" style="display:none">  <input type="radio"  name="estudio" value="Terciario/Uni"> Terciario/Uni </div><br />
 <div class= "option_estudias" style="display:none">  <input type="radio"  name="estudio" value="Posgrado"> Posgrado </div><br />
-<div class= "option_estudias" style="display:none">  <input type="radio"  name="estudio" value="Otros"> Otros </div><br />
+<div class= "option_estudias" style="display:none">  <input type="radio"  name="estudio" value="Otros"> Otros </div><br /> 
+<div class= "option_estudias" style="display:none">  <input type="radio"  name="estudio" value="Otros"> Otros 2 </div><br /> 
+
 
 
 <script type="text/javascript">
