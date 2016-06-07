@@ -5,6 +5,7 @@
 
 		public function index() {
 
+			debug($_POST);
 		}
 
 	}
