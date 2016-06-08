@@ -1,3 +1,5 @@
+<!-- LLamado al archivo "webroot/css/styles.css". Poner ahi todos los estilos -->
+<?php echo $this->Html->css('styles', array('inline' => false)); ?>
 
 
 <div class="container">
@@ -54,20 +56,26 @@
 
 		<div class="col-xs-12 col-sm-5">
 
-			<div class= "option_pregunta_7_si" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="1"> Primario </div>
-			<div class= "option_pregunta_7_si" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="2"> Secundario  </div>
-			<div class= "option_pregunta_7_si" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="3"> Terciario/Uni </div>
-			<div class= "option_pregunta_7_si" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="4"> Posgrado </div>
-			<div class= "option_pregunta_7_si" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="5"> Otros </div>
+			<!-- Este estilo esta definido en app/webroot/css/styles.css. Creo que sera comun para todas las preguntas donde al elegir una opcion, se despliegan otras opciones (como en este caso).
+			Lo que hace es meter un poquito para adentro las nuevas opciones para que se note que son opciones de la pregunta  -->
+			<div class="opciones_radios">
 
-			<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="6"> Porque trabajo o estoy busncado trabajo </div>
-			<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="7"> Porque ya concluí mis estudios </div>
-			<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="8"> Porque la institución educativa esta muy lejos </div>
-			<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="9"> Porque no puedo pagar los estudios</div>
-			<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="10"> Porque no me interesa </div>
-			<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="11"> Porque estoy esperando un hijo/cuidado de hijo/s </div>
-			<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="12"> Por enfermedades o discapacidad  </div>
-			<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="13"> Otro  </div>
+				<div class= "option_pregunta_7_si" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="1"> Primario </div>
+				<div class= "option_pregunta_7_si" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="2"> Secundario  </div>
+				<div class= "option_pregunta_7_si" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="3"> Terciario/Uni </div>
+				<div class= "option_pregunta_7_si" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="4"> Posgrado </div>
+				<div class= "option_pregunta_7_si" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="5"> Otros </div>
+
+				<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="6"> Porque trabajo o estoy busncado trabajo </div>
+				<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="7"> Porque ya concluí mis estudios </div>
+				<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="8"> Porque la institución educativa esta muy lejos </div>
+				<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="9"> Porque no puedo pagar los estudios</div>
+				<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="10"> Porque no me interesa </div>
+				<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="11"> Porque estoy esperando un hijo/cuidado de hijo/s </div>
+				<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="12"> Por enfermedades o discapacidad  </div>
+				<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuestas][pregunta_7]" value="13"> Otro  </div>
+
+			</div>
 
 		</div>
 	</div>
@@ -82,7 +90,23 @@
 
 	<!-- ////////////////////////////////    PREGUNTA  20   ///////////////////////////////////////////////// -->
 
+	<div class="row">
 
+		<div class="form-group">
+			<label class="col-xs-12 control-label"> 20) Cuales son los principales sitios que visitas </label>
+
+
+			<ul class="checkbox">
+				<li><input type="checkbox"  value="pepperoni" title="Pepperoni"/>Pepperoni</li>
+				<li><input type="checkbox" value="sausage"  title="Sausage"/>Sausage</li>
+				<li><input type="checkbox" value="mushrooms" title="Mushrooms"/>Mushrooms</li>
+				<li><input type="checkbox" value="onions" title="Onions"/>Onions</li>
+				<li><input type="checkbox" value="gpeppers" title="Green Peppers"/>Green Peppers</li>
+				<li><input type="checkbox" value="xcheese" title="Extra Cheese"/>Extra Cheese</li>
+			</ul>
+
+		</div>
+	</div>
 
 	<br />
 
