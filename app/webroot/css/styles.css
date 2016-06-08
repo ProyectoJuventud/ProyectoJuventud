@@ -1,13 +1,21 @@
-
+/* Acomodan el bloque de radios emergentes*/
 div.opciones_radios{
 
 	padding-left: 21px;
-
+	margin-top: -5px;
+	margin-bottom: 20px;
 }
 
+/* Acomodan el bloque de checkboxes emergentes*/
+div.opciones_checkbox{
 
-div.maximo_seleccionado{
-	background: #FCD2D2;
-	border: 1px solid #FE7272;
+	margin-top: -10px;
+	margin-bottom: 15px;
+}
+
+/*Estilo del mensaje emergente cuando se alcanza el limite de selecciones maximo*/
+div.estilo_mensaje{
+	background: #FACE88;
+	border: 1px solid #FB9143;
 	padding: 0 4px;
 }
