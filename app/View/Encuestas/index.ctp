@@ -1,14 +1,10 @@
-<?php
-	$this->Html->script('//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.0.min.js', array('inline' => false));
-?>
-
 
 
 <div class="container">
 
 	<h2> Juventud </h2>
 
-	<?php echo $this->Form->create('Encuesta'); ?>
+	<?php echo $this->Form->create('Encuestas'); ?>
 
 		<div class="row">
 
@@ -68,10 +64,7 @@
 		</div>
 
 
-		<?php echo $this->Form->submit('Guardar', array(
-								'class' => 'btn btn-sm btn-primary'
-						 	    )); ?>
-
+		<?php echo $this->Form->submit('Guardar', array('class' => 'btn btn-sm btn-primary')); ?>
 
 		<?php echo $this->Form->end(); ?>
 </div>
@@ -105,4 +98,3 @@
 	});
 
 </script>
-
