@@ -6,40 +6,43 @@
 
 	<?php echo $this->Form->create('Encuestas'); ?>
 
+
+		<!-- ////////////////////////////////    PREGUNTA  1   ///////////////////////////////////////////////// -->
+
 		<div class="row">
 
 			<div class="form-group">
-			<label class="col-xs-12 control-label">Edad </label>
+				<label class="col-xs-12 control-label">Edad </label>
 
-			<div class="col-xs-12 col-sm-5">
-				<select id="select_pregunta_1" name="data[Encuesta][pregunta_1]" class="form-control">
+				<div class="col-xs-12 col-sm-5">
+					<select id="select_pregunta_1" name="data[Encuesta][pregunta_1]" class="form-control">
 
-						<option selected disabled value="">Elija una opcion..</option>
-						<option value="1">15 a 18</option>
-						<option value="2">18 a 24</option>
-						<option value="3">25 a 29</option>
-				</select>
-			</div>
+							<option selected disabled value="">Elija una opcion..</option>
+							<option value="1">15 a 18</option>
+							<option value="2">18 a 24</option>
+							<option value="3">25 a 29</option>
+					</select>
+				</div>
 
 			</div>
 		</div>
 
 
-		<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+		<!-- ////////////////////////////////    PREGUNTA  7   ///////////////////////////////////////////////// -->
 
 		<div class="row">
 
 			<div class="form-group">
-			<label class="col-xs-12 control-label">Estudias? </label>
+				<label class="col-xs-12 control-label">Estudias? </label>
 
-			<div class="col-xs-12 col-sm-5">
-				<select id="select_pregunta_7" class="form-control">
+				<div class="col-xs-12 col-sm-5">
+					<select id="select_pregunta_7" class="form-control">
 
-						<option selected disabled value="">Elija una opcion..</option>
-						<option value="Si">Si</option>
-						<option value="No">No</option>
-				</select>
-			</div>
+							<option selected disabled value="">Elija una opcion..</option>
+							<option value="Si">Si</option>
+							<option value="No">No</option>
+					</select>
+				</div>
 
 			</div>
 		</div>
@@ -62,6 +65,18 @@
 			<div class= "option_pregunta_7_no" style="display:none">  <input type="radio"  name="data[Encuesta][pregunta_7]" value="13"> Otro  </div>
 
 		</div>
+
+
+
+
+		<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+		<!-- ////////////////////////////////////////    PARTE DANIEL ///////////////////////////////////////////////////////////////////// -->
+		<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+		<!-- ////////////////////////////////    PREGUNTA  20   ///////////////////////////////////////////////// -->
+
+
 
 
 		<?php echo $this->Form->submit('Guardar', array('class' => 'btn btn-sm btn-primary')); ?>
