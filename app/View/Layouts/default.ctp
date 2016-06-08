@@ -10,7 +10,7 @@
 
 		echo $this->Html->css(array('bootstrap.min','bootstrap-theme.min'));
 
-		echo $this->Html->script(array('jquery.min-1.11'));
+		echo $this->Html->script(array('jquery.min-1.11','bootstrap.min'));
 
 		echo $this->fetch('meta');
 		echo $this->fetch('css');
