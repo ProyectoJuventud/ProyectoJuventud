@@ -9,7 +9,7 @@
 
 				debug($_POST);
 
-				debug($this->request->data['Encuesta']['pregunta_1']);
+				debug($this->request->data['Encuestas']['pregunta_1']);
 			}
 		}
 
