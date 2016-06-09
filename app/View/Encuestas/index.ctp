@@ -1,6 +1,9 @@
 <!-- LLamado al archivo "webroot/css/styles.css". Poner ahi todos los estilos -->
 <?php echo $this->Html->css('styles', array('inline' => false)); ?>
 
+<!-- LLamado al archivo "webroot/js/codigoJquery.js". -->
+<?php echo $this->Html->script('codigoJquery', array('inline' => false, 'defer' => true)); ?>
+
 
 <div class="container">
 
@@ -307,12 +310,82 @@
 
 	<!-- ////////////////////////////////    PREGUNTA  26   ///////////////////////////////////////////////// -->
 
-	<!-- que haces con la  opcion ESPECIFICAR CUALES???????? -->
+	<!-- que hacer con la  opcion ESPECIFICAR CUALES???????? -->
 
 
 	<!-- ////////////////////////////////    PREGUNTA  27   ///////////////////////////////////////////////// -->
 
-	<!-- Son 2 preguntas o 1? son ambas de opciones multiples??? -->
+	<div class="row">
+
+		<label id="label_pregunta_27" class="col-xs-12">
+			27) Cuales de los siguientes métodos son anticonceptivos eficientes?
+		</label>
+
+	</div>
+
+	<div class="row">
+
+		<div class="col-xs-12 col-md-5 col-sm-6">
+
+			<ul class="checkbox">
+				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_27][]"/>  Método del calendario </li>
+				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_27][]"/>  Coito interrumpido </li>
+				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_27][]"/>  Pastillas anticonceptivas </li>
+				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_27][]"/>  Pastillas del "Dia despues" </li>
+				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_27][]"/>  DIU </li>
+				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_27][]"/>  Parches </li>
+				<li><input type ="checkbox"  value="7" name="data[Encuestas][pregunta_27][]"/>  Preservativos </li>
+			</ul>
+
+		</div>
+
+	</div>
+
+	<div class="row">
+
+		<div id="mensaje_alerta_pregunta_27" class="col-xs-12 col-md-5 col-sm-6"></div>
+
+	</div>
+
+	<br />
+
+
+	<!-- ////////////////////////////////    PREGUNTA  27-b   ///////////////////////////////////////////////// -->
+
+	<div class="row">
+
+		<label id="label_pregunta_27b" class="col-xs-12">
+			 &nbsp; &nbsp; &nbsp; Cual utilizás frecuentemente?
+		</label>
+
+	</div>
+
+	<div class="row">
+
+		<div class="col-xs-12 col-md-5 col-sm-6">
+
+			<ul class="checkbox">
+				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_27b][]"/>  Pastillas anticonceptivas </li>
+				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_27b][]"/>  Coito interrumpido </li>
+				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_27b][]"/>  Pastillas del "Dia despues" </li>
+				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_27b][]"/>  Método del calendario </li>
+				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_27b][]"/>  DIU </li>
+				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_27b][]"/>  Parches </li>
+				<li><input type ="checkbox"  value="7" name="data[Encuestas][pregunta_27b][]"/>  Preservativos </li>
+				<li><input type ="checkbox"  value="7" name="data[Encuestas][pregunta_27b][]"/>  Ninguo de los anteriores </li>
+			</ul>
+
+		</div>
+
+	</div>
+
+	<div class="row">
+
+		<div id="mensaje_alerta_pregunta_27b" class="col-xs-12 col-md-5 col-sm-6"></div>
+
+	</div>
+
+	<br />
 
 
 	<!-- ////////////////////////////////    PREGUNTA  28   ///////////////////////////////////////////////// -->
@@ -338,6 +411,7 @@
 	</div>
 
 	<br />
+
 
 	<!-- ////////////////////////////////    PREGUNTA  29   ///////////////////////////////////////////////// -->
 
@@ -400,6 +474,7 @@
 
 	<br />
 
+
 	<!-- ////////////////////////////////    PREGUNTA  31   ///////////////////////////////////////////////// -->
 
 	<div class="row">
@@ -444,9 +519,241 @@
 		</div>
 	</div>
 
-	<!-- ////////////////////////////////    PREGUNTA  32, 33, 34, 35 (dependen de 31)   ///////////////////////////////////////////////// -->
+
+	<!-- ////////////////////////////////    PREGUNTA  32  (depende de 31)  ///////////////////////////////////////////////// -->
+
+	<div id="bloque_32_33_34_35" style="display:none">
+
+		<div class="row">
+
+			<label class="col-xs-12"> 32) A que edad comenzaste a consumir? </label>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-xs-12 col-md-5 col-sm-6">
+				<select id="select_pregunta_32" name="data[Encuestas][pregunta_32]" class="form-control">
+
+					<option selected disabled value=""> Elija una opción.. </option>
+					<option value="1"> 15 a 18 </option>
+					<option value="2"> 18 a 24 </option>
+					<option value="3"> 25 a 29 </option>
+				</select>
+			</div>
+
+		</div>
+
+		<br />
+
+		<!-- ////////////////////////////////    PREGUNTA  33 (depende de 31)  ///////////////////////////////////////////////// -->
+
+		<div class="row">
+
+			<label class="col-xs-12"> 33) En que lugar fue tu primer consumo? </label>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-xs-12 col-md-5 col-sm-6">
+				<select id="select_pregunta_33" name="data[Encuestas][pregunta_33]" class="form-control">
+
+					<option selected disabled value=""> Elija una opción.. </option>
+					<option value="1"> Sólo en casa </option>
+					<option value="2"> En casa y con amigos </option>
+					<option value="3"> En una fiesta fuera de casa </option>
+					<option value="3"> Otros </option>
+				</select>
+			</div>
+
+		</div>
+
+		<br />
 
 
+		<!-- ////////////////////////////////    PREGUNTA  34 (depende de 31)  ///////////////////////////////////////////////// -->
+
+		<div class="row">
+
+			<label class="col-xs-12"> 34) Cual droga probaste por primera vez? </label>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-xs-12 col-md-5 col-sm-6">
+				<select id="select_pregunta_34" name="data[Encuestas][pregunta_34]" class="form-control">
+
+					<option selected disabled value=""> Elija una opción.. </option>
+					<option value="1"> Cocaina </option>
+					<option value="2"> Metanfetaminas </option>
+					<option value="3"> Marihuana </option>
+					<option value="4"> Paco </option>
+					<option value="5"> Alcohol </option>
+					<option value="6"> Cigarrillos </option>
+					<option value="7"> Otras </option>
+				</select>
+			</div>
+
+		</div>
+
+		<br />
+
+
+		<!-- ////////////////////////////////    PREGUNTA  35  (depende de 31) ///////////////////////////////////////////////// -->
+
+		<div class="row">
+
+			<label class="col-xs-12"> 35) Dónde y con quienes consumís? </label>
+
+		</div>
+
+		<div class="row">
+
+			<div class="col-xs-12 col-md-5 col-sm-6">
+				<select id="select_pregunta_35" name="data[Encuestas][pregunta_35]" class="form-control">
+
+					<option selected disabled value=""> Elija una opción.. </option>
+					<option value="1"> Solo en casa </option>
+					<option value="2"> En casa y con amigos </option>
+					<option value="3"> En una fiesta fuera de casa </option>
+					<option value="4"> Otras </option>
+				</select>
+			</div>
+
+		</div>
+
+		<br />
+
+	</div>
+
+
+	<!-- ////////////////////////////////    PREGUNTA  36   ///////////////////////////////////////////////// -->
+
+	<div class="row">
+
+		<label class="col-xs-12"> 36) Pensas que es un problema el consumo de drogas? </label>
+
+	</div>
+
+	<div class="row">
+
+		<div class="col-xs-12 col-md-5 col-sm-6">
+			<select id="select_pregunta_36" name="data[Encuestas][pregunta_36]" class="form-control">
+
+				<option selected disabled value=""> Elija una opción.. </option>
+				<option value="1"> Sí </option>
+				<option value="2"> No </option>
+			</select>
+		</div>
+
+	</div>
+
+	<br />
+
+
+	<!-- ////////////////////////////////    PREGUNTA  37   ///////////////////////////////////////////////// -->
+
+	<div class="row">
+
+		<label id="label_pregunta_30" class="col-xs-12">
+			37) Considerás que pasaste por alguna situación de violencia física o psicologica?
+		</label>
+
+	</div>
+
+	<div class="row">
+
+		<div class="col-xs-12 col-md-5 col-sm-6">
+
+			<ul class="checkbox">
+				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_37][]"/>  Nunca </li>
+				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_37][]"/>  En casa </li>
+				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_37][]"/>  En la escuela/facultad </li>
+				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_37][]"/>  En el trabajo </li>
+				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_37][]"/>  En el barrio </li>
+				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_37][]"/>  En la organización a la que pertenezco </li>
+				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_37][]"/>  Otros </li>
+			</ul>
+
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div id="mensaje_alerta_pregunta_37" class="col-xs-12 col-md-5 col-sm-6"></div>
+
+	</div>
+
+	<br />
+
+
+	<!-- ////////////////////////////////    PREGUNTA  38, 38b, 39, 40   ///////////////////////////////////////////////// -->
+
+		<!-- Dependen de la pregunta 37! -->
+
+
+
+	<!-- ////////////////////////////////    PREGUNTA  41   ///////////////////////////////////////////////// -->
+
+	<div class="row">
+
+		<label class="col-xs-12"> 41) Cual es el número a llamar en caso de violencia de gérero? </label>
+
+	</div>
+
+	<div class="row">
+
+		<div class="col-xs-12 col-md-5 col-sm-6">
+			<select id="select_pregunta_41" name="data[Encuestas][pregunta_41]" class="form-control">
+
+				<option selected disabled value=""> Elija una opción.. </option>
+				<option value="1"> 140 </option>
+				<option value="2"> 111 </option>
+				<option value="3"> 110 </option>
+			</select>
+		</div>
+
+	</div>
+
+	<br />
+
+
+	<!-- ////////////////////////////////    PREGUNTA  42   ///////////////////////////////////////////////// -->
+
+	<div class="row">
+
+		<label id="label_pregunta_42" class="col-xs-12">
+			42) Cuales consideras que son problemas de los jovenes?
+		</label>
+
+	</div>
+
+	<div class="row">
+
+		<div class="col-xs-12 col-md-5 col-sm-6">
+
+			<ul class="checkbox">
+				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_42][]"/>  Adicciones </li>
+				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_42][]"/>  Primer empleo </li>
+				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_42][]"/>  Bulling </li>
+				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_42][]"/>  Maternidad/Paternidad temprana </li>
+				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_42][]"/>  En Diversidad sexual </li>
+				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_42][]"/>  Indigencia </li>
+				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_42][]"/>  Otros </li>
+			</ul>
+
+		</div>
+	</div>
+
+	<div class="row">
+
+		<div id="mensaje_alerta_pregunta_42" class="col-xs-12 col-md-5 col-sm-6"></div>
+
+	</div>
+
+	<br />
 
 
 
@@ -470,139 +777,6 @@
 
 <script type="text/javascript">
 
-$(document).ready(function () {
-
-
-	////////////////////////////////    PREGUNTA  7   ////////////////////////////////////////////////
-
-	var select_pregunta_7 = $('#select_pregunta_7');
-	var opciones_si_pregunta_7 = $('.opciones_si_pregunta_7');
-	var opciones_no_pregunta_7 = $('.opciones_no_pregunta_7');
-
-
-	select_pregunta_7.change(function () {
-
-		if ( $(this).val() == 'No' ){
-
-			opciones_si_pregunta_7.fadeOut(300, function(){
-				opciones_no_pregunta_7.fadeIn(300);
-			});
-		}
-
-		else{
-
-			opciones_no_pregunta_7.fadeOut(300, function(){
-				opciones_si_pregunta_7.fadeIn(300);
-			});
-		}
-	});
-
-
-	////////////////////////////////    PREGUNTA  20   ////////////////////////////////////////////////
-
-	$('input[name="data[Encuestas][pregunta_20][]"]').click(function () {
-
-		// Permitira seleccionar hasta 3 checkboxes y mostrara el mensaje de alerta en la pregunta qu corresponda
-		disableCheckboxes('pregunta_20', 3);
-	});
-
-
-	////////////////////////////////    PREGUNTA  21   ////////////////////////////////////////////////
-
-	$('input[name="data[Encuestas][pregunta_21][]"]').click(function () {
-
-		disableCheckboxes('pregunta_21', 2);
-	});
-
-
-	////////////////////////////////    PREGUNTA  25   ////////////////////////////////////////////////
-
-	var select_pregunta_25 = $('#select_pregunta_25');
-	var opciones_si_pregunta_25 = $('.opciones_si_pregunta_25');
-
-
-	select_pregunta_25.change(function () {
-
-		if ( $(this).val() == 'No' ){
-
-			opciones_si_pregunta_25.fadeOut(300);
-		}
-
-
-		else{
-			opciones_si_pregunta_25.fadeIn(300);
-		}
-	});
-
-
-	$('input[name="data[Encuestas][pregunta_25][]"]').click(function () {
-
-		disableCheckboxes('pregunta_25', 2);
-	});
-
-
-	////////////////////////////////    PREGUNTA  30   ////////////////////////////////////////////////
-
-	$('input[name="data[Encuestas][pregunta_30][]"]').click(function () {
-
-		disableCheckboxes('pregunta_30', 3);
-	});
-
-
-	////////////////////////////////    PREGUNTA  31   ////////////////////////////////////////////////
-
-	var select_pregunta_31 = $('#select_pregunta_31');
-	var opciones_si_pregunta_31 = $('.opciones_si_pregunta_31');
-
-	select_pregunta_31.change(function () {
-
-		if ( $(this).val() == 'No' ){
-
-			opciones_si_pregunta_31.fadeOut(300);
-		}
-
-
-		else{
-			opciones_si_pregunta_31.fadeIn(300);
-		}
-	});
-
-
-
-
-
-	///////////////////////////////////////    METODOS    ////////////////////////////////////////////////
-
-	/* Desactivara los checkboxes de la pregunta "pregunta" luego de tener seleccionado tanto checkboxes como "cantidad" */
-	var disableCheckboxes = function (pregunta, cantidad) {
-
-		// Esto tiene TODOS los checkboxes
-		var Allcheckboxes = $('input[name="data[Encuestas][' + pregunta + '][]"]');
-
-		// Esto tiene TODOS los checkboxes NO SELECCIONADOS
-		var checkboxesNoSelected = $('input[name="data[Encuestas][' + pregunta + '][]"]:not(:checked)');
-
-        // checkboxes SELECCIONADOS
-        var checkboxesSelected = $('input[name="data[Encuestas][' + pregunta + '][]"]:checked');
-
-        if (checkboxesSelected.length >= cantidad) {
-
-        	checkboxesNoSelected.attr('disabled', true);
-
-        	$('#mensaje_alerta_' + pregunta).html('<div class="estilo_mensaje maximo_seleccionado_' + pregunta +'" style="display:none"> <b>Advertencia: </b> No puede elegir más opciones');
-
-        	$('.maximo_seleccionado_' + pregunta).fadeIn(500).delay(5000).fadeOut('slow');
-
-        }
-
-        else{
-        	Allcheckboxes.attr('disabled', false);
-        }
-    };
-
-    //////////////////////////////
-
-});
-
+	// El codigo Jquery lo pase al archivo webroot/js/codigoJquery.js (donde corresponde)
 
 </script>
