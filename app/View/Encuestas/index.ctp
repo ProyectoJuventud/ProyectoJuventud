@@ -619,7 +619,7 @@
 
 				<div class="opciones_si_pregunta_25" style="display:none">
 					<ul class="checkbox">
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_25][]" value="1"> Metodos anticonceptivos y embarazos </li>
+						<li> <input type="checkbox"  name="data[Encuestas][pregunta_25][]" value="1"> Metodos anticonceptivos y embarazo </li>
 						<li> <input type="checkbox"  name="data[Encuestas][pregunta_25][]" value="2"> Adicciones (alcohol, cigarrillos, drogas, etc) </li>
 						<li> <input type="checkbox"  name="data[Encuestas][pregunta_25][]" value="3"> Planificación familiar </li>
 						<li> <input type="checkbox"  name="data[Encuestas][pregunta_25][]" value="4"> Diversidad sexual </li>
@@ -640,8 +640,46 @@
 
 	<!-- ////////////////////////////////    PREGUNTA  26   ///////////////////////////////////////////////// -->
 
-	<!-- que hacer con la  opcion ESPECIFICAR CUALES???????? -->
+	<div class="row">
+		<label class="col-xs-12 col-md-5 col-sm-6"> 26) Considerias que es importante que existieran talleres o charlas relacionadas con tu salud? </label>
+	</div>
 
+	<div class="row">
+		<div class="col-xs-12 col-md-5 col-sm-6">
+			<select id="select_pregunta_26" class="form-control">
+				<option selected disabled value=""> Elija una opción.. </option>
+				<option value="Si"> Sí </option>
+				<option value="No"> No </option>
+			</select>
+		</div>
+	</div>
+
+	<br />
+
+	<div class="row">
+		<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="opciones_checkbox">
+
+				<div class="opciones_si_pregunta_26" style="display:none">
+					<ul class="checkbox">
+						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="1"> Metodos anticonceptivos y embarazo </li>
+						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="2"> Adicciones (alcohol, cigarrillos, drogas, etc) </li>
+						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="3"> Planificación familiar </li>
+						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="4"> Diversidad sexual </li>
+						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="5"> Enfermedades estacionales o epidemias </li>
+						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="6"> Violencias </li>
+						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="7"> Otros </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div id="mensaje_alerta_pregunta_26" class="col-xs-12 col-md-5 col-sm-6"></div>
+	</div>
+
+	<br />
 
 	<!-- ////////////////////////////////    PREGUNTA  27   ///////////////////////////////////////////////// -->
 
@@ -806,9 +844,9 @@
 		<div class="row">
 			<div class="col-xs-12 col-md-5 col-sm-6">
 				<select id="select_pregunta_32" name="data[Encuestas][pregunta_32]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
+					<option selected disabled value=""> Elija una opcion </option>
 					<option value="1"> 15 a 18 </option>
-					<option value="2"> 18 a 24 </option>
+					<option value="2"> 19 a 24 </option>
 					<option value="3"> 25 a 29 </option>
 				</select>
 			</div>
