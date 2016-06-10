@@ -71,7 +71,23 @@ $(document).ready(function () {
 	});
 
 
-////////////////////////////////    PREGUNTA  18   ////////////////////////////////////////////////
+	////////////////////////////////    PREGUNTA  14   ////////////////////////////////////////////////
+
+	$('input[name="data[Encuestas][pregunta_14][]"]').click(function () {
+
+		disableCheckboxes('pregunta_14', 3);
+	});
+
+
+	////////////////////////////////    PREGUNTA  17   ////////////////////////////////////////////////
+
+	$('input[name="data[Encuestas][pregunta_17][]"]').click(function () {
+
+		disableCheckboxes('pregunta_17', 3);
+	});
+
+
+	////////////////////////////////    PREGUNTA  18   ////////////////////////////////////////////////
 
 	var select_pregunta_18 = $('#select_pregunta_18');
 	var opciones_si_pregunta_18 = $('.opciones_si_pregunta_18');
