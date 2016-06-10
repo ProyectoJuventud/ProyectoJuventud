@@ -137,7 +137,7 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
-			<select id="select_pregunta_7" class="form-control">
+			<select id="select_pregunta_7" name="data[Encuestas][pregunta_7]" class="form-control">
 				<option selected disabled value=""> Elija una opción.. </option>
 				<option value="Si"> Sí </option>
 				<option value="No"> No </option>
@@ -152,22 +152,22 @@
 			<div class="opciones_radios">
 
 				<div class="opciones_si_pregunta_7" style="display:none">
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="1"> Estudios Primarios </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="2"> Estudios Secundarios </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="3"> Estudios Terciarios/Universitarios </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="4"> Estudios Posgrado </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="5"> Otros </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="1"> Estudios Primarios </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="2"> Estudios Secundarios </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="3"> Estudios Terciarios/Universitarios </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="4"> Estudios Posgrado </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="5"> Otros </div>
 				</div>
 
 				<div class="opciones_no_pregunta_7" style="display:none">
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="6"> Porque trabajo o estoy buscando trabajo </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="7"> Porque ya conclui mis estudios </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="8"> Porque la Institución educativa está muy lejos</div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="9"> Porque no puedo pagar los estudios </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="10"> Porque no me interesa </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="11"> Porque estoy esperando un hijo/cuidado de hijo/s </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="12"> Por enfermedad o discapacidad </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_7]" value="13"> Otro </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="6"> Porque trabajo o estoy buscando trabajo </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="7"> Porque ya conclui mis estudios </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="8"> Porque la Institución educativa está muy lejos</div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="9"> Porque no puedo pagar los estudios </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="10"> Porque no me interesa </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="11"> Porque estoy esperando un hijo/cuidado de hijo/s </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="12"> Por enfermedad o discapacidad </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="13"> Otro </div>
 				</div>
 			</div>
 		</div>
@@ -181,7 +181,7 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
-			<select id="select_pregunta_8" class="form-control">
+			<select id="select_pregunta_8" name="data[Encuestas][pregunta_8]" class="form-control">
 				<option selected disabled value=""> Elija una opción.. </option>
 				<option value="Si"> Sí </option>
 				<option value="No"> No </option>
@@ -196,9 +196,9 @@
 			<div class="opciones_radios">
 
 				<div class="opciones_si_pregunta_8" style="display:none">
-					<div> <input type="radio"  name="data[Encuestas][pregunta_8]" value="1"> Porque me aporataria saberes y conocimientos </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_8]" value="2"> Porque conseguiria un mejor trabajo </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_8]" value="3"> Otros </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_8"  name="data[Encuestas][pregunta_8][Si]" value="1"> Porque me aporataria saberes y conocimientos </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_8"  name="data[Encuestas][pregunta_8][Si]" value="2"> Porque conseguiria un mejor trabajo </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_8"  name="data[Encuestas][pregunta_8][Si]" value="3"> Otros </div>
 				</div>
 			</div>
 		</div>
@@ -272,7 +272,7 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
-			<select id="select_pregunta_12" class="form-control">
+			<select id="select_pregunta_12" name="data[Encuestas][pregunta_12]" class="form-control">
 				<option selected disabled value=""> Elija una opción.. </option>
 				<option value="Si"> Sí </option>
 				<option value="No"> No </option>
@@ -287,24 +287,24 @@
 			<div class="opciones_radios">
 
 				<div class="opciones_si_pregunta_12" style="display:none">
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="1"> Relación de dependencia Registrado (en blanco) </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="2"> Relación de dependencia Registrado (en negro) </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="3"> Emprendimiento propio o familiar </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="4"> Changas </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="5"> Trabajo de limpieza, cuidado de niños, ancianos, casas </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="6"> Otros </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_12" name="data[Encuestas][pregunta_12][Si]" value="1"> Relación de dependencia Registrado (en blanco) </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_12" name="data[Encuestas][pregunta_12][Si]" value="2"> Relación de dependencia Registrado (en negro) </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_12" name="data[Encuestas][pregunta_12][Si]" value="3"> Emprendimiento propio o familiar </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_12" name="data[Encuestas][pregunta_12][Si]" value="4"> Changas </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_12" name="data[Encuestas][pregunta_12][Si]" value="5"> Trabajo de limpieza, cuidado de niños, ancianos, casas </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_12" name="data[Encuestas][pregunta_12][Si]" value="6"> Otros </div>
 				</div>
 
 				<div class="opciones_no_pregunta_12" style="display:none">
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="7"> Porque no busco trabajo </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="8"> No encontré lo que buscaba según mis requisitos</div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="9"> Porque tengo que cuidar a un familiar </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="10"> Porque tengo que cuidar hijo/s </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="11"> Porque estoy esperando un hijo/s </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="12"> Por enfermedad o discapacidad </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="13"> Porque no me interesa </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="14"> Porque estoy estudiando </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_12]" value="15"> Otros </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="7"> Porque no busco trabajo </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="8"> No encontré lo que buscaba según mis requisitos</div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="9"> Porque tengo que cuidar a un familiar </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="10"> Porque tengo que cuidar hijo/s </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="11"> Porque estoy esperando un hijo/s </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="12"> Por enfermedad o discapacidad </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="13"> Porque no me interesa </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="14"> Porque estoy estudiando </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="15"> Otros </div>
 				</div>
 			</div>
 		</div>
@@ -342,13 +342,13 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
 			<ul class="checkbox">
-				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_14][]"/>  Profesión/Conocimientos técnicos </li>
-				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_14][]"/>  Posibilidades de hacer carrera </li>
-				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_14][]"/>  Remuneración </li>
-				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_14][]"/>  Flexibilidad horaria </li>
-				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_14][]"/>  La oferta existente </li>
-				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_14][]"/>  Tradición familiar </li>
-				<li><input type ="checkbox"  value="7" name="data[Encuestas][pregunta_14][]"/>  Otros </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_14" name="data[Encuestas][pregunta_14][]" value="1" />  Profesión/Conocimientos técnicos </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_14" name="data[Encuestas][pregunta_14][]" value="2" />  Posibilidades de hacer carrera </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_14" name="data[Encuestas][pregunta_14][]" value="3" />  Remuneración </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_14" name="data[Encuestas][pregunta_14][]" value="4" />  Flexibilidad horaria </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_14" name="data[Encuestas][pregunta_14][]" value="5" />  La oferta existente </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_14" name="data[Encuestas][pregunta_14][]" value="6" />  Tradición familiar </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_14" name="data[Encuestas][pregunta_14][]" value="7"/>  Otros </li>
 			</ul>
 		</div>
 	</div>
@@ -408,13 +408,13 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
 			<ul class="checkbox">
-				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_17][]"/>  Políticas </li>
-				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_17][]"/>  Religiosas </li>
-				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_17][]"/>  Ambientales </li>
-				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_17][]"/>  Humanitarias </li>
-				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_17][]"/>  Culturales </li>
-				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_17][]"/>  Recreativas </li>
-				<li><input type ="checkbox"  value="7" name="data[Encuestas][pregunta_17][]"/>  Otras </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_17" name="data[Encuestas][pregunta_17][]" value="1" />  Políticas </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_17" name="data[Encuestas][pregunta_17][]" value="2"/>  Religiosas </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_17" name="data[Encuestas][pregunta_17][]" value="3"/>  Ambientales </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_17" name="data[Encuestas][pregunta_17][]" value="4"/>  Humanitarias </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_17" name="data[Encuestas][pregunta_17][]" value="5"/>  Culturales </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_17" name="data[Encuestas][pregunta_17][]" value="6" />  Recreativas </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_17" name="data[Encuestas][pregunta_17][]" value="7" />  Otras </li>
 			</ul>
 		</div>
 	</div>
@@ -433,7 +433,7 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
-			<select id="select_pregunta_18" class="form-control">
+			<select id="select_pregunta_18" name="data[Encuestas][pregunta_18]" class="form-control">
 				<option selected disabled value=""> Elija una opción.. </option>
 				<option value="Si"> Sí </option>
 				<option value="No"> No </option>
@@ -448,9 +448,9 @@
 			<div class="opciones_radios">
 
 				<div class="opciones_si_pregunta_18" style="display:none">
-					<div> <input type="radio"  name="data[Encuestas][pregunta_18]" value="1"> 1 vez a la semana </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_18]" value="2"> 2 o 3 veces a la semana </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_18]" value="3"> Más de 3 veces a la semana </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_18"  name="data[Encuestas][pregunta_18][Si]" value="1"> 1 vez a la semana </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_18"  name="data[Encuestas][pregunta_18][Si]" value="2"> 2 o 3 veces a la semana </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_18"  name="data[Encuestas][pregunta_18][Si]" value="3"> Más de 3 veces a la semana </div>
 				</div>
 			</div>
 		</div>
@@ -489,18 +489,18 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
 			<ul class="checkbox">
-				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_20][]"/>  Facebook </li>
-				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_20][]"/>  Twitter </li>
-				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_20][]"/>  Instagram </li>
-				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_20][]"/>  Whatsapp </li>
-				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_20][]"/>  Skype </li>
-				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_20][]"/>  Correo electrónico </li>
-				<li><input type ="checkbox"  value="7" name="data[Encuestas][pregunta_20][]"/>  YouTube </li>
-				<li><input type ="checkbox"  value="8" name="data[Encuestas][pregunta_20][]"/>  Plataformas del trabajo </li>
-				<li><input type ="checkbox"  value="9" name="data[Encuestas][pregunta_20][]"/>  Bolsas de trabajo </li>
-				<li><input type ="checkbox"  value="10" name="data[Encuestas][pregunta_20][]"/> Facultad </li>
-				<li><input type ="checkbox"  value="11" name="data[Encuestas][pregunta_20][]"/> Ebooks </li>
-				<li><input type ="checkbox"  value="12" name="data[Encuestas][pregunta_20][]"/> Otros </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_20" name="data[Encuestas][pregunta_20][]" value="1" />  Facebook </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_20" name="data[Encuestas][pregunta_20][]" value="2" />  Twitter </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_20" name="data[Encuestas][pregunta_20][]" value="3"/>  Instagram </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_20" name="data[Encuestas][pregunta_20][]" value="4"/>  Whatsapp </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_20" name="data[Encuestas][pregunta_20][]" value="5"/>  Skype </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_20" name="data[Encuestas][pregunta_20][]" value="6"/>  Correo electrónico </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_20" name="data[Encuestas][pregunta_20][]" value="7"/>  YouTube </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_20" name="data[Encuestas][pregunta_20][]" value="8"/>  Plataformas del trabajo </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_20" name="data[Encuestas][pregunta_20][]" value="9"/>  Bolsas de trabajo </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_20" name="data[Encuestas][pregunta_20][]" value="10"/> Facultad </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_20" name="data[Encuestas][pregunta_20][]" value="11"/> Ebooks </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_20" name="data[Encuestas][pregunta_20][]" value="12"/> Otros </li>
 			</ul>
 		</div>
 	</div>
@@ -520,12 +520,12 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
 			<ul class="checkbox">
-				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_21][]"/>  Casa </li>
-				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_21][]"/>  Escuela/Facultad </li>
-				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_21][]"/>  Trabajo </li>
-				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_21][]"/>  Casa de un amigo/familiar </li>
-				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_21][]"/>  Espacio público</li>
-				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_21][]"/>  Otros </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_21" name="data[Encuestas][pregunta_21][]" value="1" />  Casa </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_21" name="data[Encuestas][pregunta_21][]" value="2"/>  Escuela/Facultad </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_21" name="data[Encuestas][pregunta_21][]" value="3" />  Trabajo </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_21" name="data[Encuestas][pregunta_21][]" value="4"/>  Casa de un amigo/familiar </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_21" name="data[Encuestas][pregunta_21][]" value="5"/>  Espacio público</li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_21" name="data[Encuestas][pregunta_21][]" value="6"/>  Otros </li>
 			</ul>
 		</div>
 	</div>
@@ -581,7 +581,7 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
-			<select id="select_pregunta_24" class="form-control">
+			<select id="select_pregunta_24" name="data[Encuestas][pregunta_24]" class="form-control">
 				<option selected disabled value=""> Elija una opción.. </option>
 				<option value="1"> Centro de Salud </option>
 				<option value="2"> Hospital </option>
@@ -603,7 +603,7 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
-			<select id="select_pregunta_25" class="form-control">
+			<select id="select_pregunta_25" name="data[Encuestas][pregunta_25]" class="form-control">
 				<option selected disabled value=""> Elija una opción.. </option>
 				<option value="Si"> Sí </option>
 				<option value="No"> No </option>
@@ -619,13 +619,13 @@
 
 				<div class="opciones_si_pregunta_25" style="display:none">
 					<ul class="checkbox">
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_25][]" value="1"> Metodos anticonceptivos y embarazo </li>
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_25][]" value="2"> Adicciones (alcohol, cigarrillos, drogas, etc) </li>
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_25][]" value="3"> Planificación familiar </li>
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_25][]" value="4"> Diversidad sexual </li>
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_25][]" value="5"> Enfermedades estacionales o epidemias </li>
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_25][]" value="6"> Violencias </li>
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_25][]" value="7"> Otros </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="1"> Metodos anticonceptivos y embarazo </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="2"> Adicciones (alcohol, cigarrillos, drogas, etc) </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="3"> Planificación familiar </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="4"> Diversidad sexual </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="5"> Enfermedades estacionales o epidemias </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="6"> Violencias </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="7"> Otros </li>
 					</ul>
 				</div>
 			</div>
@@ -646,7 +646,7 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
-			<select id="select_pregunta_26" class="form-control">
+			<select id="select_pregunta_26" name="data[Encuestas][pregunta_26]" class="form-control">
 				<option selected disabled value=""> Elija una opción.. </option>
 				<option value="Si"> Sí </option>
 				<option value="No"> No </option>
@@ -662,13 +662,13 @@
 
 				<div class="opciones_si_pregunta_26" style="display:none">
 					<ul class="checkbox">
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="1"> Metodos anticonceptivos y embarazo </li>
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="2"> Adicciones (alcohol, cigarrillos, drogas, etc) </li>
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="3"> Planificación familiar </li>
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="4"> Diversidad sexual </li>
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="5"> Enfermedades estacionales o epidemias </li>
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="6"> Violencias </li>
-						<li> <input type="checkbox"  name="data[Encuestas][pregunta_26][]" value="7"> Otros </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="1"> Metodos anticonceptivos y embarazo </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="2"> Adicciones (alcohol, cigarrillos, drogas, etc) </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="3"> Planificación familiar </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="4"> Diversidad sexual </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="5"> Enfermedades estacionales o epidemias </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="6"> Violencias </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="7"> Otros </li>
 					</ul>
 				</div>
 			</div>
@@ -690,13 +690,13 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
 			<ul class="checkbox">
-				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_27][]"/>  Método del calendario </li>
-				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_27][]"/>  Coito interrumpido </li>
-				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_27][]"/>  Pastillas anticonceptivas </li>
-				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_27][]"/>  Pastillas del "Dia despues" </li>
-				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_27][]"/>  DIU </li>
-				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_27][]"/>  Parches </li>
-				<li><input type ="checkbox"  value="7" name="data[Encuestas][pregunta_27][]"/>  Preservativos </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27" name="data[Encuestas][pregunta_27][]" value="1" />  Método del calendario </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27" name="data[Encuestas][pregunta_27][]" value="2" />  Coito interrumpido </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27" name="data[Encuestas][pregunta_27][]" value="3" />  Pastillas anticonceptivas </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27" name="data[Encuestas][pregunta_27][]" value="4" />  Pastillas del "Dia despues" </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27" name="data[Encuestas][pregunta_27][]" value="5" />  DIU </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27" name="data[Encuestas][pregunta_27][]" value="6" />  Parches </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27" name="data[Encuestas][pregunta_27][]" value="7" />  Preservativos </li>
 			</ul>
 		</div>
 	</div>
@@ -716,14 +716,14 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
 			<ul class="checkbox">
-				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_27b][]"/>  Pastillas anticonceptivas </li>
-				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_27b][]"/>  Coito interrumpido </li>
-				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_27b][]"/>  Pastillas del "Dia despues" </li>
-				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_27b][]"/>  Método del calendario </li>
-				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_27b][]"/>  DIU </li>
-				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_27b][]"/>  Parches </li>
-				<li><input type ="checkbox"  value="7" name="data[Encuestas][pregunta_27b][]"/>  Preservativos </li>
-				<li><input type ="checkbox"  value="7" name="data[Encuestas][pregunta_27b][]"/>  Ninguo de los anteriores </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27b" name="data[Encuestas][pregunta_27b][]" value="1" />  Pastillas anticonceptivas </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27b" name="data[Encuestas][pregunta_27b][]" value="2" />  Coito interrumpido </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27b" name="data[Encuestas][pregunta_27b][]" value="3" />  Pastillas del "Dia despues" </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27b" name="data[Encuestas][pregunta_27b][]" value="4"/>  Método del calendario </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27b" name="data[Encuestas][pregunta_27b][]" value="5"/>  DIU </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27b" name="data[Encuestas][pregunta_27b][]" value="6" />  Parches </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27b" name="data[Encuestas][pregunta_27b][]" value="7"/>  Preservativos </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_27b" name="data[Encuestas][pregunta_27b][]" value="8"/>  Ninguo de los anteriores </li>
 			</ul>
 		</div>
 	</div>
@@ -773,7 +773,7 @@
 
 	<br />
 
-	<!-- ////////////////////////////////    PREGUNTA  30   ///////////////////////////////////////////////// -->
+	<!-- ////////////////////////////  ////    PREGUNTA  30   ///////////////////////////////////////////////// -->
 
 	<div class="row">
 		<label id="label_pregunta_30" class="col-xs-12"> 30) Que considerás como drogas? </label>
@@ -782,13 +782,13 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
 			<ul class="checkbox">
-				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_30][]"/>  Cocaina </li>
-				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_30][]"/>  Metanfetaminas </li>
-				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_30][]"/>  Marihuana </li>
-				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_30][]"/>  Paco </li>
-				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_30][]"/>  Alcohol </li>
-				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_30][]"/>  Cigarrillos </li>
-				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_30][]"/>  Otras </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_30" name="data[Encuestas][pregunta_30][]" value="1"/>  Cocaina </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_30" name="data[Encuestas][pregunta_30][]" value="2" />  Metanfetaminas </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_30" name="data[Encuestas][pregunta_30][]" value="3" />  Marihuana </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_30" name="data[Encuestas][pregunta_30][]" value="4" />  Paco </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_30" name="data[Encuestas][pregunta_30][]" value="5" />  Alcohol </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_30" name="data[Encuestas][pregunta_30][]" value="6"/>  Cigarrillos </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_30"name="data[Encuestas][pregunta_30][]" value="7"/>  Otras </li>
 			</ul>
 		</div>
 	</div>
@@ -808,7 +808,7 @@
 
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
-			<select id="select_pregunta_31" class="form-control">
+			<select id="select_pregunta_31" name="data[Encuestas][pregunta_31]" class="form-control">
 				<option selected disabled value=""> Elija una opción.. </option>
 				<option value="Si"> Sí </option>
 				<option value="No"> No </option>
@@ -823,11 +823,11 @@
 			<div class="opciones_radios">
 
 				<div class="opciones_si_pregunta_31" style="display:none">
-					<div> <input type="radio"  name="data[Encuestas][pregunta_31]" value="1"> 1 vez cada 6 meses </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_31]" value="2"> 1 vez al mes </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_31]" value="3"> 1 vez a la semana </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_31]" value="4"> 2 a 3 veces a la semana </div>
-					<div> <input type="radio"  name="data[Encuestas][pregunta_31]" value="5"> Más de 3 veces por semana </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="1"> 1 vez cada 6 meses </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="2"> 1 vez al mes </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="3"> 1 vez a la semana </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="4"> 2 a 3 veces a la semana </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="5"> Más de 3 veces por semana </div>
 				</div>
 			</div>
 		</div>
@@ -947,13 +947,13 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
 			<ul class="checkbox">
-				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_37][]"/>  Nunca </li>
-				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_37][]"/>  En casa </li>
-				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_37][]"/>  En la escuela/facultad </li>
-				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_37][]"/>  En el trabajo </li>
-				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_37][]"/>  En el barrio </li>
-				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_37][]"/>  En la organización a la que pertenezco </li>
-				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_37][]"/>  Otros </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_37" name="data[Encuestas][pregunta_37][]" value="1" />  Nunca </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_37" name="data[Encuestas][pregunta_37][]" value="2" />  En casa </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_37" name="data[Encuestas][pregunta_37][]" value="3" />  En la escuela/facultad </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_37" name="data[Encuestas][pregunta_37][]" value="4" />  En el trabajo </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_37" name="data[Encuestas][pregunta_37][]" value="5" />  En el barrio </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_37" name="data[Encuestas][pregunta_37][]" value="6" />  En la organización a la que pertenezco </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_37" name="data[Encuestas][pregunta_37][]" value="7" />  Otros </li>
 			</ul>
 		</div>
 	</div>
@@ -997,13 +997,13 @@
 	<div class="row">
 		<div class="col-xs-12 col-md-5 col-sm-6">
 			<ul class="checkbox">
-				<li><input type ="checkbox"  value="1" name="data[Encuestas][pregunta_42][]"/>  Adicciones </li>
-				<li><input type ="checkbox"  value="2" name="data[Encuestas][pregunta_42][]"/>  Primer empleo </li>
-				<li><input type ="checkbox"  value="3" name="data[Encuestas][pregunta_42][]"/>  Bulling </li>
-				<li><input type ="checkbox"  value="4" name="data[Encuestas][pregunta_42][]"/>  Maternidad/Paternidad temprana </li>
-				<li><input type ="checkbox"  value="5" name="data[Encuestas][pregunta_42][]"/>  En Diversidad sexual </li>
-				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_42][]"/>  Indigencia </li>
-				<li><input type ="checkbox"  value="6" name="data[Encuestas][pregunta_42][]"/>  Otros </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_42" name="data[Encuestas][pregunta_42][]" value="1" />  Adicciones </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_42" name="data[Encuestas][pregunta_42][]" value="2" />  Primer empleo </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_42" name="data[Encuestas][pregunta_42][]" value="3" />  Bulling </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_42" name="data[Encuestas][pregunta_42][]" value="4" />  Maternidad/Paternidad temprana </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_42" name="data[Encuestas][pregunta_42][]" value="5" />  En Diversidad sexual </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_42" name="data[Encuestas][pregunta_42][]" value="6" />  Indigencia </li>
+				<li><input type ="checkbox"  data-pregunta= "check_pregunta_42" name="data[Encuestas][pregunta_42][]" value="7" />  Otros </li>
 			</ul>
 		</div>
 	</div>

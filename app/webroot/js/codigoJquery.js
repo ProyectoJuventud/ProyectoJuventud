@@ -4,20 +4,28 @@ $(document).ready(function () {
 	////////////////////////////////    PREGUNTA  7   ////////////////////////////////////////////////
 
 	var select_pregunta_7 = $('#select_pregunta_7');
-	var opciones_si_pregunta_7 = $('.opciones_si_pregunta_7');
-	var opciones_no_pregunta_7 = $('.opciones_no_pregunta_7');
+	var opciones_si_pregunta_7 = $('.opciones_si_pregunta_7'); /* Bloque DIV */
+	var opciones_no_pregunta_7 = $('.opciones_no_pregunta_7'); /* Bloque DIV */
+
+	var Allradios_si_pregunta_7 = $('input[data-pregunta= "radio_si_pregunta_7"]'); /* Contiene todos los radios SI de la pregunta*/
+	var Allradios_no_pregunta_7 = $('input[data-pregunta= "radio_no_pregunta_7"]');  /* Contiene todos los radios NO de la pregunta*/
+
 
 	select_pregunta_7.change(function () {
 
 		if ( $(this).val() == 'No' ){
 
 			opciones_si_pregunta_7.fadeOut(300, function(){
+
+				Allradios_si_pregunta_7.prop('checked', false);  /* Deselecciono cualquier radio que haya marcado de SI*/
 				opciones_no_pregunta_7.fadeIn(300);
 			});
 		}
 
 		else{
 			opciones_no_pregunta_7.fadeOut(300, function(){
+
+				Allradios_no_pregunta_7.prop('checked', false);  /* Deselecciono cualquier radio que haya marcado de NO */
 				opciones_si_pregunta_7.fadeIn(300);
 			});
 		}
@@ -27,9 +35,9 @@ $(document).ready(function () {
 	////////////////////////////////    PREGUNTA  8   ////////////////////////////////////////////////
 
 	var select_pregunta_8 = $('#select_pregunta_8');
-	var opciones_si_pregunta_8 = $('.opciones_si_pregunta_8');
+	var opciones_si_pregunta_8 = $('.opciones_si_pregunta_8'); /* Bloque DIV */
 
-	var Allradios_pregunta_8 = $('input[name="data[Encuestas][pregunta_8]"]'); /* Contiene todos los radios de la pregunta*/
+	var Allradios_pregunta_8 = $('input[data-pregunta= "radio_si_pregunta_8"]'); /* Contiene todos los radios de la pregunta*/
 
 	select_pregunta_8.change(function () {
 
@@ -49,21 +57,27 @@ $(document).ready(function () {
 	////////////////////////////////    PREGUNTA  12   ////////////////////////////////////////////////
 
 	var select_pregunta_12 = $('#select_pregunta_12');
-	var opciones_si_pregunta_12 = $('.opciones_si_pregunta_12');
-	var opciones_no_pregunta_12 = $('.opciones_no_pregunta_12');
+	var opciones_si_pregunta_12 = $('.opciones_si_pregunta_12'); /*Bloque DIV*/
+	var opciones_no_pregunta_12 = $('.opciones_no_pregunta_12'); /* Bloque DIV */
+
+	var Allradios_si_pregunta_12 = $('input[data-pregunta= "radio_si_pregunta_12"]'); /* Contiene todos los radios SI de la pregunta*/
+	var Allradios_no_pregunta_12 = $('input[data-pregunta= "radio_no_pregunta_12"]');/* Contiene todos los radios NO de la pregunta*/
 
 	select_pregunta_12.change(function () {
 
 		if ( $(this).val() == 'No' ){
 
 			opciones_si_pregunta_12.fadeOut(300, function(){
+
 				opciones_no_pregunta_12.fadeIn(300);
+				Allradios_si_pregunta_12.prop('checked', false); /* Deselecciono cualquier radio que haya marcado de SI*/
 			});
 		}
 		else{
 
 			opciones_no_pregunta_12.fadeOut(300, function(){
 				opciones_si_pregunta_12.fadeIn(300);
+				Allradios_no_pregunta_12.prop('checked', false); /* Deselecciono cualquier radio que haya marcado de NO */
 			});
 		}
 	});
@@ -71,15 +85,15 @@ $(document).ready(function () {
 
 	////////////////////////////////    PREGUNTA  14   ////////////////////////////////////////////////
 
-	$('input[name="data[Encuestas][pregunta_14][]"]').click(function () {
+	$('input[data-pregunta= "check_pregunta_14"]').click(function () {
 
-		disableCheckboxes('pregunta_14', 3);
+		 disableCheckboxes('pregunta_14', 3);
 	});
 
 
 	////////////////////////////////    PREGUNTA  17   ////////////////////////////////////////////////
 
-	$('input[name="data[Encuestas][pregunta_17][]"]').click(function () {
+	$('input[data-pregunta= "check_pregunta_17"]').click(function () {
 
 		disableCheckboxes('pregunta_17', 3);
 	});
@@ -90,7 +104,7 @@ $(document).ready(function () {
 	var select_pregunta_18 = $('#select_pregunta_18');
 	var opciones_si_pregunta_18 = $('.opciones_si_pregunta_18');
 
-	var Allradios_pregunta_18 = $('input[name="data[Encuestas][pregunta_18]"]'); /* Contiene todos los radios de la pregunta*/
+	var Allradios_pregunta_18 = $('input[data-pregunta= "radio_si_pregunta_18"]'); /* Contiene todos los radios de la pregunta*/
 
 	select_pregunta_18.change(function () {
 
@@ -108,7 +122,7 @@ $(document).ready(function () {
 
 	////////////////////////////////    PREGUNTA  20   ////////////////////////////////////////////////
 
-	$('input[name="data[Encuestas][pregunta_20][]"]').click(function () {
+	$('input[data-pregunta= "check_pregunta_20"]').click(function () {
 
 		// Permitira seleccionar hasta 3 checkboxes y mostrara el mensaje de alerta en la pregunta qu corresponda
 		disableCheckboxes('pregunta_20', 3);
@@ -117,7 +131,7 @@ $(document).ready(function () {
 
 	////////////////////////////////    PREGUNTA  21   ////////////////////////////////////////////////
 
-	$('input[name="data[Encuestas][pregunta_21][]"]').click(function () {
+	$('input[data-pregunta= "check_pregunta_21"]').click(function () {
 
 		disableCheckboxes('pregunta_21', 2);
 	});
@@ -126,24 +140,24 @@ $(document).ready(function () {
 	////////////////////////////////    PREGUNTA  25   ////////////////////////////////////////////////
 
 	var select_pregunta_25 = $('#select_pregunta_25');
-	var opciones_si_pregunta_25 = $('.opciones_si_pregunta_25');
+	var opciones_si_pregunta_25 = $('.opciones_si_pregunta_25'); /* bloque DIV */
 
-	var Allcheckboxes_pregunta_25 = $('input[name="data[Encuestas][pregunta_25][]"]'); /* Contiene todos los checkboxes de la pregunta*/
+	var Allcheckboxes_pregunta_25 = $('input[data-pregunta= "check_pregunta_25"]'); /* Contiene todos los checkboxes de la pregunta*/
 
 	select_pregunta_25.change(function () {
 
 		if ( $(this).val() == 'No' ){
 
 			opciones_si_pregunta_25.fadeOut(300);
-			Allcheckboxes_pregunta_25 .prop('checked', false);  /*Quito seleccion a los marcados*/
-			Allcheckboxes_pregunta_25 .attr('disabled', false); /*habilito todos de nuevo por si habia marcado 3.*/
+			Allcheckboxes_pregunta_25.prop('checked', false);  /*Quito seleccion a los marcados*/
+			Allcheckboxes_pregunta_25.attr('disabled', false); /*habilito todos de nuevo por si habia marcado 3.*/
 		}
 		else{
 			opciones_si_pregunta_25.fadeIn(300);
 		}
 	});
 
-	$('input[name="data[Encuestas][pregunta_25][]"]').click(function () {
+	Allcheckboxes_pregunta_25.click(function () {
 
 		disableCheckboxes('pregunta_25', 3);
 	});
@@ -154,22 +168,22 @@ $(document).ready(function () {
 	var select_pregunta_26 = $('#select_pregunta_26');
 	var opciones_si_pregunta_26 = $('.opciones_si_pregunta_26');
 
-	var Allcheckboxes_pregunta_26  = $('input[name="data[Encuestas][pregunta_26][]"]');
+	var Allcheckboxes_pregunta_26 = $('input[data-pregunta= "check_pregunta_26"]'); /* Contiene todos los checkboxes de la pregunta*/
 
 	select_pregunta_26.change(function () {
 
 		if ( $(this).val() == 'No' ){
 
 			opciones_si_pregunta_26.fadeOut(300);
-			Allcheckboxes_pregunta_26 .prop('checked', false);
-			Allcheckboxes_pregunta_26 .attr('disabled', false);
+			Allcheckboxes_pregunta_26 .prop('checked', false); /*Quito seleccion a los marcados*/
+			Allcheckboxes_pregunta_26 .attr('disabled', false); /*habilito todos de nuevo por si habia marcado 3.*/
 		}
 		else{
 			opciones_si_pregunta_26.fadeIn(300);
 		}
 	});
 
-	$('input[name="data[Encuestas][pregunta_26][]"]').click(function () {
+	$('input[data-pregunta= "check_pregunta_26"]').click(function () {
 
 		disableCheckboxes('pregunta_26', 3);
 	});
@@ -177,7 +191,7 @@ $(document).ready(function () {
 
 	////////////////////////////////    PREGUNTA  27   ////////////////////////////////////////////////
 
-	$('input[name="data[Encuestas][pregunta_27][]"]').click(function () {
+	$('input[data-pregunta= "check_pregunta_27"]').click(function () {
 
 		disableCheckboxes('pregunta_27', 3);
 	});
@@ -185,7 +199,7 @@ $(document).ready(function () {
 
 	////////////////////////////////    PREGUNTA  27-b   ////////////////////////////////////////////////
 
-	$('input[name="data[Encuestas][pregunta_27b][]"]').click(function () {
+	$('input[data-pregunta= "check_pregunta_27b"]').click(function () {
 
 		disableCheckboxes('pregunta_27b', 3);
 	});
@@ -193,7 +207,7 @@ $(document).ready(function () {
 
 	////////////////////////////////    PREGUNTA  30   ////////////////////////////////////////////////
 
-	$('input[name="data[Encuestas][pregunta_30][]"]').click(function () {
+	$('input[data-pregunta= "check_pregunta_30"]').click(function () {
 
 		disableCheckboxes('pregunta_30', 3);
 	});
@@ -204,7 +218,7 @@ $(document).ready(function () {
 	var select_pregunta_31 = $('#select_pregunta_31');
 	var opciones_si_pregunta_31 = $('.opciones_si_pregunta_31');
 
-	var Allradios_pregunta_31 = $('input[name="data[Encuestas][pregunta_31]"]'); /* Contiene todos los radios de la pregunta*/
+	var Allradios_pregunta_31 = $('input[data-pregunta= "radio_si_pregunta_31"]'); /* Contiene todos los radios de la pregunta*/
 
 	/* Todo el bloque de las preguntas 32, 33, 34 y 35*/
 	var bloque_32_33_34_35 = $('#bloque_32_33_34_35');
@@ -240,7 +254,7 @@ $(document).ready(function () {
 
 	////////////////////////////////    PREGUNTA  37   ////////////////////////////////////////////////
 
-	$('input[name="data[Encuestas][pregunta_37][]"]').click(function () {
+	$('input[data-pregunta= "check_pregunta_37"]').click(function () {
 
 		disableCheckboxes('pregunta_37', 3);
 	});
@@ -248,7 +262,7 @@ $(document).ready(function () {
 
 	////////////////////////////////    PREGUNTA  42   ////////////////////////////////////////////////
 
-	$('input[name="data[Encuestas][pregunta_42][]"]').click(function () {
+	$('input[data-pregunta= "check_pregunta_42"]').click(function () {
 
 		disableCheckboxes('pregunta_42', 3);
 	});
@@ -263,13 +277,11 @@ $(document).ready(function () {
 	var disableCheckboxes = function (pregunta, cantidad) {
 
 		// Esto tiene TODOS los checkboxes
-		var Allcheckboxes = $('input[name="data[Encuestas][' + pregunta + '][]"]');
+		var Allcheckboxes = $('input[data-pregunta="check_' + pregunta + '"]');
 
-		// Esto tiene TODOS los checkboxes NO SELECCIONADOS
-		var checkboxesNoSelected = $('input[name="data[Encuestas][' + pregunta + '][]"]:not(:checked)');
+		var checkboxesSelected = $('input[data-pregunta="check_' + pregunta + '"]:checked');
 
-        // checkboxes SELECCIONADOS
-        var checkboxesSelected = $('input[name="data[Encuestas][' + pregunta + '][]"]:checked');
+		var checkboxesNoSelected = $('input[data-pregunta="check_' + pregunta + '"]:not(:checked)');
 
         if (checkboxesSelected.length >= cantidad) {
 
