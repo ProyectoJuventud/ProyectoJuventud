@@ -26,6 +26,70 @@ $(document).ready(function () {
 		}
 	});
 
+////////////////////////////////    PREGUNTA  8   ////////////////////////////////////////////////
+
+	var select_pregunta_8 = $('#select_pregunta_8');
+	var opciones_si_pregunta_8 = $('.opciones_si_pregunta_8');
+
+	select_pregunta_8.change(function () {
+
+		if ( $(this).val() == 'No' ){
+
+			opciones_si_pregunta_8.fadeOut(300);
+		}
+
+		else{
+
+				opciones_si_pregunta_8.fadeIn(300);
+			};
+		}
+	);
+
+
+	////////////////////////////////    PREGUNTA  12   ////////////////////////////////////////////////
+
+	var select_pregunta_12 = $('#select_pregunta_12');
+	var opciones_si_pregunta_12 = $('.opciones_si_pregunta_12');
+	var opciones_no_pregunta_12 = $('.opciones_no_pregunta_12');
+
+
+	select_pregunta_12.change(function () {
+
+		if ( $(this).val() == 'No' ){
+
+			opciones_si_pregunta_12.fadeOut(300, function(){
+				opciones_no_pregunta_12.fadeIn(300);
+			});
+		}
+
+		else{
+
+			opciones_no_pregunta_12.fadeOut(300, function(){
+				opciones_si_pregunta_12.fadeIn(300);
+			});
+		}
+	});
+
+
+////////////////////////////////    PREGUNTA  18   ////////////////////////////////////////////////
+
+	var select_pregunta_18 = $('#select_pregunta_18');
+	var opciones_si_pregunta_18 = $('.opciones_si_pregunta_18');
+
+	select_pregunta_18.change(function () {
+
+		if ( $(this).val() == 'No' ){
+
+			opciones_si_pregunta_18.fadeOut(300);
+		}
+
+		else{
+
+				opciones_si_pregunta_18.fadeIn(300);
+			};
+		}
+	);
+
 
 	////////////////////////////////    PREGUNTA  20   ////////////////////////////////////////////////
 
