@@ -1,17 +1,14 @@
-/* Acomodan el bloque de radios emergentes*/
+/* Acomodan el bloque de radios emergentes */
 div.opciones_radios{
 	padding-left: 21px;
-	margin-top: -5px;
-	margin-bottom: 0px;
 }
 
 /* Acomodan el bloque de checkboxes emergentes*/
 div.opciones_checkbox{
 	margin-top: -10px;
-	margin-bottom: 15px;
 }
 
-/*Estilo del mensaje emergente cuando se alcanza el limite de selecciones maximo*/
+/*Estilo del mensaje emergente cuando se alcanza el limite de selecciones maximo en los checkboxes*/
 div.estilo_mensaje{
 	background: #FACE88;
 	border: 1px solid #FB9143;
@@ -56,7 +53,7 @@ div.estilo_mensaje{
 /*Color que rodea el input cuando el mensaje es correcto y estamos ENCIMA*/
 #form_encuesta .has-success .form-control:focus{
   	border-color: #2B6FA8;
-  	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075)  inset, 0 0 6px #2B6FA8;
+  	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075)  inset, 0 0 4px #3A92DC;
 }
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/

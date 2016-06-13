@@ -16,6 +16,7 @@
 
 	<h2> Encuesta Juventud </h2>
 
+	<!--  Cambiar nombre de ID aca para desactivar las validaciones de los campos-->
 	<?php echo $this->Form->create('Encuestas', array('id' => 'form_encuesta')); ?>
 
 
@@ -147,7 +148,7 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_1"> 7) Estudias? </label>
+			<label class="col-xs-12 control-label" for="select_pregunta_7"> 7) Estudias? </label>
 		</div>
 
 		<div class="row">
@@ -159,31 +160,42 @@
 				</select>
 			</div>
 		</div>
+	</div>
 
-		<br />
+	<div class="form-group has-feedback" id="opciones_si_pregunta_7" style="display:none">
 
 		<div class="row">
 			<div class="col-xs-12 col-md-5 col-sm-6">
-				<div class="opciones_radios">
 
-					<div class="opciones_si_pregunta_7" style="display:none">
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="1"> Estudios Primarios </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="2"> Estudios Secundarios </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="3"> Estudios Terciarios/Universitarios </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="4"> Estudios Posgrado </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="5"> Otros </div>
-					</div>
+				<!-- La clase "opciones_radios" esta en Styles.css, ponindo esto mas a la derecha porque es un submodulo de la preg 7. -->
+				<div class= "opciones_radios">
 
-					<div class="opciones_no_pregunta_7" style="display:none">
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="6"> Porque trabajo o estoy buscando trabajo </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="7"> Porque ya conclui mis estudios </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="8"> Porque la Institución educativa está muy lejos</div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="9"> Porque no puedo pagar los estudios </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="10"> Porque no me interesa </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="11"> Porque estoy esperando un hijo/cuidado de hijo/s </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="12"> Por enfermedad o discapacidad </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="13"> Otro </div>
-					</div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="1"> Estudios Primarios </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="2"> Estudios Secundarios </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="3"> Estudios Terciarios/Universitarios </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="4"> Estudios Posgrado </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_7" name="data[Encuestas][pregunta_7][Si]" value="5"> Otros </div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-group has-feedback" id="opciones_no_pregunta_7" style="display:none">
+
+		<div class="row">
+			<div class="col-xs-12 col-md-5 col-sm-6">
+
+				<!-- La clase "opciones_radios" esta en Styles.css, ponindo esto mas a la derecha porque es un submodulo de la preg 7. -->
+				<div class= "opciones_radios">
+
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="6"> Porque trabajo o estoy buscando trabajo </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="7"> Porque ya concluí mis estudios </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="8"> Porque la Institución educativa está muy lejos</div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="9"> Porque no puedo pagar los estudios </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="10"> Porque no me interesa </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="11"> Porque estoy esperando un hijo/cuidado de hijo/s </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="12"> Por enfermedad o discapacidad </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_7" name="data[Encuestas][pregunta_7][No]" value="13"> Otro </div>
 				</div>
 			</div>
 		</div>
@@ -206,18 +218,18 @@
 				</select>
 			</div>
 		</div>
+	</div>
 
-		<br />
+	<div class="form-group has-feedback" id="opciones_si_pregunta_8" style="display:none">
 
 		<div class="row">
 			<div class="col-xs-12 col-md-5 col-sm-6">
+
 				<div class="opciones_radios">
 
-					<div class="opciones_si_pregunta_8" style="display:none">
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_8"  name="data[Encuestas][pregunta_8][Si]" value="1"> Porque me aporataria saberes y conocimientos </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_8"  name="data[Encuestas][pregunta_8][Si]" value="2"> Porque conseguiria un mejor trabajo </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_8"  name="data[Encuestas][pregunta_8][Si]" value="3"> Otros </div>
-					</div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_8"  name="data[Encuestas][pregunta_8][Si]" value="1"> Porque me aporataria saberes y conocimientos </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_8"  name="data[Encuestas][pregunta_8][Si]" value="2"> Porque conseguiria un mejor trabajo </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_8"  name="data[Encuestas][pregunta_8][Si]" value="3"> Otros </div>
 				</div>
 			</div>
 		</div>
@@ -304,33 +316,42 @@
 				</select>
 			</div>
 		</div>
+	</div>
 
-		<br />
+	<div class="form-group has-feedback" id="opciones_si_pregunta_12" style="display:none">
 
 		<div class="row">
 			<div class="col-xs-12 col-md-5 col-sm-6">
+
 				<div class="opciones_radios">
 
-					<div class="opciones_si_pregunta_12" style="display:none">
 						<div> <input type="radio"  data-pregunta="radio_si_pregunta_12" name="data[Encuestas][pregunta_12][Si]" value="1"> Relación de dependencia Registrado (en blanco) </div>
 						<div> <input type="radio"  data-pregunta="radio_si_pregunta_12" name="data[Encuestas][pregunta_12][Si]" value="2"> Relación de dependencia Registrado (en negro) </div>
 						<div> <input type="radio"  data-pregunta="radio_si_pregunta_12" name="data[Encuestas][pregunta_12][Si]" value="3"> Emprendimiento propio o familiar </div>
 						<div> <input type="radio"  data-pregunta="radio_si_pregunta_12" name="data[Encuestas][pregunta_12][Si]" value="4"> Changas </div>
 						<div> <input type="radio"  data-pregunta="radio_si_pregunta_12" name="data[Encuestas][pregunta_12][Si]" value="5"> Trabajo de limpieza, cuidado de niños, ancianos, casas </div>
 						<div> <input type="radio"  data-pregunta="radio_si_pregunta_12" name="data[Encuestas][pregunta_12][Si]" value="6"> Otros </div>
-					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-					<div class="opciones_no_pregunta_12" style="display:none">
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="7"> Porque no busco trabajo </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="8"> No encontré lo que buscaba según mis requisitos</div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="9"> Porque tengo que cuidar a un familiar </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="10"> Porque tengo que cuidar hijo/s </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="11"> Porque estoy esperando un hijo/s </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="12"> Por enfermedad o discapacidad </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="13"> Porque no me interesa </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="14"> Porque estoy estudiando </div>
-						<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="15"> Otros </div>
-					</div>
+	<div class="form-group has-feedback" id="opciones_no_pregunta_12" style="display:none">
+
+		<div class="row">
+			<div class="col-xs-12 col-md-5 col-sm-6">
+
+				<div class="opciones_radios">
+
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="7"> Porque no busco trabajo </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="8"> No encontré lo que buscaba según mis requisitos</div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="9"> Porque tengo que cuidar a un familiar </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="10"> Porque tengo que cuidar hijo/s </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="11"> Porque estoy esperando un hijo/s </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="12"> Por enfermedad o discapacidad </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="13"> Porque no me interesa </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="14"> Porque estoy estudiando </div>
+					<div> <input type="radio"  data-pregunta="radio_no_pregunta_12" name="data[Encuestas][pregunta_12][No]" value="15"> Otros </div>
 				</div>
 			</div>
 		</div>
@@ -474,18 +495,18 @@
 				</select>
 			</div>
 		</div>
+	</div>
 
-		<br/>
+	<div class="form-group has-feedback" id="opciones_si_pregunta_18" style="display:none">
 
 		<div class="row">
 			<div class="col-xs-12 col-md-5 col-sm-6">
+
 				<div class="opciones_radios">
 
-					<div class="opciones_si_pregunta_18" style="display:none">
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_18"  name="data[Encuestas][pregunta_18][Si]" value="1"> 1 vez a la semana </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_18"  name="data[Encuestas][pregunta_18][Si]" value="2"> 2 o 3 veces a la semana </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_18"  name="data[Encuestas][pregunta_18][Si]" value="3"> Más de 3 veces a la semana </div>
-					</div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_18"  name="data[Encuestas][pregunta_18][Si]" value="1"> 1 vez a la semana </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_18"  name="data[Encuestas][pregunta_18][Si]" value="2"> 2 o 3 veces a la semana </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_18"  name="data[Encuestas][pregunta_18][Si]" value="3"> Más de 3 veces a la semana </div>
 				</div>
 			</div>
 		</div>
@@ -651,24 +672,24 @@
 				</select>
 			</div>
 		</div>
+	</div>
 
-		<br />
+	<div class="form-group has-feedback" id="opciones_si_pregunta_25" style="display:none">
 
 		<div class="row">
 			<div class="col-xs-12 col-md-5 col-sm-6">
+
 				<div class="opciones_checkbox">
 
-					<div class="opciones_si_pregunta_25" style="display:none">
-						<ul class="checkbox">
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="1"> Metodos anticonceptivos y embarazo </li>
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="2"> Adicciones (alcohol, cigarrillos, drogas, etc) </li>
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="3"> Planificación familiar </li>
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="4"> Diversidad sexual </li>
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="5"> Enfermedades estacionales o epidemias </li>
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="6"> Violencias </li>
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="7"> Otros </li>
-						</ul>
-					</div>
+					<ul class="checkbox">
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="1"> Metodos anticonceptivos y embarazo </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="2"> Adicciones (alcohol, cigarrillos, drogas, etc) </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="3"> Planificación familiar </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="4"> Diversidad sexual </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="5"> Enfermedades estacionales o epidemias </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="6"> Violencias </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_25" name="data[Encuestas][pregunta_25][Si][]" value="7"> Otros </li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -695,24 +716,24 @@
 				</select>
 			</div>
 		</div>
+	</div>
 
-		<br />
+	<div class="form-group has-feedback" id="opciones_si_pregunta_26" style="display:none">
 
 		<div class="row">
 			<div class="col-xs-12 col-md-5 col-sm-6">
+
 				<div class="opciones_checkbox">
 
-					<div class="opciones_si_pregunta_26" style="display:none">
-						<ul class="checkbox">
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="1"> Metodos anticonceptivos y embarazo </li>
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="2"> Adicciones (alcohol, cigarrillos, drogas, etc) </li>
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="3"> Planificación familiar </li>
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="4"> Diversidad sexual </li>
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="5"> Enfermedades estacionales o epidemias </li>
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="6"> Violencias </li>
-							<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="7"> Otros </li>
-						</ul>
-					</div>
+					<ul class="checkbox">
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="1"> Metodos anticonceptivos y embarazo </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="2"> Adicciones (alcohol, cigarrillos, drogas, etc) </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="3"> Planificación familiar </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="4"> Diversidad sexual </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="5"> Enfermedades estacionales o epidemias </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="6"> Violencias </li>
+						<li> <input type="checkbox"  data-pregunta= "check_pregunta_26" name="data[Encuestas][pregunta_26][Si][]" value="7"> Otros </li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -862,20 +883,20 @@
 				</select>
 			</div>
 		</div>
+	</div>
 
-		<br />
+	<div class="form-group has-feedback" id="opciones_si_pregunta_31" style="display:none">
 
 		<div class="row">
 			<div class="col-xs-12 col-md-5 col-sm-6">
+
 				<div class="opciones_radios">
 
-					<div class="opciones_si_pregunta_31" style="display:none">
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="1"> 1 vez cada 6 meses </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="2"> 1 vez al mes </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="3"> 1 vez a la semana </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="4"> 2 a 3 veces a la semana </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="5"> Más de 3 veces por semana </div>
-					</div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="1"> 1 vez cada 6 meses </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="2"> 1 vez al mes </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="3"> 1 vez a la semana </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="4"> 2 a 3 veces a la semana </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_31" name="data[Encuestas][pregunta_31][Si]" value="5"> Más de 3 veces por semana </div>
 				</div>
 			</div>
 		</div>
@@ -969,7 +990,7 @@
 			</div>
 		</div>
 
-	</div>
+	</div> <!-- cierra el bloque 32, 33, 34, 35 -->
 
 	<!-- ////////////////////////////////    PREGUNTA  36   ///////////////////////////////////////////////// -->
 

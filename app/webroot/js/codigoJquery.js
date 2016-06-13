@@ -4,8 +4,8 @@ $(document).ready(function () {
 	////////////////////////////////    PREGUNTA  7   ////////////////////////////////////////////////
 
 	var select_pregunta_7 = $('#select_pregunta_7');
-	var opciones_si_pregunta_7 = $('.opciones_si_pregunta_7'); /* Bloque DIV */
-	var opciones_no_pregunta_7 = $('.opciones_no_pregunta_7'); /* Bloque DIV */
+	var opciones_si_pregunta_7 = $('#opciones_si_pregunta_7'); /* Bloque DIV oculto */
+	var opciones_no_pregunta_7 = $('#opciones_no_pregunta_7'); /* Bloque DIV oculto */
 
 	var Allradios_si_pregunta_7 = $('input[data-pregunta= "radio_si_pregunta_7"]'); /* Contiene todos los radios SI de la pregunta*/
 	var Allradios_no_pregunta_7 = $('input[data-pregunta= "radio_no_pregunta_7"]');  /* Contiene todos los radios NO de la pregunta*/
@@ -13,13 +13,21 @@ $(document).ready(function () {
 
 	select_pregunta_7.change(function () {
 
+		// Sera utilizado para limpiar las validaciones client-side en el caso de pasar de SI a NO o viceversa.
+		// Utilizara funcion "reserField" de "validation.io".
+		var validation = $('#form_encuesta').data('formValidation');
+
 		if ( $(this).val() == 'No' ){
 
+			//  Si seleccione NO, entonces debo ocultar todos los radios de SI y mostrar los de NO
 			opciones_si_pregunta_7.fadeOut(300, function(){
 
 				Allradios_si_pregunta_7.prop('checked', false);  /* Deselecciono cualquier radio que haya marcado de SI*/
 				opciones_no_pregunta_7.fadeIn(300);
 			});
+
+			//  Si ya habia marcado alguna opcion de SI y pase a elegir NO, entonces debo borrar la validacion client-side de SI.
+			validation.resetField(Allradios_si_pregunta_7, true);
 		}
 
 		else{
@@ -28,6 +36,9 @@ $(document).ready(function () {
 				Allradios_no_pregunta_7.prop('checked', false);  /* Deselecciono cualquier radio que haya marcado de NO */
 				opciones_si_pregunta_7.fadeIn(300);
 			});
+
+			// Aca ocurre lo mismo pero a la inversa.
+			validation.resetField(Allradios_no_pregunta_7, true);
 		}
 	});
 
@@ -35,17 +46,24 @@ $(document).ready(function () {
 	////////////////////////////////    PREGUNTA  8   ////////////////////////////////////////////////
 
 	var select_pregunta_8 = $('#select_pregunta_8');
-	var opciones_si_pregunta_8 = $('.opciones_si_pregunta_8'); /* Bloque DIV */
+	var opciones_si_pregunta_8 = $('#opciones_si_pregunta_8'); /* Bloque DIV oculto */
 
 	var Allradios_pregunta_8 = $('input[data-pregunta= "radio_si_pregunta_8"]'); /* Contiene todos los radios de la pregunta*/
 
 	select_pregunta_8.change(function () {
+
+		// Sera utilizado para limpiar las validaciones client-side en el caso de pasar de SI a NO o viceversa.
+		// Utilizara funcion "reserField" de "validation.io".
+		var validation = $('#form_encuesta').data('formValidation');
 
 		/* Si elijo NO, entonces no solo debo ocultar las opciones, sino tambien desmarcar las que habia marcado*/
 		if ( $(this).val() == 'No' ){
 
 			opciones_si_pregunta_8.fadeOut(300);
 			Allradios_pregunta_8.prop('checked', false);  /*Quito seleccion a las marcadas*/
+
+			//  Si ya habia marcado alguna opcion de SI y pase a elegir NO, entonces debo borrar la validacion client-side de SI.
+			validation.resetField(Allradios_pregunta_8, true);
 		}
 
 		else{
@@ -57,13 +75,17 @@ $(document).ready(function () {
 	////////////////////////////////    PREGUNTA  12   ////////////////////////////////////////////////
 
 	var select_pregunta_12 = $('#select_pregunta_12');
-	var opciones_si_pregunta_12 = $('.opciones_si_pregunta_12'); /*Bloque DIV*/
-	var opciones_no_pregunta_12 = $('.opciones_no_pregunta_12'); /* Bloque DIV */
+	var opciones_si_pregunta_12 = $('#opciones_si_pregunta_12'); /*Bloque DIV oculto */
+	var opciones_no_pregunta_12 = $('#opciones_no_pregunta_12'); /* Bloque DIV oculto */
 
 	var Allradios_si_pregunta_12 = $('input[data-pregunta= "radio_si_pregunta_12"]'); /* Contiene todos los radios SI de la pregunta*/
 	var Allradios_no_pregunta_12 = $('input[data-pregunta= "radio_no_pregunta_12"]');/* Contiene todos los radios NO de la pregunta*/
 
 	select_pregunta_12.change(function () {
+
+		// Sera utilizado para limpiar las validaciones client-side en el caso de pasar de SI a NO o viceversa.
+		// Utilizara funcion "reserField" de "validation.io".
+		var validation = $('#form_encuesta').data('formValidation');
 
 		if ( $(this).val() == 'No' ){
 
@@ -72,6 +94,9 @@ $(document).ready(function () {
 				opciones_no_pregunta_12.fadeIn(300);
 				Allradios_si_pregunta_12.prop('checked', false); /* Deselecciono cualquier radio que haya marcado de SI*/
 			});
+
+			//  Si ya habia marcado alguna opcion de SI y pase a elegir NO, entonces debo borrar la validacion client-side de SI.
+			validation.resetField(Allradios_si_pregunta_12, true);
 		}
 		else{
 
@@ -79,6 +104,9 @@ $(document).ready(function () {
 				opciones_si_pregunta_12.fadeIn(300);
 				Allradios_no_pregunta_12.prop('checked', false); /* Deselecciono cualquier radio que haya marcado de NO */
 			});
+
+			//  Si ya habia marcado alguna opcion de NO y pase a elegir SI, entonces debo borrar la validacion client-side de NO.
+			validation.resetField(Allradios_no_pregunta_12, true);
 		}
 	});
 
@@ -102,16 +130,23 @@ $(document).ready(function () {
 	////////////////////////////////    PREGUNTA  18   ////////////////////////////////////////////////
 
 	var select_pregunta_18 = $('#select_pregunta_18');
-	var opciones_si_pregunta_18 = $('.opciones_si_pregunta_18');
+	var opciones_si_pregunta_18 = $('#opciones_si_pregunta_18');
 
 	var Allradios_pregunta_18 = $('input[data-pregunta= "radio_si_pregunta_18"]'); /* Contiene todos los radios de la pregunta*/
 
 	select_pregunta_18.change(function () {
 
+		// Sera utilizado para limpiar las validaciones client-side en el caso de pasar de SI a NO o viceversa.
+		// Utilizara funcion "reserField" de "validation.io".
+		var validation = $('#form_encuesta').data('formValidation');
+
 		if ( $(this).val() == 'No' ){
 
 			opciones_si_pregunta_18.fadeOut(300);
 			Allradios_pregunta_18.prop('checked', false);  /*Quito seleccion a las marcadas*/
+
+			//  Si ya habia marcado alguna opcion de SI y pase a elegir NO, entonces debo borrar la validacion client-side de SI.
+			validation.resetField(Allradios_pregunta_18, true);
 		}
 		else{
 			opciones_si_pregunta_18.fadeIn(300);
@@ -140,17 +175,21 @@ $(document).ready(function () {
 	////////////////////////////////    PREGUNTA  25   ////////////////////////////////////////////////
 
 	var select_pregunta_25 = $('#select_pregunta_25');
-	var opciones_si_pregunta_25 = $('.opciones_si_pregunta_25'); /* bloque DIV */
+	var opciones_si_pregunta_25 = $('#opciones_si_pregunta_25'); /* bloque DIV oculto */
 
 	var Allcheckboxes_pregunta_25 = $('input[data-pregunta= "check_pregunta_25"]'); /* Contiene todos los checkboxes de la pregunta*/
 
 	select_pregunta_25.change(function () {
+
+		var validation = $('#form_encuesta').data('formValidation');
 
 		if ( $(this).val() == 'No' ){
 
 			opciones_si_pregunta_25.fadeOut(300);
 			Allcheckboxes_pregunta_25.prop('checked', false);  /*Quito seleccion a los marcados*/
 			Allcheckboxes_pregunta_25.attr('disabled', false); /*habilito todos de nuevo por si habia marcado 3.*/
+
+			validation.resetField(Allcheckboxes_pregunta_25, true);
 		}
 		else{
 			opciones_si_pregunta_25.fadeIn(300);
@@ -166,17 +205,21 @@ $(document).ready(function () {
 	////////////////////////////////    PREGUNTA  26   ////////////////////////////////////////////////
 
 	var select_pregunta_26 = $('#select_pregunta_26');
-	var opciones_si_pregunta_26 = $('.opciones_si_pregunta_26');
+	var opciones_si_pregunta_26 = $('#opciones_si_pregunta_26');
 
 	var Allcheckboxes_pregunta_26 = $('input[data-pregunta= "check_pregunta_26"]'); /* Contiene todos los checkboxes de la pregunta*/
 
 	select_pregunta_26.change(function () {
+
+		var validation = $('#form_encuesta').data('formValidation');
 
 		if ( $(this).val() == 'No' ){
 
 			opciones_si_pregunta_26.fadeOut(300);
 			Allcheckboxes_pregunta_26 .prop('checked', false); /*Quito seleccion a los marcados*/
 			Allcheckboxes_pregunta_26 .attr('disabled', false); /*habilito todos de nuevo por si habia marcado 3.*/
+
+			validation.resetField(Allcheckboxes_pregunta_26, true);
 		}
 		else{
 			opciones_si_pregunta_26.fadeIn(300);
@@ -216,7 +259,7 @@ $(document).ready(function () {
 	////////////////////////////////    PREGUNTA  31 ---> 32, 33, 34, 35 ////////////////////////////////////////////////
 
 	var select_pregunta_31 = $('#select_pregunta_31');
-	var opciones_si_pregunta_31 = $('.opciones_si_pregunta_31');
+	var opciones_si_pregunta_31 = $('#opciones_si_pregunta_31');
 
 	var Allradios_pregunta_31 = $('input[data-pregunta= "radio_si_pregunta_31"]'); /* Contiene todos los radios de la pregunta*/
 
@@ -225,6 +268,8 @@ $(document).ready(function () {
 
 
 	select_pregunta_31.change(function () {
+
+		var validation = $('#form_encuesta').data('formValidation');
 
 		if ( $(this).val() == 'No' ){
 
@@ -242,6 +287,15 @@ $(document).ready(function () {
 
 			/*Y ahora las oculto*/
 			bloque_32_33_34_35.fadeOut(300);
+
+			//  Si ya habia marcado alguna opcion de SI y pase a elegir NO, entonces debo borrar la validacion client-side de SI.
+			validation.resetField(Allradios_pregunta_31, true);
+
+			// Ademas debo borrar las validaciones de las preguntas 32 33 34 y 35 si volvi a elegir NO.
+			validation.resetField($('#select_pregunta_32'), true);
+			validation.resetField($('#select_pregunta_33'), true);
+			validation.resetField($('#select_pregunta_34'), true);
+			validation.resetField($('#select_pregunta_35'), true);
 		}
 
 		else{
@@ -298,9 +352,8 @@ $(document).ready(function () {
 		}
 	};
 
-    //////////////////////////////
 
-
+    ////////////////////////// VALIDACIONES CLIENT-SIDE ///////////////////////////////
 
     /*ID formulario*/
     $('#form_encuesta').formValidation({
@@ -323,104 +376,406 @@ $(document).ready(function () {
     			}
     		},
 
-    		// 'data[Encuestas][pregunta_2]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuestas][pregunta_2]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuestas][pregunta_3]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuestas][pregunta_3]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuestas][pregunta_4]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuestas][pregunta_4]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuestas][pregunta_5]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuestas][pregunta_5]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuestas][pregunta_6]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuestas][pregunta_6]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
 
-    		// 'data[Encuestas][pregunta_7]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuestas][pregunta_7]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuestas][pregunta_8]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuestas][pregunta_7][Si]':{
 
-    		// 'data[Encuestas][pregunta_9]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuestas][pregunta_10]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuestas][pregunta_7][No]':{
 
-    		// 'data[Encuestas][pregunta_11]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuestas][pregunta_12]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuestas][pregunta_8]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuestas][pregunta_13]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// }
+    		'data[Encuestas][pregunta_8][Si]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		
+    		'data[Encuestas][pregunta_9]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_10]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_11]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_12]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_12][Si]':{
+
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_12][No]':{
+
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_13]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_14][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
+
+            'data[Encuestas][pregunta_15]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_16]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_17][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
+
+            'data[Encuestas][pregunta_18]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_18][Si]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_19]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_20][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
+
+		    'data[Encuestas][pregunta_21][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
+
+            'data[Encuestas][pregunta_22]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_23]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_24]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+ 		    'data[Encuestas][pregunta_25]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_25][Si][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
+
+            'data[Encuestas][pregunta_26]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+            'data[Encuestas][pregunta_26][Si][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
+
+            'data[Encuestas][pregunta_27][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
+
+            'data[Encuestas][pregunta_27b][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
+
+            'data[Encuestas][pregunta_28]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_29]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+	   		'data[Encuestas][pregunta_30][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
+
+      		'data[Encuestas][pregunta_31]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_31][Si]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_32]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_33]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_34]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_35]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_36]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_37][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
+
+      		'data[Encuestas][pregunta_41]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		'data[Encuestas][pregunta_42][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            }
+
     	}
     });
 
