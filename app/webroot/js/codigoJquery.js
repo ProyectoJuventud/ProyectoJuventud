@@ -87,7 +87,7 @@ $(document).ready(function () {
 
 	$('input[data-pregunta= "check_pregunta_14"]').click(function () {
 
-		 disableCheckboxes('pregunta_14', 3);
+		disableCheckboxes('pregunta_14', 3);
 	});
 
 
@@ -115,8 +115,8 @@ $(document).ready(function () {
 		}
 		else{
 			opciones_si_pregunta_18.fadeIn(300);
-			};
-		}
+		};
+	}
 	);
 
 
@@ -283,21 +283,146 @@ $(document).ready(function () {
 
 		var checkboxesNoSelected = $('input[data-pregunta="check_' + pregunta + '"]:not(:checked)');
 
-        if (checkboxesSelected.length >= cantidad) {
+		if (checkboxesSelected.length >= cantidad) {
 
-        	checkboxesNoSelected.attr('disabled', true);
+			checkboxesNoSelected.attr('disabled', true);
 
-        	$('#mensaje_alerta_' + pregunta).html('<div class="estilo_mensaje maximo_seleccionado_' + pregunta +'" style="display:none"> <b>Advertencia: </b> No puede seleccionar más opciones');
+			$('#mensaje_alerta_' + pregunta).html('<div class="estilo_mensaje maximo_seleccionado_' + pregunta +'" style="display:none"> <b>Advertencia: </b> No puede seleccionar más opciones');
 
-        	$('.maximo_seleccionado_' + pregunta).fadeIn(500).delay(5000).fadeOut('slow');
+			$('.maximo_seleccionado_' + pregunta).fadeIn(500).delay(5000).fadeOut('slow');
 
-        }
+		}
 
-        else{
-        	Allcheckboxes.attr('disabled', false);
-        }
-    };
+		else{
+			Allcheckboxes.attr('disabled', false);
+		}
+	};
 
     //////////////////////////////
+
+
+
+    /*ID formulario*/
+    $('#form_encuesta').formValidation({
+    	framework: 'bootstrap',
+
+    	icon: {
+    		valid: 'glyphicon glyphicon-ok',
+    		invalid: 'glyphicon glyphicon-remove',
+    		validating: 'glyphicon glyphicon-refresh'
+    	},
+
+
+    	fields: {
+
+    		'data[Encuestas][pregunta_1]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
+
+    		// 'data[Encuestas][pregunta_2]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// },
+
+    		// 'data[Encuestas][pregunta_3]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// },
+
+    		// 'data[Encuestas][pregunta_4]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// },
+
+    		// 'data[Encuestas][pregunta_5]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// },
+
+    		// 'data[Encuestas][pregunta_6]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// },
+
+
+    		// 'data[Encuestas][pregunta_7]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// },
+
+    		// 'data[Encuestas][pregunta_8]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// },
+
+    		// 'data[Encuestas][pregunta_9]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// },
+
+    		// 'data[Encuestas][pregunta_10]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// },
+
+    		// 'data[Encuestas][pregunta_11]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// },
+
+    		// 'data[Encuestas][pregunta_12]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// },
+
+    		// 'data[Encuestas][pregunta_13]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// }
+
+    		
+    	}
+    });
+
 
 });
