@@ -239,9 +239,9 @@
 		</div>
 	</div>
 
-	<!-- ////////////////////////////////    PREGUNTA  10   ///////////////////////////////////////////////// -->
+	<!-- ////////////////////////////////    PREGUNTA  10  (depende de 9) ///////////////////////////////////////////////// -->
 
-	<div class="form-group has-feedback">
+	<div class="form-group has-feedback" id="pregunta_10" style="display:none">
 
 		<div class="row">
 			<label class="col-xs-12 control-label" for="select_pregunta_10"> 10) Te gustaría estudiar? </label>
@@ -265,8 +265,8 @@
 
 				<div class="opciones_radios">
 
-					<div> <input type="radio"  data-pregunta="radio_si_pregunta_10"  name="data[Encuestas][pregunta_10][Si]" value="1"> Porque me aporataria saberes y conocimientos </div>
-					<div> <input type="radio"  data-pregunta="radio_si_pregunta_10"  name="data[Encuestas][pregunta_10][Si]" value="2"> Porque conseguiria un mejor trabajo </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_10"  name="data[Encuestas][pregunta_10][Si]" value="1"> Porque me aporataría saberes y conocimientos </div>
+					<div> <input type="radio"  data-pregunta="radio_si_pregunta_10"  name="data[Encuestas][pregunta_10][Si]" value="2"> Porque conseguiría un mejor trabajo </div>
 					<div> <input type="radio"  data-pregunta="radio_si_pregunta_10"  name="data[Encuestas][pregunta_10][Si]" value="3"> Otros </div>
 				</div>
 			</div>
@@ -307,117 +307,123 @@
 			<div class="col-xs-12 col-md-5 col-sm-6">
 				<select id="select_pregunta_12" name="data[Encuestas][pregunta_12]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> 15 a 18 </option>
-					<option value="2"> 19 a 24 </option>
-					<option value="3"> 25 a 29 </option>
+					<option value="1"> Nunca he trabajado </option>
+					<option value="2"> 15 a 18 </option>
+					<option value="3"> 19 a 24 </option>
+					<option value="4"> 25 a 29 </option>
 				</select>
 			</div>
 		</div>
 	</div>
 
-	<!-- ////////////////////////////////    PREGUNTA  13   ///////////////////////////////////////////////// -->
+	<!-- ////////////////////////////////    PREGUNTA  13  (depende de 12) ///////////////////////////////////////////////// -->
 
-	<div class="form-group has-feedback">
+	<div id="bloque_13_14_15" style="display:none">
 
-		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_13"> 13) Como conseguiste tu primer trabajo? </label>
-		</div>
+		<div class="form-group has-feedback">
 
-		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_13" name="data[Encuestas][pregunta_13]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> Presentación de CV en comercio/fábrica/empresa </option>
-					<option value="2"> Páginas web a las cuales me suscribí </option>
-					<option value="3"> Contacto por un familiar </option>
-					<option value="4"> Contacto por un conocido </option>
-					<option value="5"> Otros </option>
-				</select>
+			<div class="row">
+				<label class="col-xs-12 control-label" for="select_pregunta_13"> 13) Como conseguiste tu primer trabajo? </label>
 			</div>
-		</div>
-	</div>
 
-	<!-- ////////////////////////////////    PREGUNTA  14   ///////////////////////////////////////////////// -->
-
-	<div class="form-group has-feedback">
-
-		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_14"> 14) Trabajaste el último mes? </label>
-		</div>
-
-		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_14" name="data[Encuestas][pregunta_14]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="Si"> Sí </option>
-					<option value="No"> No </option>
-				</select>
-			</div>
-		</div>
-	</div>
-
-	<div class="form-group has-feedback" id="opciones_si_pregunta_14" style="display:none">
-
-		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-
-				<div class="opciones_radios">
-
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuestas][pregunta_14][Si]" value="1"> Relación de dependencia Registrado (en blanco) </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuestas][pregunta_14][Si]" value="2"> Relación de dependencia Registrado (en negro) </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuestas][pregunta_14][Si]" value="3"> Emprendimiento propio o familiar </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuestas][pregunta_14][Si]" value="4"> Changas </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuestas][pregunta_14][Si]" value="5"> Trabajo de limpieza, cuidado de niños, ancianos, casas </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuestas][pregunta_14][Si]" value="6"> Otros </div>
+			<div class="row">
+				<div class="col-xs-12 col-md-5 col-sm-6">
+					<select id="select_pregunta_13" name="data[Encuestas][pregunta_13]" class="form-control">
+						<option selected disabled value=""> Elija una opción.. </option>
+						<option value="1"> Presentación de CV en comercio/fábrica/empresa </option>
+						<option value="2"> Páginas web a las cuales me suscribí </option>
+						<option value="3"> Contacto por un familiar </option>
+						<option value="4"> Contacto por un conocido </option>
+						<option value="5"> Otros </option>
+					</select>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<div class="form-group has-feedback" id="opciones_no_pregunta_14" style="display:none">
+	<!-- ////////////////////////////////    PREGUNTA  14  (depende de 12)  ///////////////////////////////////////////////// -->
 
-		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+		<div class="form-group has-feedback">
 
-				<div class="opciones_radios">
+			<div class="row">
+				<label class="col-xs-12 control-label" for="select_pregunta_14"> 14) Trabajaste el último mes? </label>
+			</div>
 
-					<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="7"> Porque no busco trabajo </div>
-					<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="8"> No encontré lo que buscaba según mis requisitos</div>
-					<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="9"> Porque tengo que cuidar a un familiar </div>
-					<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="10"> Porque tengo que cuidar hijo/s </div>
-					<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="11"> Porque estoy esperando un hijo/s </div>
-					<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="12"> Por enfermedad o discapacidad </div>
-					<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="13"> Porque no me interesa </div>
-					<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="14"> Porque estoy estudiando </div>
-					<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="15"> Otros </div>
+			<div class="row">
+				<div class="col-xs-12 col-md-5 col-sm-6">
+					<select id="select_pregunta_14" name="data[Encuestas][pregunta_14]" class="form-control">
+						<option selected disabled value=""> Elija una opción.. </option>
+						<option value="Si"> Sí </option>
+						<option value="No"> No </option>
+					</select>
 				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- ////////////////////////////////    PREGUNTA  15   ///////////////////////////////////////////////// -->
+		<div class="form-group has-feedback" id="opciones_si_pregunta_14" style="display:none">
 
-	<div class="form-group has-feedback">
+			<div class="row">
+				<div class="col-xs-12 col-md-5 col-sm-6">
 
-		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_15"> 15) Elegiste tu trabajo según </label>
-		</div>
+					<div class="opciones_radios">
 
-		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_15" name="data[Encuestas][pregunta_15]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> Profesión/Conocimientos técnicos</option>
-					<option value="2"> Posibilidades de hacer carrera</option>
-					<option value="3"> Remuneración </option>
-					<option value="4"> Flexibilidad horaria</option>
-					<option value="5"> La oferta existente </option>
-					<option value="6"> Tradición familiar  </option>
-					<option value="7"> Otros </option>
-				</select>
+							<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuestas][pregunta_14][Si]" value="1"> Relación de dependencia Registrado (en blanco) </div>
+							<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuestas][pregunta_14][Si]" value="2"> Relación de dependencia Registrado (en negro) </div>
+							<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuestas][pregunta_14][Si]" value="3"> Emprendimiento propio o familiar </div>
+							<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuestas][pregunta_14][Si]" value="4"> Changas </div>
+							<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuestas][pregunta_14][Si]" value="5"> Trabajo de limpieza, cuidado de niños, ancianos, casas </div>
+							<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuestas][pregunta_14][Si]" value="6"> Otros </div>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
+
+		<div class="form-group has-feedback" id="opciones_no_pregunta_14" style="display:none">
+
+			<div class="row">
+				<div class="col-xs-12 col-md-5 col-sm-6">
+
+					<div class="opciones_radios">
+
+						<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="7"> Porque no busco trabajo </div>
+						<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="8"> No encontré lo que buscaba según mis requisitos</div>
+						<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="9"> Porque tengo que cuidar a un familiar </div>
+						<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="10"> Porque tengo que cuidar hijo/s </div>
+						<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="11"> Porque estoy esperando un hijo/s </div>
+						<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="12"> Por enfermedad o discapacidad </div>
+						<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="13"> Porque no me interesa </div>
+						<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="14"> Porque estoy estudiando </div>
+						<div> <input type="radio"  data-pregunta="radio_no_pregunta_14" name="data[Encuestas][pregunta_14][No]" value="15"> Otros </div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<!-- ////////////////////////////////    PREGUNTA  15  (depende de 12)  ///////////////////////////////////////////////// -->
+
+		<div class="form-group has-feedback">
+
+			<div class="row">
+				<label class="col-xs-12 control-label" for="select_pregunta_15"> 15) Elegiste tu trabajo según </label>
+			</div>
+
+			<div class="row">
+				<div class="col-xs-12 col-md-5 col-sm-6">
+					<select id="select_pregunta_15" name="data[Encuestas][pregunta_15]" class="form-control">
+						<option selected disabled value=""> Elija una opción.. </option>
+						<option value="1"> Profesión/Conocimientos técnicos</option>
+						<option value="2"> Posibilidades de hacer carrera</option>
+						<option value="3"> Remuneración </option>
+						<option value="4"> Flexibilidad horaria</option>
+						<option value="5"> La oferta existente </option>
+						<option value="6"> Tradición familiar  </option>
+						<option value="7"> Otros </option>
+					</select>
+				</div>
+			</div>
+		</div>
+
+	</div> <!-- Cierra bloque_13_14_15 -->
+
 
 	<!-- ////////////////////////////////    PREGUNTA  16   ///////////////////////////////////////////////// -->
 
@@ -445,24 +451,24 @@
 			<div id="mensaje_alerta_pregunta_16" class="col-xs-12 col-md-5 col-sm-6"></div>
 		</div>
 	</div>
-	
 
 	<!-- ////////////////////////////////    PREGUNTA  17   ///////////////////////////////////////////////// -->
 
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_17"> 17) Para llegar a tu Institución Educativa demorás </label>
+			<label class="col-xs-12 control-label" for="select_pregunta_17"> 17) Para llegar a tu Institución Educativa demorás... </label>
 		</div>
 
 		<div class="row">
 			<div class="col-xs-12 col-md-5 col-sm-6">
 				<select id="select_pregunta_17" name="data[Encuestas][pregunta_17]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> De 0 a 30 minutos </option>
-					<option value="2"> 30 minutos a 1 hora </option>
-					<option value="3"> De 1 a 2 horas </option>
-					<option value="4"> Mas de 2 horas </option>
+					<option value="1"> NO estudio </option>
+					<option value="2"> De 0 a 30 minutos </option>
+					<option value="3"> 30 minutos a 1 hora </option>
+					<option value="4"> De 1 a 2 horas </option>
+					<option value="5"> Mas de 2 horas </option>
 				</select>
 			</div>
 		</div>
@@ -473,17 +479,18 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_18"> 18) Para llegar a tu trabajo demorás </label>
+			<label class="col-xs-12 control-label" for="select_pregunta_18"> 18) Para llegar a tu trabajo demorás... </label>
 		</div>
 
 		<div class="row">
 			<div class="col-xs-12 col-md-5 col-sm-6">
 				<select id="select_pregunta_18" name="data[Encuestas][pregunta_18]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> De 0 a 30 minutos </option>
-					<option value="2"> 30 minutos a 1 hora </option>
-					<option value="3"> De 1 a 2 horas </option>
-					<option value="4"> Mas de 2 horas </option>
+					<option value="1"> NO trabajo  </option>
+					<option value="2"> De 0 a 30 minutos </option>
+					<option value="3"> 30 minutos a 1 hora </option>
+					<option value="4"> De 1 a 2 horas </option>
+					<option value="5"> Mas de 2 horas </option>
 				</select>
 			</div>
 		</div>
