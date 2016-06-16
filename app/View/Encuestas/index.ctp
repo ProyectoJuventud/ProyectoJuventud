@@ -454,7 +454,8 @@
 
 	<!-- ////////////////////////////////    PREGUNTA  17   ///////////////////////////////////////////////// -->
 
-	<div class="form-group has-feedback">
+	<!-- Solo es visible si pregunta 9 es SI -->
+	<div class="form-group has-feedback" id="pregunta_17" style="display:none">
 
 		<div class="row">
 			<label class="col-xs-12 control-label" for="select_pregunta_17"> 17) Para llegar a tu Institución Educativa demorás... </label>
@@ -464,11 +465,10 @@
 			<div class="col-xs-12 col-md-5 col-sm-6">
 				<select id="select_pregunta_17" name="data[Encuestas][pregunta_17]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> NO estudio </option>
-					<option value="2"> De 0 a 30 minutos </option>
-					<option value="3"> 30 minutos a 1 hora </option>
-					<option value="4"> De 1 a 2 horas </option>
-					<option value="5"> Mas de 2 horas </option>
+					<option value="1"> De 0 a 30 minutos </option>
+					<option value="2"> 30 minutos a 1 hora </option>
+					<option value="3"> De 1 a 2 horas </option>
+					<option value="4"> Mas de 2 horas </option>
 				</select>
 			</div>
 		</div>
@@ -476,7 +476,8 @@
 
 	<!-- ////////////////////////////////    PREGUNTA  18   ///////////////////////////////////////////////// -->
 
-	<div class="form-group has-feedback">
+	<!-- Solo es visible si pregunta 12 es value = 2, 3 o 4 -->
+	<div class="form-group has-feedback" id="pregunta_18" style="display:none">
 
 		<div class="row">
 			<label class="col-xs-12 control-label" for="select_pregunta_18"> 18) Para llegar a tu trabajo demorás... </label>
@@ -486,11 +487,10 @@
 			<div class="col-xs-12 col-md-5 col-sm-6">
 				<select id="select_pregunta_18" name="data[Encuestas][pregunta_18]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> NO trabajo  </option>
-					<option value="2"> De 0 a 30 minutos </option>
-					<option value="3"> 30 minutos a 1 hora </option>
-					<option value="4"> De 1 a 2 horas </option>
-					<option value="5"> Mas de 2 horas </option>
+					<option value="1"> De 0 a 30 minutos </option>
+					<option value="2"> 30 minutos a 1 hora </option>
+					<option value="3"> De 1 a 2 horas </option>
+					<option value="4"> Mas de 2 horas </option>
 				</select>
 			</div>
 		</div>
@@ -507,13 +507,18 @@
 		<div class="row">
 			<div class="col-xs-12 col-md-5 col-sm-6">
 				<ul class="checkbox">
-					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][]" value="1" />  Políticas </li>
-					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][]" value="2"/>  Religiosas </li>
-					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][]" value="3"/>  Ambientales </li>
-					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][]" value="4"/>  Humanitarias </li>
-					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][]" value="5"/>  Culturales </li>
-					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][]" value="6" />  Recreativas </li>
-					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][]" value="7" />  Otras </li>
+					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][Si][]" value="1" />  Políticas </li>
+					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][Si][]" value="2"/>  Religiosas </li>
+					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][Si][]" value="3"/>  Ambientales </li>
+					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][Si][]" value="4"/>  Humanitarias </li>
+					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][Si][]" value="5"/>  Culturales </li>
+					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][Si][]" value="6" />  Recreativas </li>
+					<li>
+						<input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuestas][pregunta_19][Si][]" value="7" />
+						Otras
+						&nbsp;
+						<input id= "input_text_pregunta_19" type="text" disabled placeholder="Especificar..." name="data[Encuestas][pregunta_19][Otras]">
+					</li>
 				</ul>
 			</div>
 		</div>
