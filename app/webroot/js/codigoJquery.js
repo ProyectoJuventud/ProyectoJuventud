@@ -1,6 +1,56 @@
 
 $(document).ready(function () {
 
+	////////////////////////////////    PREGUNTA  2   ////////////////////////////////////////////////
+
+	/* La pregutna 32 se abrira si la pregunta 2 y 7 son SI.
+	Debo chequear esto mismo tanto para la PREGUNTA 2 como para la PREGUNTA 7*/
+	var pregunta_32 = $('#pregunta_32');
+
+	$('#select_pregunta_2').change(function () {
+
+		var validation = $('#form_encuesta').data('formValidation');
+
+		/* El "val = 1" corresponde a MUJER. En "select_pregunta_7", el "val = 1" corresponde a que TIENE HIJOS*/
+		if($(this).val() == '1'){
+
+			if($('#select_pregunta_7').val() == '1'){
+
+				pregunta_32.fadeIn(400);
+			}
+		}
+		else{
+
+			pregunta_32.fadeOut(400);
+			validation.resetField($('#select_pregunta_32'), true);
+		}
+	});
+
+	////////////////////////////////    PREGUNTA  7   ////////////////////////////////////////////////
+
+	/* La pregutna 32 se abrira si la pregunta 2 y 7 son SI*/
+	var pregunta_32 = $('#pregunta_32');
+
+
+	$('#select_pregunta_7').change(function () {
+
+		var validation = $('#form_encuesta').data('formValidation');
+
+		/* El "val = 1" corresponde a si TIENE HIJOS . En "select_pregunta_2", el "val = 1" corresponde a que si es MUJER */
+		if($(this).val() == '1'){
+
+			if($('#select_pregunta_2').val() == '1'){
+
+				pregunta_32.fadeIn(400);
+			}
+		}
+		else{
+
+			pregunta_32.fadeOut(400);
+			validation.resetField($('#select_pregunta_32'), true);
+		}
+	});
+
 	////////////////////////////////    PREGUNTA  9   ////////////////////////////////////////////////
 
 	var opciones_si_pregunta_9 = $('#opciones_si_pregunta_9'); /* Bloque DIV oculto */
@@ -214,7 +264,11 @@ $(document).ready(function () {
 			$('input[id="input_text_pregunta_19"]').attr('disabled', false);
 		}
 		else{
+
 			$('input[id="input_text_pregunta_19"]').attr('disabled', true);
+
+			/* Borro lo que pude haber escrito*/
+			$('input[id="input_text_pregunta_19"]').val('');
 		}
 	});
 
@@ -243,12 +297,43 @@ $(document).ready(function () {
 	});
 
 
+	////////////////////////////////    PREGUNTA  21   ////////////////////////////////////////////////
+
+	var bloque_22_23_24 = $('#bloque_22_23_24');
+
+	var check_pregunta_22 = $('input[data-pregunta= "check_pregunta_22"]');
+	var check_pregunta_23 = $('input[data-pregunta= "check_pregunta_23"]');
+
+	/*Si cambie la opcion en la pregunta 21..*/
+	$('#select_pregunta_21').change(function () {
+
+		var validation = $('#form_encuesta').data('formValidation');
+
+		if ( $(this).val() == 'No' ){
+
+			bloque_22_23_24.fadeOut(300);
+
+			validation.resetField(check_pregunta_22, true);
+			check_pregunta_22.attr('disabled', false); /*habilito todos de nuevo por si habia marcado 3.*/
+
+			validation.resetField(check_pregunta_23, true);
+			check_pregunta_23.attr('disabled', false); /*habilito todos de nuevo por si habia marcado 3.*/
+
+			validation.resetField($('#select_pregunta_24'), true);
+		}
+		else{
+			bloque_22_23_24.fadeIn(300);
+		}
+	});
+
+
+
 	////////////////////////////////    PREGUNTA  22   ////////////////////////////////////////////////
 
 	$('input[data-pregunta= "check_pregunta_22"]').click(function () {
 
 		// Permitira seleccionar hasta 3 checkboxes y mostrara el mensaje de alerta en la pregunta qu corresponda
-		disableCheckboxes('pregunta_22', 3);
+		disableCheckboxes('pregunta_22', 4);
 	});
 
 
@@ -283,9 +368,21 @@ $(document).ready(function () {
 		}
 	});
 
-	Allcheckboxes_pregunta_27.click(function () {
+	$('input[data-pregunta= "check_pregunta_27"]').click(function () {
 
-		disableCheckboxes('pregunta_27', 3);
+		/*Habilitamos el campo para escribir si y solo si el checkbox de OTRAS esta seleccionado*/
+		/* "Val = 7" es opcion "OTRAS" */
+		if ($('input[data-pregunta="check_pregunta_27"][value="7"]').is(":checked")) {
+
+			$('input[id="input_text_pregunta_27"]').attr('disabled', false);
+		}
+		else{
+
+			$('input[id="input_text_pregunta_27"]').attr('disabled', true);
+
+			/* Borro lo que pude haber escrito*/
+			$('input[id="input_text_pregunta_27"]').val('');
+		}
 	});
 
 
@@ -314,7 +411,19 @@ $(document).ready(function () {
 
 	$('input[data-pregunta= "check_pregunta_28"]').click(function () {
 
-		disableCheckboxes('pregunta_28', 3);
+		/*Habilitamos el campo para escribir si y solo si el checkbox de OTRAS esta seleccionado*/
+		/* "Val = 7" es opcion "OTRAS" */
+		if ($('input[data-pregunta="check_pregunta_28"][value="7"]').is(":checked")) {
+
+			$('input[id="input_text_pregunta_28"]').attr('disabled', false);
+		}
+		else{
+
+			$('input[id="input_text_pregunta_28"]').attr('disabled', true);
+
+			/* Borro lo que pude haber escrito*/
+			$('input[id="input_text_pregunta_28"]').val('');
+		}
 	});
 
 
@@ -332,7 +441,6 @@ $(document).ready(function () {
 
 		disableCheckboxes('pregunta_31', 3);
 	});
-
 
 	////////////////////////////////    PREGUNTA  34   ////////////////////////////////////////////////
 
@@ -363,18 +471,11 @@ $(document).ready(function () {
 			//  Si ya habia marcado alguna opcion de SI y pase a elegir NO, entonces debo borrar la validacion client-side de SI.
 			validation.resetField(Allradios_pregunta_35, true);
 
-			// Recordar que las preguntas 36, 37, 38 y 39 dependen de 35. Por lo tanto si habia marcado algo en estas preguntas y
-			// luego cambio la opcion de la pregunta 35 pro NO, debo DESMARCAR todo lo que habia marcado en 36 37 38 y 39 y poner
-			// nuevamnete la primer opcion que es VACIO.
-			$('#select_pregunta_36 option[value=""]').prop('selected', true);
-			$('#select_pregunta_37 option[value=""]').prop('selected', true);
-			$('#select_pregunta_38 option[value=""]').prop('selected', true);
-			$('#select_pregunta_39 option[value=""]').prop('selected', true);
-
 			/*Y ahora las oculto*/
 			bloque_36_37_38_39.fadeOut(300);
 
-			// Ademas debo borrar las validaciones de las preguntas 36 37 38 y 39 si volvi a elegir NO.
+			// Ademas debo borrar las validaciones client-side y vuelvo a valor por defecto (Elija una opcion) en las preguntas 36 37 38 y 39
+			// si volvi a elegi No en pregunta 35.
 			validation.resetField($('#select_pregunta_36'), true);
 			validation.resetField($('#select_pregunta_37'), true);
 			validation.resetField($('#select_pregunta_38'), true);
@@ -390,9 +491,31 @@ $(document).ready(function () {
 
 	////////////////////////////////    PREGUNTA  41   ////////////////////////////////////////////////
 
-	$('input[data-pregunta= "check_pregunta_41"]').click(function () {
+	/* Todo el bloque de las preguntas 36, 37, 38 y 39*/
+	var bloque_42_43_44_45 = $('#bloque_42_43_44_45');
 
-		disableCheckboxes('pregunta_41', 3);
+	/*Si cambie la opcion en la pregunta 35..*/
+	$('#select_pregunta_41').change(function () {
+
+		var validation = $('#form_encuesta').data('formValidation');
+
+		/* Val = 1 corresponde a NUNCA */
+		if ( $(this).val() == '1' ){
+
+			// Oculto el BLOQUE
+			bloque_42_43_44_45.fadeOut(300);
+
+			// Ademas debo borrar las validaciones client-side y vuelvo a valor por defecto (Elija una opcion) en las preguntas 36 37 38 y 39
+			// si volvi a elegi No en pregunta 35.
+			validation.resetField($('#select_pregunta_42'), true);
+			validation.resetField($('#select_pregunta_43'), true);
+			validation.resetField($('#select_pregunta_44'), true);
+			validation.resetField($('#select_pregunta_45'), true);
+		}
+
+		else{
+			bloque_42_43_44_45.fadeIn(500);
+		}
 	});
 
 
@@ -409,10 +532,20 @@ $(document).ready(function () {
 
 	$('input[data-pregunta= "check_pregunta_47"]').click(function () {
 
-		disableCheckboxes('pregunta_47', 3);
+		/*Habilitamos el campo para escribir si y solo si el checkbox de OTRAS esta seleccionado*/
+		/* "Val = 7" es opcion "OTRAS" */
+		if ($('input[data-pregunta="check_pregunta_47"][value="7"]').is(":checked")) {
+
+			$('input[id="input_text_pregunta_47"]').attr('disabled', false);
+		}
+		else{
+
+			$('input[id="input_text_pregunta_47"]').attr('disabled', true);
+
+			/* Borro lo que pude haber escrito*/
+			$('input[id="input_text_pregunta_47"]').val('');
+		}
 	});
-
-
 
 
 
@@ -748,14 +881,14 @@ $(document).ready(function () {
     		// 	}
     		// },
 
-      //       'data[Encuestas][pregunta_28][Si][]': {
-      //           validators: {
-      //               choice: {
-      //                   min: 1,
-      //                   message: 'Debe seleccionar al menos una opción'
-      //               }
-      //           }
-      //       },
+            // 'data[Encuestas][pregunta_28][Si][]': {
+            //     validators: {
+            //         choice: {
+            //             min: 1,
+            //             message: 'Debe seleccionar al menos una opción'
+            //         }
+            //     }
+            // },
 
       //       'data[Encuestas][pregunta_29]': {
     		// 	validators: {
@@ -864,14 +997,13 @@ $(document).ready(function () {
     		// 	}
     		// },
 
-    		// 'data[Encuestas][pregunta_41][]': {
-      //           validators: {
-      //               choice: {
-      //                   min: 1,
-      //                   message: 'Debe seleccionar al menos una opción'
-      //               }
-      //           }
-      //       },
+    		// 'data[Encuestas][pregunta_41]': {
+    		// 	validators: {
+    		// 		notEmpty: {
+    		// 			message: 'Debe seleccionar una opción'
+    		// 		}
+    		// 	}
+    		// },
 
       // 		'data[Encuestas][pregunta_42]': {
     		// 	validators: {
@@ -913,19 +1045,16 @@ $(document).ready(function () {
     		// 	}
     		// },
 
-    		// 'data[Encuestas][pregunta_47][]': {
-      //           validators: {
-      //               choice: {
-      //                   min: 1,
-      //                   message: 'Debe seleccionar al menos una opción'
-      //               }
-      //           }
-      //       }
+    		'data[Encuestas][pregunta_47][Si][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            }
 
     	}
     });
 
-
 });
-
-
