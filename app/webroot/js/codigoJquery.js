@@ -1,6 +1,70 @@
 
 $(document).ready(function () {
 
+
+	var departamentosDDL = $('#select_pregunta_5');
+	var municipiosDDL = $('#select_pregunta_6');
+
+	//  Estara desactivada inicialmente
+	municipiosDDL.prop('disabled', true);
+
+	$.ajax({
+		url: 'encuestas/GetDepartamentos',
+		method: 'post',
+		dataType: 'json',
+
+		success: function (data) {
+
+			$(data).each(function (index, departamento) {
+
+				departamentosDDL.append($('<option/>', { value: departamento.id, text: departamento.nombre_departamento}));
+			});
+		},
+		error: function (err) {
+			alert('Se produjo un error al cargar la lista de Departamentos.');
+		}
+	});
+
+	//////////////////////////////////////////////////////////////////////////////////////////////////
+
+	departamentosDDL.change(function () {
+
+		var validation = $('#form_encuesta').data('formValidation');
+
+		$.ajax({
+			url: 'encuestas/GetMunicipioPorId',
+			method: 'post',
+			dataType: 'json',
+
+			data: { DepartamentoId: $(this).val() },
+
+			success: function (data) {
+
+				// Vacio la lista
+				municipiosDDL.empty();
+
+				// Tuve que darselo de esta manera (distinta a los otros apppend de option) debido a que con la otra forma
+				// no podia darle las opciones de "disabled" y "selected".
+				 municipiosDDL.append("<option disabled selected value='' >Seleccione un Municipio..</option>")
+
+				$(data).each(function (index, municipio) {
+
+					municipiosDDL.append($('<option/>', { value: municipio.id, text: municipio.nombre_municipio }));
+				});
+
+				// Lo activo
+				municipiosDDL.prop('disabled', false);
+				validation.resetField(municipiosDDL, true);
+			},
+
+			error: function (err) {
+
+				alert('Se produjo un error al cargar la lista de Municipios.');
+			}
+		});
+	});
+
+
 	////////////////////////////////    PREGUNTA  2   ////////////////////////////////////////////////
 
 	/* La pregutna 32 se abrira si la pregunta 2 y 7 son SI.
@@ -151,7 +215,7 @@ $(document).ready(function () {
 
 		else{
 			opciones_si_pregunta_10.fadeIn(300);
-		};
+		}
 	});
 
 	////////////////////////////////    PREGUNTA  12   ////////////////////////////////////////////////
@@ -206,7 +270,7 @@ $(document).ready(function () {
 			// Ahora debo MOSTRAR la pregunta 18
 			////////////
 			pregunta_18.fadeIn(500);
-		};
+		}
 	});
 
 
@@ -243,7 +307,7 @@ $(document).ready(function () {
 	});
 
 
-	////////////////////////////////    PREGUNTA  15   ////////////////////////////////////////////////
+	////////////////////////////////    PREGUNTA  16   ////////////////////////////////////////////////
 
 	$('input[data-pregunta= "check_pregunta_16"]').click(function () {
 
@@ -293,7 +357,7 @@ $(document).ready(function () {
 		}
 		else{
 			opciones_si_pregunta_20.fadeIn(300);
-		};
+		}
 	});
 
 
@@ -328,20 +392,11 @@ $(document).ready(function () {
 
 
 
-	////////////////////////////////    PREGUNTA  22   ////////////////////////////////////////////////
-
-	$('input[data-pregunta= "check_pregunta_22"]').click(function () {
-
-		// Permitira seleccionar hasta 3 checkboxes y mostrara el mensaje de alerta en la pregunta qu corresponda
-		disableCheckboxes('pregunta_22', 4);
-	});
-
-
 	////////////////////////////////    PREGUNTA  23   ////////////////////////////////////////////////
 
 	$('input[data-pregunta= "check_pregunta_23"]').click(function () {
 
-		disableCheckboxes('pregunta_23', 2);
+		disableCheckboxes('pregunta_23', 3);
 	});
 
 
@@ -426,13 +481,14 @@ $(document).ready(function () {
 		}
 	});
 
+	$('input[data-pregunta= "check_pregunta_28"]').click(function () {
+
+		disableCheckboxes('pregunta_28', 3);
+	});
+
 
 	////////////////////////////////    PREGUNTA  30   ////////////////////////////////////////////////
 
-	$('input[data-pregunta= "check_pregunta_30"]').click(function () {
-
-		disableCheckboxes('pregunta_30', 3);
-	});
 
 
 	////////////////////////////////    PREGUNTA  31   ////////////////////////////////////////////////
@@ -444,10 +500,6 @@ $(document).ready(function () {
 
 	////////////////////////////////    PREGUNTA  34   ////////////////////////////////////////////////
 
-	$('input[data-pregunta= "check_pregunta_34"]').click(function () {
-
-		disableCheckboxes('pregunta_34', 3);
-	});
 
 
 	////////////////////////////////    PREGUNTA  35 ---> 36, 37, 38, 39 ////////////////////////////////////////////////
@@ -545,6 +597,11 @@ $(document).ready(function () {
 			/* Borro lo que pude haber escrito*/
 			$('input[id="input_text_pregunta_47"]').val('');
 		}
+	});
+
+	$('input[data-pregunta= "check_pregunta_47"]').click(function () {
+
+		disableCheckboxes('pregunta_47', 3);
 	});
 
 
@@ -881,14 +938,14 @@ $(document).ready(function () {
     		// 	}
     		// },
 
-            // 'data[Encuestas][pregunta_28][Si][]': {
-            //     validators: {
-            //         choice: {
-            //             min: 1,
-            //             message: 'Debe seleccionar al menos una opción'
-            //         }
-            //     }
-            // },
+      //       'data[Encuestas][pregunta_28][Si][]': {
+      //           validators: {
+      //               choice: {
+      //                   min: 1,
+      //                   message: 'Debe seleccionar al menos una opción'
+      //               }
+      //           }
+      //       },
 
       //       'data[Encuestas][pregunta_29]': {
     		// 	validators: {
@@ -1045,14 +1102,14 @@ $(document).ready(function () {
     		// 	}
     		// },
 
-    		'data[Encuestas][pregunta_47][Si][]': {
-                validators: {
-                    choice: {
-                        min: 1,
-                        message: 'Debe seleccionar al menos una opción'
-                    }
-                }
-            }
+    		// 'data[Encuestas][pregunta_47][Si][]': {
+      //           validators: {
+      //               choice: {
+      //                   min: 1,
+      //                   message: 'Debe seleccionar al menos una opción'
+      //               }
+      //           }
+      //       }
 
     	}
     });
