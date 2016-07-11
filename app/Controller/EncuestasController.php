@@ -55,7 +55,7 @@
 	  		$this->autoRender = false;
 		}
 
-
+		///////////////////////////////////////////////////////////////////
 
 		public function index() {
 
@@ -110,6 +110,90 @@
 				}
 			}
 		}
+
+
+		public function buscador(){
+
+			$encuestas = $this->Encuesta->find('all', array('recursive' => 0));
+
+			$cantidadEncuestas = count($encuestas);
+
+			$this->set(compact('cantidadEncuestas'));
+
+			////////////////////////////  PREGUNTA 1 (VARIABLES) //////////////////////////
+			$pregunta1_opc1 = 0;
+			$pregunta1_opc2 = 0;
+			$pregunta1_opc3 = 0;
+
+			////////////////////////////  PREGUNTA 2 (VARIABLES) //////////////////////////
+			$pregunta2_opc1 = 0;
+			$pregunta2_opc2 = 0;
+
+			////////////////////////////  PREGUNTA 3 (VARIABLES) //////////////////////////
+			$pregunta3_opc1 = 0;
+			$pregunta3_opc2 = 0;
+
+
+
+			foreach($encuestas as $encuesta){
+
+			///////////////////////     PREGUNTA 1 /////////////////////////////////////
+
+				switch ($encuesta['Encuesta']['pregunta_1']) {
+					case '1':
+						$pregunta1_opc1++;
+						break ;
+
+					case '2':
+						$pregunta1_opc2++;
+						break ;
+
+					case '3':
+						$pregunta1_opc3++;
+						break ;
+
+					default:
+						break;
+				}
+
+				///////////////////////     PREGUNTA 2 /////////////////////////////////////
+
+				switch ($encuesta['Encuesta']['pregunta_2']) {
+					case '1':
+						$pregunta2_opc1++;
+						break ;
+
+					case '2':
+						$pregunta2_opc2++;
+						break ;
+					default:
+						break;
+				}
+
+				///////////////////////     PREGUNTA 3 /////////////////////////////////////
+
+				switch ($encuesta['Encuesta']['pregunta_3']) {
+					case '1':
+						$pregunta3_opc1++;
+						break ;
+
+					case '2':
+						$pregunta3_opc2++;
+						break ;
+					default:
+						break;
+				}
+
+			}  // cierra FOREACH
+
+
+			// Envio todo a la VISTA
+			$this->set(compact('pregunta1_opc1', 'pregunta1_opc2', 'pregunta1_opc3'));
+			$this->set(compact('pregunta2_opc1', 'pregunta2_opc2'));
+			$this->set(compact('pregunta3_opc1', 'pregunta3_opc2'));
+
+		} // cierra BUSCADOR;
+
 
 	}
 ?>

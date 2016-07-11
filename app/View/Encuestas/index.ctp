@@ -12,6 +12,8 @@
 
 
 
+<?php echo $this->Html->link('Estadisticas', array('controller' => 'encuestas', 'action' => 'buscador')); ?>
+
 <div class="container">
 
 	<h2> Encuesta Juventud </h2>
@@ -52,8 +54,8 @@
 			<div class="col-xs-12 col-md-5 col-sm-6">
 				<select id="select_pregunta_2" name="data[Encuesta][pregunta_2]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> Femenino </option>
-					<option value="2"> Masculino </option>
+					<option value="1"> Masculino </option>
+					<option value="2"> Femenino </option>
 				</select>
 			</div>
 		</div>
