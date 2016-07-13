@@ -203,6 +203,9 @@
 			$pregunta14_No_opc7 = $pregunta14_No_opc8 = $pregunta14_No_opc9 = $pregunta14_No_opc10 = $pregunta14_No_opc11 =
 			$pregunta14_No_opc12 = $pregunta14_No_opc13 = $pregunta14_No_opc14  = $pregunta14_No_opc15  = 0;
 
+			////////////////////////////  PREGUNTA 15 (VARIABLES)  //////////////////////////
+			$pregunta15_opc1 = $pregunta15_opc2 = $pregunta15_opc3 = $pregunta15_opc4 = $pregunta15_opc5 = $pregunta15_opc6 =
+			$pregunta15_opc7 = 0;
 
 
 			foreach($encuestas as $encuesta){
@@ -538,7 +541,6 @@
 					}
 				}
 
-				// Recibe SI o NO
 				///////////////////////     PREGUNTA 14 (Depende de 12)  /////////////////////////////////////
 
 				// Si entra, significa que en 12 se respondio que SI trabaja (2,3,4)
@@ -614,6 +616,38 @@
 					}
 				}
 
+				///////////////////////     PREGUNTA 15 (Depende de 12) /////////////////////////////////////
+
+				// Si entra, significa que en 12 se respondio que SI trabaja (2,3,4)
+				if(!empty($encuesta['Encuesta']['pregunta_15'])){
+
+					switch ($encuesta['Encuesta']['pregunta_15']) {
+						case '1':
+							$pregunta15_opc1++;
+							break ;
+						case '2':
+							$pregunta15_opc2++;
+							break ;
+						case '3':
+							$pregunta15_opc3++;
+							break ;
+						case '4':
+							$pregunta15_opc4++;
+							break ;
+						case '5':
+							$pregunta15_opc5++;
+							break ;
+						case '6':
+							$pregunta15_opc6++;
+							break ;
+						case '7':
+							$pregunta15_opc7++;
+							break ;
+						default:
+							break;
+					}
+				}
+
 
 			}  // cierra FOREACH
 
@@ -646,6 +680,9 @@
 			 				   'pregunta14_Si_opc6'));
 			$this->set(compact('pregunta14_No_opc7','pregunta14_No_opc8','pregunta14_No_opc9','pregunta14_No_opc10', 'pregunta14_No_opc11',
 							   'pregunta14_No_opc12','pregunta14_No_opc13', 'pregunta14_No_opc14', 'pregunta14_No_opc15'));
+
+			$this->set(compact('pregunta15_opc1', 'pregunta15_opc2', 'pregunta15_opc3', 'pregunta15_opc4', 'pregunta15_opc5',
+							   'pregunta15_opc6', 'pregunta15_opc7'));
 
 		} // cierra BUSCADOR;
 

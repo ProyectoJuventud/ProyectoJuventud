@@ -7,49 +7,52 @@
 	<!-- /////////////////////////////////////     PREGUNTA 1 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 1) Edad </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<thead>
-			<tr>
-				<th>15 a 18</th>
-				<th>19 a 24</th>
-				<th>25 a 29</th>
-			</tr>
-		</thead>
+				<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta1_opc1 ?> </td>
-				<td> <?php echo $pregunta1_opc2 ?> </td>
-				<td> <?php echo $pregunta1_opc3 ?> </td>
-			</tr>
-		</tbody>
+					<tr>
+						<th>15 a 18 años</th>
+						<td> <?php echo $pregunta1_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th>19 a 24 años</th>
+						<td> <?php echo $pregunta1_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th>25 a 29 años</th>
+						<td> <?php echo $pregunta1_opc3 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-	</table>
-
-	<br />
 	<!-- /////////////////////////////////////     PREGUNTA 2 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 2) Sexo </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<thead>
-			<tr>
-				<th>Masculino</th>
-				<th>Femenino</th>
-			</tr>
-		</thead>
+				<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta2_opc1 ?> </td>
-				<td> <?php echo $pregunta2_opc2 ?> </td>
-			</tr>
-		</tbody>
 
-	</table>
+					<tr>
+						<th>Masculino</th>
+						<td> <?php echo $pregunta2_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th>Femenino</th>
+						<td> <?php echo $pregunta2_opc2 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-	<br />
 	<!-- /////////////////////////////////////     PREGUNTA 3 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 3) Zona de origen </h4>
@@ -504,6 +507,39 @@
 				<td> <?php echo $pregunta14_No_opc13 ?> </td>
 				<td> <?php echo $pregunta14_No_opc14 ?> </td>
 				<td> <?php echo $pregunta14_No_opc15 ?> </td>
+			</tr>
+		</tbody>
+
+	</table>
+
+	<br />
+	<!-- /////////////////////////////////////     PREGUNTA 15 (depende de 12) /////////////////////////////////////////////////////// -->
+
+	<h4> De acuerdo a las personas que SI trabajan (<?php echo $pregunta12_Si ?>). </h4>
+	<h4> 15) Eligieron su trabajo según </h4>
+	<table class="table table-striped table-bordered table-hover table-condensed">
+
+		<thead>
+			<tr>
+				<th> Profesión/Conocimientos técnicos </th>
+				<th> Posibilidades de hacer carrera </th>
+				<th> Remuneración </th>
+				<th> Flexibilidad horaria </th>
+				<th> La oferta existente </th>
+				<th> Tradición familiar </th>
+				<th> otros </th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr>
+				<td> <?php echo $pregunta15_opc1 ?> </td>
+				<td> <?php echo $pregunta15_opc2 ?> </td>
+				<td> <?php echo $pregunta15_opc3 ?> </td>
+				<td> <?php echo $pregunta15_opc4 ?> </td>
+				<td> <?php echo $pregunta15_opc5 ?> </td>
+				<td> <?php echo $pregunta15_opc6 ?> </td>
+				<td> <?php echo $pregunta15_opc7 ?> </td>
 			</tr>
 		</tbody>
 
