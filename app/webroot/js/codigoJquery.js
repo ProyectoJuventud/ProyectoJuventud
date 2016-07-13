@@ -45,7 +45,7 @@ $(document).ready(function () {
 
 				// Tuve que darselo de esta manera (distinta a los otros apppend de option) debido a que con la otra forma
 				// no podia darle las opciones de "disabled" y "selected".
-				 municipiosDDL.append("<option disabled selected value='' >Seleccione un Municipio..</option>");
+				municipiosDDL.append("<option disabled selected value='' >Seleccione un Municipio..</option>");
 
 				$(data).each(function (index, municipio) {
 
