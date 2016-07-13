@@ -451,7 +451,7 @@
 		</div>
 	</div>
 
-	<!-- ////////////////////////////////    PREGUNTA  17   ///////////////////////////////////////////////// -->
+	<!-- ////////////////////////////////    PREGUNTA  17 (depende de PREGUNTA 9)  ///////////////////////////////////////////////// -->
 
 	<!-- Solo es visible si pregunta 9 es SI -->
 	<div class="form-group has-feedback" id="pregunta_17" style="display:none">

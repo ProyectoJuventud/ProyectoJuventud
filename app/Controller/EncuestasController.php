@@ -98,27 +98,36 @@
 				}
 
 
-				////////////////////////////   PREGUNTA 14 /////////////////////////////
+				////////////////////////////   PREGUNTA 14 (mima estructura que PREGUNTA 9)  /////////////////////////////
 
-				//  Si pregunta 9, recibe un array de SI, guardo en pregunta 9 el numero recibido en este ARRAY.
 				if(isset($this->request->data['Encuesta']['pregunta_14']['Si'])){
 
 					$this->request->data['Encuesta']['pregunta_14'] = $this->request->data['Encuesta']['pregunta_14']['Si'];
 				}
 
-				//  Si pregunta 9, recibe un array de NO, guardo en pregunta 9 el numero recibido en este ARRAY.
 				if(isset($this->request->data['Encuesta']['pregunta_9']['No'])){
 
 					$this->request->data['Encuesta']['pregunta_14'] = $this->request->data['Encuesta']['pregunta_14']['No'];
 				}
 
 
+				////////////////////////////   PREGUNTA 16  //////////////////////////////////////////////////
+
+
+				// Convierto el array de opciones en un string donde cada elemento estara separado por una coma y este string sera lo que
+				// grabemos en la base de datos.
+				$this->request->data['Encuesta']['pregunta_16'] = implode(',', $this->request->data['Encuesta']['pregunta_16']);;
+
+
+
+
+
 
 				///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-				if ($this->Encuesta->save($this->request->data)) {
+				if ($this->Encuesta->saveAll($this->request->data)) {
 
 					$this->Session->setFlash('Encuesta almacenanda correctamente');
 					// return $this->redirect(array('action' => 'index'));
@@ -132,8 +141,7 @@
 
 		public function buscador(){
 
-
-			$encuestas = $this->Encuesta->find('all', array('recursive' => 0));
+			$encuestas = $this->Encuesta->find('all', array('recursive' => 1));
 
 			// debug($encuestas);
 
@@ -206,6 +214,11 @@
 			////////////////////////////  PREGUNTA 15 (VARIABLES)  //////////////////////////
 			$pregunta15_opc1 = $pregunta15_opc2 = $pregunta15_opc3 = $pregunta15_opc4 = $pregunta15_opc5 = $pregunta15_opc6 =
 			$pregunta15_opc7 = 0;
+
+			////////////////////////////  PREGUNTA 16 (VARIABLES)  //////////////////////////
+			$pregunta16_opc1 = $pregunta16_opc2 = $pregunta16_opc3 = $pregunta16_opc4 = $pregunta16_opc5 = $pregunta16_opc6 =
+			$pregunta16_opc7 = 0;
+
 
 
 			foreach($encuestas as $encuesta){
@@ -648,6 +661,39 @@
 					}
 				}
 
+				///////////////////////     PREGUNTA 16   /////////////////////////////////////
+
+				// Separa el string en un elemento de array cada vez que encuentra una ",".
+				$opciones_preg16 = (explode(",", $encuesta['Encuesta']['pregunta_16']));
+
+				foreach ($opciones_preg16 as $opcion_preg16) {
+
+					switch ($opcion_preg16) {
+						case '1':
+							$pregunta16_opc1++;
+							break ;
+						case '2':
+							$pregunta16_opc2++;
+							break ;
+						case '3':
+							$pregunta16_opc3++;
+							break ;
+						case '4':
+							$pregunta16_opc4++;
+							break ;
+						case '5':
+							$pregunta16_opc5++;
+							break ;
+						case '6':
+							$pregunta16_opc6++;
+							break ;
+						case '7':
+							$pregunta16_opc7++;
+							break ;
+						default:
+							break;
+					}
+				}
 
 			}  // cierra FOREACH
 
@@ -683,6 +729,9 @@
 
 			$this->set(compact('pregunta15_opc1', 'pregunta15_opc2', 'pregunta15_opc3', 'pregunta15_opc4', 'pregunta15_opc5',
 							   'pregunta15_opc6', 'pregunta15_opc7'));
+
+			$this->set(compact('pregunta16_opc1', 'pregunta16_opc2', 'pregunta16_opc3', 'pregunta16_opc4','pregunta16_opc5',
+							   'pregunta16_opc6', 'pregunta16_opc7'));
 
 		} // cierra BUSCADOR;
 

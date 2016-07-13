@@ -2,8 +2,11 @@
 
 App::uses('AppModel', 'Model');
 
-	class Encuesta extends AppModel {
 
-	}
+class Encuesta extends AppModel {
+
+
+
+}
 
 ?>

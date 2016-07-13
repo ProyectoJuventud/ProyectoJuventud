@@ -12,7 +12,6 @@
 			<div class="table-responsive">
 
 				<table class="table table-striped table-bordered table-hover table-condensed">
-
 					<tr>
 						<th>15 a 18 años</th>
 						<td> <?php echo $pregunta1_opc1 ?> </td>
@@ -38,8 +37,6 @@
 			<div class="table-responsive">
 
 				<table class="table table-striped table-bordered table-hover table-condensed">
-
-
 					<tr>
 						<th>Masculino</th>
 						<td> <?php echo $pregunta2_opc1 ?> </td>
@@ -56,169 +53,206 @@
 	<!-- /////////////////////////////////////     PREGUNTA 3 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 3) Zona de origen </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Urbana </th>
-				<th> Rural </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta3_opc1 ?> </td>
-				<td> <?php echo $pregunta3_opc2 ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> Urbana </th>
+						<td> <?php echo $pregunta3_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Rural </th>
+						<td> <?php echo $pregunta3_opc2 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-	</table>
-
-	<br />
 	<!-- /////////////////////////////////////     PREGUNTA 4 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 4) Zona de residencia </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Urbana </th>
-				<th> Rural </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta4_opc1 ?> </td>
-				<td> <?php echo $pregunta4_opc2 ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> Urbana </th>
+						<td> <?php echo $pregunta4_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Rural </th>
+						<td> <?php echo $pregunta4_opc2 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-	</table>
-
-	<br />
 	<!-- /////////////////////////////////////     PREGUNTA 5 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 5) Departamento de residencia </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Colón </th>
-				<th> Concordia </th>
-				<th> Diamante </th>
-				<th> Federacíon </th>
-				<th> Federal </th>
-				<th> Feliciano </th>
-				<th> Gualeguay </th>
-				<th> Gualeguachú </th>
-				<th> Villa Paranacito </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta5_opc1 ?> </td>
-				<td> <?php echo $pregunta5_opc2 ?> </td>
-				<td> <?php echo $pregunta5_opc3 ?> </td>
-				<td> <?php echo $pregunta5_opc4 ?> </td>
-				<td> <?php echo $pregunta5_opc5 ?> </td>
-				<td> <?php echo $pregunta5_opc6 ?> </td>
-				<td> <?php echo $pregunta5_opc7 ?> </td>
-				<td> <?php echo $pregunta5_opc8 ?> </td>
-				<td> <?php echo $pregunta5_opc9 ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> Colón </th>
+						<td> <?php echo $pregunta5_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Concordia </th>
+						<td><?php echo $pregunta5_opc2 ?>  </td>
+					</tr>
+					<tr>
+						<th> Diamante </th>
+						<td> <?php echo $pregunta5_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Federacíon </th>
+						<td> <?php echo $pregunta5_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> Federal </th>
+						<td> <?php echo $pregunta5_opc5 ?>  </td>
+					</tr>
+					<tr>
+						<th> Feliciano </th>
+						<td> <?php echo $pregunta5_opc6 ?>  </td>
+					</tr>
+					<tr>
+						<th> Gualeguay </th>
+						<td> <?php echo $pregunta5_opc7 ?> </td>
+					</tr>
+					<tr>
+						<th> Gualeguachú </th>
+						<td> <?php echo $pregunta5_opc8 ?>  </td>
+					</tr>
+					<tr>
+						<th> Villa Paranacito </th>
+						<td>  <?php echo $pregunta5_opc9 ?> </td>
+					</tr>
+					<tr>
+						<th> La Paz </th>
+						<td> <?php echo $pregunta5_opc10 ?> </td>
+					</tr>
+					<tr>
+						<th> Nogoyá </th>
+						<td> <?php echo $pregunta5_opc11 ?> </td>
 
-		<thead>
-			<tr>
-				<th> La Paz </th>
-				<th> Nogoyá </th>
-				<th> Paraná </th>
-				<th> San Salvador </th>
-				<th> Rosario del Tala </th>
-				<th> Concepción del Uruguay </th>
-				<th> Victoria </th>
-				<th> Villaguay </th>
-			</tr>
-		</thead>
+					</tr>
+					<tr>
+						<th> Paraná </th>
+						<td> <?php echo $pregunta5_opc12 ?> </td>
+					</tr>
+					<tr>
+						<th> San Salvador </th>
+						<td> <?php echo $pregunta5_opc13 ?> </td>
+					</tr>
+					<tr>
+						<th> Rosario del Tala </th>
+						<td> <?php echo $pregunta5_opc14 ?> </td>
+					</tr>
+					<tr>
+						<th> Concepción del Uruguay </th>
+						<td> <?php echo $pregunta5_opc15 ?> </td>
+					</tr>
+					<tr>
+						<th> Victoria </th>
+						<td> <?php echo $pregunta5_opc16 ?> </td>
+					</tr>
+					<tr>
+						<th> Villaguay </th>
+						<td> <?php echo $pregunta5_opc17 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta5_opc10 ?> </td>
-				<td> <?php echo $pregunta5_opc11 ?> </td>
-				<td> <?php echo $pregunta5_opc12 ?> </td>
-				<td> <?php echo $pregunta5_opc13 ?> </td>
-				<td> <?php echo $pregunta5_opc14 ?> </td>
-				<td> <?php echo $pregunta5_opc15 ?> </td>
-				<td> <?php echo $pregunta5_opc16 ?> </td>
-				<td> <?php echo $pregunta5_opc17 ?> </td>
-			</tr>
-		</tbody>
-	</table>
-
-	<br />
 	<!-- /////////////////////////////////////     PREGUNTA 7 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 7) Hijos </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Con Hijos </th>
-				<th> Sin Hijos </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta7_opc1 ?> </td>
-				<td> <?php echo $pregunta7_opc2 ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> Con Hijos </th>
+						<td> <?php echo $pregunta7_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Sin Hijos </th>
+						<td> <?php echo $pregunta7_opc2 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-	</table>
-
-	<br />
 	<!-- /////////////////////////////////////     PREGUNTA 8 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 8) Con quien vivis? </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Padres </th>
-				<th> Sin Padre/Madre con su conyuge </th>
-				<th> Hermanos </th>
-				<th> Familiar </th>
-				<th> Hijos </th>
-				<th> Pareja </th>
-				<th> Pareja con sus hijos </th>
-				<th> Amigos </th>
-				<th> Solo  </th>
-				<th> Otros </th>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-			</tr>
-		</thead>
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> Padres </th>
+						<td> <?php echo $pregunta8_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Sin Padre/Madre con su conyuge </th>
+						<td> <?php echo $pregunta8_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Hermanos </th>
+						<td> <?php echo $pregunta8_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Familiar </th>
+						<td> <?php echo $pregunta8_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> Hijos </th>
+						<td> <?php echo $pregunta8_opc5 ?> </td>
+					</tr>
+					<tr>
+						<th> Pareja </th>
+						<td> <?php echo $pregunta8_opc6 ?> </td>
+					</tr>
+					<tr>
+						<th> Pareja con sus hijos </th>
+						<td> <?php echo $pregunta8_opc7 ?> </td>
+					</tr>
+					<tr>
+						<th> Amigos </th>
+						<td> <?php echo $pregunta8_opc8 ?> </td>
+					</tr>
+					<tr>
+						<th> Solo  </th>
+						<td> <?php echo $pregunta8_opc9 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta8_opc10 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta8_opc1 ?> </td>
-				<td> <?php echo $pregunta8_opc2 ?> </td>
-				<td> <?php echo $pregunta8_opc3 ?> </td>
-				<td> <?php echo $pregunta8_opc4 ?> </td>
-				<td> <?php echo $pregunta8_opc5 ?> </td>
-				<td> <?php echo $pregunta8_opc6 ?> </td>
-				<td> <?php echo $pregunta8_opc7 ?> </td>
-				<td> <?php echo $pregunta8_opc8 ?> </td>
-				<td> <?php echo $pregunta8_opc9 ?> </td>
-				<td> <?php echo $pregunta8_opc10 ?> </td>
-			</tr>
-		</tbody>
-
-	</table>
-
-	<br />
 	<!-- /////////////////////////////////////     PREGUNTA 9 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 9) Estudias? </h4>
@@ -546,9 +580,54 @@
 	</table>
 
 	<br />
+	<!-- /////////////////////////////////////     PREGUNTA 16 /////////////////////////////////////////////////////// -->
+
+	<h4> 16) Cuales crees que son las principales dificultades para conseguir trabajo  </h4>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover table-condensed">
+
+					<tr>
+						<th> Poca disponibilidad horaria </th>
+						<td> <?php echo $pregunta16_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Poca oferta </th>
+						<td> <?php echo $pregunta16_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Las Distancias </th>
+						<td> <?php echo $pregunta16_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Por cuidado de hijos  </th>
+						<td> <?php echo $pregunta16_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> Porque tengo una discapacidad </th>
+						<td> <?php echo $pregunta16_opc5 ?> </td>
+					</tr>
+					<tr>
+						<th> Porque no me gusta lo que hay disponible </th>
+						<td> <?php echo $pregunta16_opc6 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta16_opc7 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<br />
 
 
 
 	<?php echo $this->Html->link('Volver', array('controller' => 'encuestas', 'action' => 'index'));?>
+
+	<br /><br />
 
 </div> <!-- Cierra CONTAINER -->
