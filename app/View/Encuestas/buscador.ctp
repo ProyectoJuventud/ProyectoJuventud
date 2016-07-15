@@ -256,330 +256,414 @@
 	<!-- /////////////////////////////////////     PREGUNTA 9 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 9) Estudias? </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Si </th>
-				<th> No </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta9_Si ?> </td>
-				<td> <?php echo $pregunta9_No ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> Si </th>
+						<td> <?php echo $pregunta9_Si ?> </td>
+					</tr>
+						<th> No </th>
+						<td> <?php echo $pregunta9_No ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-	</table>
-
-	<br />
 	<!-- /////////////////////////////////////     PREGUNTA 9 SI y NO ////////////////////////////////////////////////////////////// -->
 
 	<h4> Personas que SI estudian (<?php echo $pregunta9_Si ?>). Nivel: </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Estudios Primarios </th>
-				<th> Estudios Secundarios </th>
-				<th> Terciarios/Universitarios </th>
-				<th> Posgrados </th>
-				<th> Otros </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta9_Si_opc1 ?> </td>
-				<td> <?php echo $pregunta9_Si_opc2 ?> </td>
-				<td> <?php echo $pregunta9_Si_opc3 ?> </td>
-				<td> <?php echo $pregunta9_Si_opc4 ?> </td>
-				<td> <?php echo $pregunta9_Si_opc5 ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
 
-	</table>
+
+					<tr>
+						<th> Estudios Primarios </th>
+						<td> <?php echo $pregunta9_Si_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Estudios Secundarios </th>
+						<td> <?php echo $pregunta9_Si_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Terciarios/Universitarios </th>
+						<td> <?php echo $pregunta9_Si_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Posgrados </th>
+						<td> <?php echo $pregunta9_Si_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta9_Si_opc5 ?> </td>
+					</tr>
+
+				</table>
+			</div>
+		</div>
+	</div>
+
 
 	<h4> Personas que NO estudian (<?php echo $pregunta9_No ?>). Motivos: </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Trabajo o busco trabajo </th>
-				<th> Concluí mis estudios </th>
-				<th> La Institución educativa está muy lejos </th>
-				<th> No puedo pagar los estudios </th>
-				<th> No me interesa </th>
-				<th> Estoy esperando un hijo/cuidado de hijo/s </th>
-				<th> Enfermedad o discapacidad </th>
-				<th> Otro </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta9_No_opc6 ?> </td>
-				<td> <?php echo $pregunta9_No_opc7 ?> </td>
-				<td> <?php echo $pregunta9_No_opc8 ?> </td>
-				<td> <?php echo $pregunta9_No_opc9 ?> </td>
-				<td> <?php echo $pregunta9_No_opc10 ?> </td>
-				<td> <?php echo $pregunta9_No_opc11 ?> </td>
-				<td> <?php echo $pregunta9_No_opc12 ?> </td>
-				<td> <?php echo $pregunta9_No_opc13 ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
 
-	</table>
+					<tr>
+						<th> Trabajo o busco trabajo </th>
+						<td> <?php echo $pregunta9_No_opc6 ?> </td>
+					</tr>
+					<tr>
+						<th> Concluí mis estudios </th>
+						<td> <?php echo $pregunta9_No_opc7 ?> </td>
+					</tr>
+					<tr>
+						<th> La Institución educativa está muy lejos </th>
+						<td> <?php echo $pregunta9_No_opc8 ?> </td>
+					</tr>
+					<tr>
+						<th> No puedo pagar los estudios </th>
+						<td> <?php echo $pregunta9_No_opc9 ?> </td>
+					</tr>
+					<tr>
+						<th> No me interesa </th>
+						<td> <?php echo $pregunta9_No_opc10 ?> </td>
+					</tr>
+					<tr>
+						<th> Estoy esperando un hijo/cuidado de hijo/s </th>
+						<td> <?php echo $pregunta9_No_opc11 ?> </td>
+					</tr>
+					<tr>
+						<th> Enfermedad o discapacidad </th>
+						<td> <?php echo $pregunta9_No_opc12 ?> </td>
+					</tr>
+					<tr>
+						<th> Otro </th>
+						<td> <?php echo $pregunta9_No_opc13 ?> </td>
+					</tr>
 
-	<br />
+				</table>
+			</div>
+		</div>
+	</div>
+
 	<!-- /////////////////////////////////////     PREGUNTA 10  ////////////////////////////////////////////////////////////// -->
 
 	<h4> 10) En base a las personas que seleccionaron Que NO estudian (<?php echo $pregunta9_No ?>) </h4>
 
 	<h4>Les gustarían estudiar? </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Si </th>
-				<th> No </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta10_Si ?> </td>
-				<td> <?php echo $pregunta10_No ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
 
-	</table>
+					<tr>
+						<th> Si </th>
+						<td> <?php echo $pregunta10_Si ?> </td>
+					</tr>
+					<tr>
+						<th> No </th>
+						<td> <?php echo $pregunta10_No ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
 	<h4> Personas que Si les gustaria estudiar (<?php echo $pregunta10_Si ?>). Motivos: </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Me aportaría sabers y conocimientos </th>
-				<th> Conseguiría un mejor trabajo </th>
-				<th> Otros </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta10_Si_opc1 ?> </td>
-				<td> <?php echo $pregunta10_Si_opc2 ?> </td>
-				<td> <?php echo $pregunta10_Si_opc3 ?> </td>
-			</tr>
-		</tbody>
+					<tr>
+						<th> Me aportaría sabers y conocimientos </th>
+						<td> <?php echo $pregunta10_Si_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Conseguiría un mejor trabajo </th>
+						<td> <?php echo $pregunta10_Si_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta10_Si_opc3 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-	</table>
-
-	<br />
 	<!-- /////////////////////////////////////     PREGUNTA 11 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 11) Elegiste o eligirías una carrera según? </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Gustos o deseos personales </th>
-				<th> Para tener un mejor poder adquisitivo </th>
-				<th> Tradicion Familiar </th>
-				<th> Cercania y/o bajos costos </th>
-				<th> Otros </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta11_opc1 ?> </td>
-				<td> <?php echo $pregunta11_opc2 ?> </td>
-				<td> <?php echo $pregunta11_opc3 ?> </td>
-				<td> <?php echo $pregunta11_opc4 ?> </td>
-				<td> <?php echo $pregunta11_opc5 ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
 
-	</table>
+					<tr>
+						<th> Gustos o deseos personales </th>
+						<td> <?php echo $pregunta11_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Para tener un mejor poder adquisitivo </th>
+						<td> <?php echo $pregunta11_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Tradicion Familiar </th>
+						<td> <?php echo $pregunta11_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Cercania y/o bajos costos </th>
+						<td> <?php echo $pregunta11_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta11_opc5 ?> </td>
+					</tr>
 
-	<br />
+				</table>
+			</div>
+		</div>
+	</div>
+
 	<!-- /////////////////////////////////////     PREGUNTA 12 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 12) A que edad comenzaste a trabajar? </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Nunca he trabajado </th>
-				<th> 15 a 18 </th>
-				<th> 19 a 24 </th>
-				<th> 25 a 29 </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta12_opc1 ?> </td>
-				<td> <?php echo $pregunta12_opc2 ?> </td>
-				<td> <?php echo $pregunta12_opc3 ?> </td>
-				<td> <?php echo $pregunta12_opc4 ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
 
-	</table>
-	<br />
+					<tr>
+						<th> Nunca he trabajado </th>
+						<td> <?php echo $pregunta12_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> 15 a 18 </th>
+						<td> <?php echo $pregunta12_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> 19 a 24 </th>
+						<td> <?php echo $pregunta12_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> 25 a 29 </th>
+						<td> <?php echo $pregunta12_opc4 ?> </td>
+					</tr>
+				</table>
+
+			</div>
+		</div>
+	</div>
+
 	<!-- /////////////////////////////////////     PREGUNTA 13 (depende de 12) /////////////////////////////////////////////////////// -->
 
 	<h4> De acuerdo a las personas que SI trabajan (<?php echo $pregunta12_Si ?>). </h4>
 	<h4> 13) Como conseguiste tu primer trabajo? </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Presentando CV en comercio/fabrica/empresa </th>
-				<th> Páginas Web a las cuales me subscribí </th>
-				<th> Contacto por un familiar </th>
-				<th> Contacto por un conocido </th>
-				<th> Otros </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta13_opc1 ?> </td>
-				<td> <?php echo $pregunta13_opc2 ?> </td>
-				<td> <?php echo $pregunta13_opc3 ?> </td>
-				<td> <?php echo $pregunta13_opc4 ?> </td>
-				<td> <?php echo $pregunta13_opc5 ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
 
-	</table>
+					<tr>
+						<th> Presentando CV en comercio/fabrica/empresa </th>
+						<td> <?php echo $pregunta13_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Páginas Web a las cuales me subscribí </th>
+						<td> <?php echo $pregunta13_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Contacto por un familiar </th>
+						<td> <?php echo $pregunta13_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Contacto por un conocido </th>
+						<td> <?php echo $pregunta13_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta13_opc5 ?> </td>
+					</tr>
 
-	<br />
+				</table>
+			</div>
+		</div>
+	</div>
+
 	<!-- /////////////////////////////////////     PREGUNTA 14 (depende de 12) ////////////////////////////////////////////////////// -->
 
 	<h4> De acuerdo a las personas que SI trabajan (<?php echo $pregunta12_Si ?>). </h4>
 	<h4> 14) Trabajaste el ultimo mes? </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Si </th>
-				<th> No </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta14_Si ?> </td>
-				<td> <?php echo $pregunta14_No ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> Si </th>
+						<td> <?php echo $pregunta14_Si ?> </td>
+					</tr>
+					<tr>
+						<th> No </th>
+						<td> <?php echo $pregunta14_No ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-	</table>
-
-	<br />
 	<!-- /////////////////////////////////////     PREGUNTA 14 SI y NO  ////////////////////////////////////////////////////////////// -->
 
 	<h4> Personas que SI trabajaron el último mes (<?php echo $pregunta14_Si ?>). Tipo: </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Relación de dependencia en blanco </th>
-				<th> Relación de dependencia en negro </th>
-				<th> Emprendimiento propio o familiar </th>
-				<th> Changas </th>
-				<th> Trabajos de limpieza, cuidado de niños, ancianos, etc </th>
-				<th> Otros </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta14_Si_opc1 ?> </td>
-				<td> <?php echo $pregunta14_Si_opc2 ?> </td>
-				<td> <?php echo $pregunta14_Si_opc3 ?> </td>
-				<td> <?php echo $pregunta14_Si_opc4 ?> </td>
-				<td> <?php echo $pregunta14_Si_opc5 ?> </td>
-				<td> <?php echo $pregunta14_Si_opc6 ?> </td>
-			</tr>
-		</tbody>
-
-	</table>
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> Relación de dependencia en blanco </th>
+						<td> <?php echo $pregunta14_Si_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Relación de dependencia en negro </th>
+						<td> <?php echo $pregunta14_Si_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Emprendimiento propio o familiar </th>
+						<td> <?php echo $pregunta14_Si_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Changas </th>
+						<td> <?php echo $pregunta14_Si_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> Trabajos de limpieza, cuidado de niños, ancianos, etc </th>
+						<td> <?php echo $pregunta14_Si_opc5 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta14_Si_opc6 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
 	<h4> Personas que NO trabajaron el ultimo mes (<?php echo $pregunta14_No ?>). Motivos: </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> No busco trabajo </th>
-				<th> No encontre lo que buscaba </th>
-				<th> Tengo que cuidar a un familiar </th>
-				<th> Tengo que cuidar hijo/s </th>
-				<th> Estoy esperando un hijo/s </th>
-				<th> Enfermedad o discapacidad </th>
-				<th> No me interesa </th>
-				<th> Estoy estudiando </th>
-				<th> Otro </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta14_No_opc7 ?> </td>
-				<td> <?php echo $pregunta14_No_opc8 ?> </td>
-				<td> <?php echo $pregunta14_No_opc9 ?> </td>
-				<td> <?php echo $pregunta14_No_opc10 ?> </td>
-				<td> <?php echo $pregunta14_No_opc11 ?> </td>
-				<td> <?php echo $pregunta14_No_opc12 ?> </td>
-				<td> <?php echo $pregunta14_No_opc13 ?> </td>
-				<td> <?php echo $pregunta14_No_opc14 ?> </td>
-				<td> <?php echo $pregunta14_No_opc15 ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> No busco trabajo </th>
+						<td> <?php echo $pregunta14_No_opc7 ?> </td>
+					</tr>
+					<tr>
+						<th> No encontre lo que buscaba </th>
+						<td> <?php echo $pregunta14_No_opc8 ?> </td>
+					</tr>
+					<tr>
+						<th> Tengo que cuidar a un familiar </th>
+						<td> <?php echo $pregunta14_No_opc9 ?> </td>
+					</tr>
+					<tr>
+						<th> Tengo que cuidar hijo/s </th>
+						<td> <?php echo $pregunta14_No_opc10 ?> </td>
+					</tr>
+					<tr>
+						<th> Estoy esperando un hijo/s </th>
+						<td> <?php echo $pregunta14_No_opc11 ?> </td>
+					</tr>
+					<tr>
+						<th> Enfermedad o discapacidad </th>
+						<td> <?php echo $pregunta14_No_opc12 ?> </td>
+					</tr>
+					<tr>
+						<th> No me interesa </th>
+						<td> <?php echo $pregunta14_No_opc13 ?> </td>
+					</tr>
+					<tr>
+						<th> Estoy estudiando </th>
+						<td> <?php echo $pregunta14_No_opc14 ?> </td>
+					</tr>
+					<tr>
+						<th> Otro </th>
+						<td> <?php echo $pregunta14_No_opc15 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-	</table>
-
-	<br />
 	<!-- /////////////////////////////////////     PREGUNTA 15 (depende de 12) /////////////////////////////////////////////////////// -->
 
 	<h4> De acuerdo a las personas que SI trabajan (<?php echo $pregunta12_Si ?>). </h4>
 	<h4> 15) Eligieron su trabajo según </h4>
-	<table class="table table-striped table-bordered table-hover table-condensed">
 
-		<thead>
-			<tr>
-				<th> Profesión/Conocimientos técnicos </th>
-				<th> Posibilidades de hacer carrera </th>
-				<th> Remuneración </th>
-				<th> Flexibilidad horaria </th>
-				<th> La oferta existente </th>
-				<th> Tradición familiar </th>
-				<th> otros </th>
-			</tr>
-		</thead>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
 
-		<tbody>
-			<tr>
-				<td> <?php echo $pregunta15_opc1 ?> </td>
-				<td> <?php echo $pregunta15_opc2 ?> </td>
-				<td> <?php echo $pregunta15_opc3 ?> </td>
-				<td> <?php echo $pregunta15_opc4 ?> </td>
-				<td> <?php echo $pregunta15_opc5 ?> </td>
-				<td> <?php echo $pregunta15_opc6 ?> </td>
-				<td> <?php echo $pregunta15_opc7 ?> </td>
-			</tr>
-		</tbody>
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> Profesión/Conocimientos técnicos </th>
+						<td> <?php echo $pregunta15_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Posibilidades de hacer carrera </th>
+						<td> <?php echo $pregunta15_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Remuneración </th>
+						<td> <?php echo $pregunta15_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Flexibilidad horaria </th>
+						<td> <?php echo $pregunta15_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> La oferta existente </th>
+						<td> <?php echo $pregunta15_opc5 ?> </td>
+					</tr>
+					<tr>
+						<th> Tradición familiar </th>
+						<td> <?php echo $pregunta15_opc6 ?> </td>
+					</tr>
+					<tr>
+						<th> otros </th>
+						<td> <?php echo $pregunta15_opc7 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
 
-	</table>
-
-	<br />
 	<!-- /////////////////////////////////////     PREGUNTA 16 /////////////////////////////////////////////////////// -->
 
 	<h4> 16) Cuales crees que son las principales dificultades para conseguir trabajo  </h4>
@@ -622,8 +706,37 @@
 		</div>
 	</div>
 
-	<br />
 
+	<!-- /////////////////////////////////////     PREGUNTA 17 ////////////////////////////////////////////////////////////// -->
+
+	<h4> 17) Para llegar a tu Institución Educativa demorás...  </h4>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> De 0 a 30 minutos</th>
+						<td> <?php echo $pregunta17_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> De 30 minutos a 1 hora </th>
+						<td> <?php echo $pregunta17_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> De 1 a 2 horas </th>
+						<td> <?php echo $pregunta17_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Mas 2 horas </th>
+						<td> <?php echo $pregunta17_opc4 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<br />
 
 
 	<?php echo $this->Html->link('Volver', array('controller' => 'encuestas', 'action' => 'index'));?>

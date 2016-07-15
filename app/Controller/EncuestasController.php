@@ -220,11 +220,14 @@
 			$pregunta16_opc1 = $pregunta16_opc2 = $pregunta16_opc3 = $pregunta16_opc4 = $pregunta16_opc5 = $pregunta16_opc6 =
 			$pregunta16_opc7 = 0;
 
+			////////////////////////////  PREGUNTA 17 (VARIABLES)  //////////////////////////
+			$pregunta17_opc1 = $pregunta17_opc2 = $pregunta17_opc3 = $pregunta17_opc4  = 0;
+
 
 
 			foreach($encuestas as $encuesta){
 
-			///////////////////////     PREGUNTA 1 /////////////////////////////////////
+				///////////////////////     PREGUNTA 1 /////////////////////////////////////
 
 				switch ($encuesta['Encuesta']['pregunta_1']) {
 					case '1':
@@ -696,6 +699,25 @@
 					}
 				}
 
+				///////////////////////     PREGUNTA 17 /////////////////////////////////////
+
+				switch ($encuesta['Encuesta']['pregunta_17']) {
+					case '1':
+						$pregunta17_opc1++;
+						break ;
+					case '2':
+						$pregunta17_opc2++;
+						break ;
+					case '3':
+						$pregunta17_opc3++;
+						break ;
+					case '4':
+						$pregunta17_opc4++;
+						break ;
+					default:
+						break;
+				}
+
 
 			}  // cierra FOREACH
 
@@ -734,6 +756,8 @@
 
 			$this->set(compact('pregunta16_opc1', 'pregunta16_opc2', 'pregunta16_opc3', 'pregunta16_opc4','pregunta16_opc5',
 							   'pregunta16_opc6', 'pregunta16_opc7'));
+
+			$this->set(compact('pregunta17_opc1', 'pregunta17_opc2', 'pregunta17_opc3', 'pregunta17_opc4'));
 
 		} // cierra BUSCADOR;
 
