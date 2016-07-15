@@ -113,10 +113,11 @@
 
 				////////////////////////////   PREGUNTA 16  //////////////////////////////////////////////////
 
-
-				// Convierto el array de opciones en un string donde cada elemento estara separado por una coma y este string sera lo que
-				// grabemos en la base de datos.
-				$this->request->data['Encuesta']['pregunta_16'] = implode(',', $this->request->data['Encuesta']['pregunta_16']);;
+				if(isset($this->request->data['Encuesta']['pregunta_6'])){
+					// Convierto el array de opciones en un string donde cada elemento estara separado por una coma y este string sera lo que
+					// grabemos en la base de datos.
+					$this->request->data['Encuesta']['pregunta_16'] = implode(',', $this->request->data['Encuesta']['pregunta_16']);;
+				}
 
 
 
@@ -694,6 +695,7 @@
 							break;
 					}
 				}
+
 
 			}  // cierra FOREACH
 
