@@ -1,23 +1,25 @@
 <?php
+/*Sessions schema generated on: 2007-11-25 07:11:54 : 1196004714*/
 /**
  * This is Sessions Schema file
  *
  * Use it to configure database for Sessions
  *
+ * PHP versions 4 and 5
+ *
  * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  *
  * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
  * Redistributions of files must retain the above copyright notice.
  *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
  * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.Config.Schema
+ * @package       cake
+ * @subpackage    cake.app.config.sql
  * @since         CakePHP(tm) v 0.2.9
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-
 /*
  *
  * Using the Schema command line utility
@@ -26,32 +28,20 @@
  */
 class SessionsSchema extends CakeSchema {
 
-	public $name = 'Sessions';
+	var $name = 'Sessions';
 
-/**
- * Before callback.
- *
- * @param array $event Schema object properties
- * @return bool Should process continue
- */
-	public function before($event = array()) {
+	function before($event = array()) {
 		return true;
 	}
 
-/**
- * After callback.
- *
- * @param array $event Schema object properties
- * @return void
- */
-	public function after($event = array()) {
+	function after($event = array()) {
 	}
 
-	public $cake_sessions = array(
-		'id' => array('type' => 'string', 'null' => false, 'key' => 'primary'),
-		'data' => array('type' => 'text', 'null' => true, 'default' => null),
-		'expires' => array('type' => 'integer', 'null' => true, 'default' => null),
-		'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1))
-	);
+	var $cake_sessions = array(
+			'id' => array('type'=>'string', 'null' => false, 'key' => 'primary'),
+			'data' => array('type'=>'text', 'null' => true, 'default' => NULL),
+			'expires' => array('type'=>'integer', 'null' => true, 'default' => NULL),
+			'indexes' => array('PRIMARY' => array('column' => 'id', 'unique' => 1))
+		);
 
 }
