@@ -8,33 +8,21 @@
 
 		public function getdepartamentos() {
 
+
 			if($this->RequestHandler->isAjax()) {
 
-				//debug("hola");
-				// if (!$this->is('post')) {
+				$this->autoRender = false;
 
-				// 	throw new BadRequestException();
-				// }
+				 $this->layout = 'ajax';
 
-				// $this->loadModel('Departamento');
 
-				// $this->Departamento->recursive = -1;
+				$this->loadModel('Departamento');
 
-				// $departamentos = $this->Departamento->find('all');
+				$this->Departamento->recursive = -1;
 
-		  // 		//$departamentos =  Hash::extract($departamentos, '{n}.Departamento');
+				$departamentos = $this->Departamento->find('all');
 
-		  // 		echo json_encode($departamentos);
-
-				$mensaje = "hola";
-
-				$this->set('data', $mensaje);
-
-		  		$this->layout = 'json';
-
-		  		 $this->render('ajax_test');
-
-		  		// $this->autoRender = false;
+		  		echo json_encode($departamentos);
 		  	}
 		}
 
@@ -42,31 +30,33 @@
 
 		public function GetMunicipioPorId(){
 
-			$this->allowMethod('ajax');
+			if($this->RequestHandler->isAjax()) {
 
-			if (!$this->is('post') || !isset($this->data['DepartamentoId'])) {
+				$this->autoRender = false;
 
-				throw new BadRequestException();
-			}
+				 $this->layout = 'ajax';
 
-			$this->loadModel('Municipio');
+				 // Recibe maaal el DATA
+				if (!isset($this->data['DepartamentoId'])) {
 
-			$this->Municipio->recursive = -1;
+					throw new BadRequestException();
+				}
 
-			$municipios = $this->Municipio->find('all',  array('conditions' => array('Municipio.id_departamento' => $this->data['DepartamentoId'])));
+				$this->loadModel('Municipio');
 
-	  		$municipios =  Hash::extract($municipios,'{n}.Municipio');
+				$this->Municipio->recursive = -1;
 
-	  		echo json_encode($municipios);
+				$municipios = $this->Municipio->find('all',  array('conditions' => array('Municipio.id_departamento' => $this->data['DepartamentoId'])));
 
-	  		$this->autoRender = false;
+				echo json_encode($municipios);
+
+	  		}
 		}
 
 		///////////////////////////////////////////////////////////////////
 
 		function index() {
 
-			//debug($_POST);
 
 			if (!empty($this->data)) {
 

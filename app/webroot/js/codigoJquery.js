@@ -15,11 +15,10 @@ $(document).ready(function () {
 
 		success: function (data) {
 
-			alert(data);
-			// $(data).each(function (index, departamento) {
+			$(data).each(function (index, departamento) {
 
-			// 	departamentosDDL.append($('<option/>', { value: departamento.id, text: departamento.nombre_departamento}));
-			// });
+				departamentosDDL.append($('<option/>', { value: departamento.Departamento.id, text: departamento.Departamento.nombre_departamento}));
+			});
 		},
 		error: function (err) {
 			alert('Se produjo un error al cargar la lista de Departamentos.');
@@ -33,7 +32,7 @@ $(document).ready(function () {
 		var validation = $('#form_encuesta').data('formValidation');
 
 		$.ajax({
-			url: 'encuestas/GetMunicipioPorId',
+			url: 'encuestas/getmunicipio',
 			method: 'post',
 			dataType: 'json',
 

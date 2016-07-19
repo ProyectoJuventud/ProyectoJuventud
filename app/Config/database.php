@@ -81,7 +81,7 @@ class DATABASE_CONFIG {
 		'password' => '',
 		'database' => 'juventud_proyecto',
 		'prefix' => '',
-		//'encoding' => 'utf8',
+		'encoding' => 'utf8',
 	);
 
 	var $test = array(

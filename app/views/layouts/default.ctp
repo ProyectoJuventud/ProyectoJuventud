@@ -16,6 +16,7 @@
 
 		echo $this->Html->meta('icon',$this->Html->url('/img/favicon.png'));
         echo $scripts_for_layout;
+
     ?>
 </head>
 
