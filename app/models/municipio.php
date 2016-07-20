@@ -5,6 +5,7 @@
 
 	class Municipio extends AppModel {
 
+		var $name = 'Municipio';
 
 	}
 ?>

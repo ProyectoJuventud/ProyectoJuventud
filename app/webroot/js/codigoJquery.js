@@ -31,12 +31,13 @@ $(document).ready(function () {
 
 		var validation = $('#form_encuesta').data('formValidation');
 
+		var id_depto = $(this).val() ;
+
 		$.ajax({
-			url: 'encuestas/getmunicipio',
+			url: 'encuestas/getmunicipio/' + id_depto,
 			method: 'post',
 			dataType: 'json',
 
-			data: { DepartamentoId: $(this).val() },
 
 			success: function (data) {
 
@@ -49,7 +50,7 @@ $(document).ready(function () {
 
 				$(data).each(function (index, municipio) {
 
-					municipiosDDL.append($('<option/>', { value: municipio.id, text: municipio.nombre_municipio }));
+					municipiosDDL.append($('<option/>', { value: municipio.Municipio.id, text: municipio.Municipio.nombre_municipio }));
 				});
 
 				// Lo activo

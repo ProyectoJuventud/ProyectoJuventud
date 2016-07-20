@@ -1,5 +1,8 @@
 <?php
 
+	// Para que funciones json_encode en PHP 5.1
+	App::import('Vendor', 'jsonwrapper');
+
 	class EncuestasController extends AppController {
 
 		var $name = 'Encuestas';
@@ -15,7 +18,6 @@
 
 				 $this->layout = 'ajax';
 
-
 				$this->loadModel('Departamento');
 
 				$this->Departamento->recursive = -1;
@@ -28,7 +30,7 @@
 
 
 
-		public function GetMunicipioPorId(){
+		public function getmunicipio($id_depto = null){
 
 			if($this->RequestHandler->isAjax()) {
 
@@ -36,20 +38,13 @@
 
 				 $this->layout = 'ajax';
 
-				 // Recibe maaal el DATA
-				if (!isset($this->data['DepartamentoId'])) {
-
-					throw new BadRequestException();
-				}
-
 				$this->loadModel('Municipio');
 
 				$this->Municipio->recursive = -1;
 
-				$municipios = $this->Municipio->find('all',  array('conditions' => array('Municipio.id_departamento' => $this->data['DepartamentoId'])));
+				$municipios = $this->Municipio->find('all',  array('conditions' => array('Municipio.id_departamento' => $id_depto)));
 
 				echo json_encode($municipios);
-
 	  		}
 		}
 
