@@ -53,7 +53,7 @@
 		function index() {
 
 			debug($_POST);
-			
+
 			if (!empty($this->data)) {
 
 
@@ -106,51 +106,51 @@
 
 				////////////////////////////   PREGUNTA 16  //////////////////////////////////////////////////
 
-				if(isset($this->data['Encuesta']['pregunta_6'])){
+				if(isset($this->data['Encuesta']['pregunta_16'])){
 					// Convierto el array de opciones en un string donde cada elemento estara separado por una coma y este string sera lo que
 					// grabemos en la base de datos.
-					$this->data['Encuesta']['pregunta_16'] = implode(',', $this->data['Encuesta']['pregunta_16']);;
+					$this->data['Encuesta']['pregunta_16'] = implode(',', $this->data['Encuesta']['pregunta_16']);
 				}
 
 				////////////////////////////   PREGUNTA 20   /////////////////////////////
 
-				if(isset($this->request->data['Encuesta']['pregunta_20']['Si'])){
+				if(isset($this->data['Encuesta']['pregunta_20']['Si'])){
 
-					$this->request->data['Encuesta']['pregunta_20'] = $this->request->data['Encuesta']['pregunta_20']['Si'];
+					$this->data['Encuesta']['pregunta_20'] = $this->data['Encuesta']['pregunta_20']['Si'];
 				}
 
-				if(isset($this->request->data['Encuesta']['pregunta_20']['No'])){
+				if(isset($this->data['Encuesta']['pregunta_20']['No'])){
 
-					$this->request->data['Encuesta']['pregunta_20'] = $this->request->data['Encuesta']['pregunta_20']['No'];
+					$this->data['Encuesta']['pregunta_20'] = $this->data['Encuesta']['pregunta_20']['No'];
 				}
 
 						////////////////////////////   PREGUNTA 21   /////////////////////////////
 
-				if(isset($this->request->data['Encuesta']['pregunta_21']['Si'])){
+				if(isset($this->data['Encuesta']['pregunta_21']['Si'])){
 
-					$this->request->data['Encuesta']['pregunta_21'] = $this->request->data['Encuesta']['pregunta_21']['Si'];
+					$this->data['Encuesta']['pregunta_21'] = $this->data['Encuesta']['pregunta_21']['Si'];
 				}
 
-				if(isset($this->request->data['Encuesta']['pregunta_21']['No'])){
+				if(isset($this->rdata['Encuesta']['pregunta_21']['No'])){
 
-					$this->request->data['Encuesta']['pregunta_21'] = $this->request->data['Encuesta']['pregunta_21']['No'];
+					$this->data['Encuesta']['pregunta_21'] = $this->data['Encuesta']['pregunta_21']['No'];
 				}
 
 
 				////////////////////////////   PREGUNTA 22  //////////////////////////////////////////////////
 
-				if(isset($this->request->data['Encuesta']['pregunta_22'])){
+				if(isset($this->data['Encuesta']['pregunta_22'])){
 					// Convierto el array de opciones en un string donde cada elemento estara separado por una coma y este string sera lo que
 					// grabemos en la base de datos.
-					$this->request->data['Encuesta']['pregunta_22'] = implode(',', $this->request->data['Encuesta']['pregunta_22']);;
+					$this->data['Encuesta']['pregunta_22'] = implode(',', $this->data['Encuesta']['pregunta_22']);
 				}
 
 					////////////////////////////   PREGUNTA 23  //////////////////////////////////////////////////
 
-				if(isset($this->request->data['Encuesta']['pregunta_23'])){
+				if(isset($this->data['Encuesta']['pregunta_23'])){
 					// Convierto el array de opciones en un string donde cada elemento estara separado por una coma y este string sera lo que
 					// grabemos en la base de datos.
-					$this->request->data['Encuesta']['pregunta_23'] = implode(',', $this->request->data['Encuesta']['pregunta_23']);;
+					$this->data['Encuesta']['pregunta_23'] = implode(',', $this->data['Encuesta']['pregunta_23']);
 				}
 
 
@@ -162,6 +162,10 @@
 
                    	$this->Session->setFlash('Encuesta agregada correctamente', 'flash_success');
                    	// $this->redirect(array('controller' => 'encuestas', 'action' => 'index'));
+                }
+                else{
+
+                	$this->Session->setFlash('No se pudo guardar', 'flash_failure');
                 }
 
 			}
@@ -783,14 +787,14 @@
 						break;
 				}
 
-				///////////////////////     PREGUNTA 20 
+				///////////////////////     PREGUNTA 20
 				 /////////////////////////////////////
 
 					switch ($encuesta['Encuesta']['pregunta_20']) {
-						
+
 						case 'No':
-							$pregunta20_No++;							
-							break ;	
+							$pregunta20_No++;
+							break ;
 						case '1':
 							$pregunta20_Si++;
 							$pregunta20_Si_opc1++;
@@ -802,22 +806,22 @@
 						case '3':
 							$pregunta20_Si++;
 							$pregunta20_Si_opc3++;
-							break ;					
+							break ;
 						default:
 							break;
 					}
-				
-				///////////////////////     PREGUNTA 21 
+
+				///////////////////////     PREGUNTA 21
 				 /////////////////////////////////////
 
 					switch ($encuesta['Encuesta']['pregunta_21']) {
-						
+
 						case 'No':
-							$pregunta21_No++;							
-							break ;	
+							$pregunta21_No++;
+							break ;
 						case 'Si':
 							$pregunta21_Si++;
-							break ;	
+							break ;
 						default:
 							break;
 					}
@@ -903,7 +907,7 @@
 							break ;
 						case '6':
 							$pregunta23_opc6++;
-							break ;					
+							break ;
 						default:
 							break;
 					}
@@ -960,7 +964,7 @@
 
 			$this->set(compact('pregunta23_opc1', 'pregunta23_opc2', 'pregunta23_opc3', 'pregunta23_opc4','pregunta23_opc5',
 							   'pregunta23_opc6'));
-		
+
 		} // cierra BUSCADOR;
 
 
