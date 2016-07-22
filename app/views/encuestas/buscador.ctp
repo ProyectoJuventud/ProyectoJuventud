@@ -736,6 +736,203 @@
 		</div>
 	</div>
 
+	<!-- /////////////////////////////////////     PREGUNTA 18 ////////////////////////////////////////////////////////////// -->
+
+	<h4> 18) Para llegar a tu trabajo demorás...  </h4>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> De 0 a 30 minutos</th>
+						<td> <?php echo $pregunta18_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> De 30 minutos a 1 hora </th>
+						<td> <?php echo $pregunta18_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> De 1 a 2 horas </th>
+						<td> <?php echo $pregunta18_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Mas 2 horas </th>
+						<td> <?php echo $pregunta18_opc4 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- /////////////////////////////////////     PREGUNTA 20 ////////////////////////////////////////////////////////////// -->
+
+	<h4> 20) Realizas algun deporte o actividad física?  </h4>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> Si </th>
+						<td> <?php echo $pregunta20_Si ?> </td>
+					</tr>
+					<tr>
+						<th> No </th>
+						<td> <?php echo $pregunta20_No ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- /////////////////////////////////////     PREGUNTA 20 (SI) ////////////////////////////////////////////////////////////// -->
+
+	<h4> Personas que SI realizan algun deporte o actividad física? (<?php echo $pregunta20_Si ?>). Cantidad: </h4>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> 1 vez a la semana </th>
+						<td> <?php echo $pregunta20_Si_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> 2 o 3 veces a la semana </th>
+						<td> <?php echo $pregunta20_Si_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Más de 3 veces a la semana </th>
+						<td> <?php echo $pregunta20_Si_opc3 ?> </td>
+					</tr>					
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<br />
+
+<!-- /////////////////////////////////////     PREGUNTA 21 ////////////////////////////////////////////////////////////// -->
+
+	<h4> 21) Tenes acceso a internet  </h4>
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> Si </th>
+						<td> <?php echo $pregunta21_Si ?> </td>
+					</tr>
+					<tr>
+						<th> No </th>
+						<td> <?php echo $pregunta21_No ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+<!-- /////////////////////////////////////     PREGUNTA 22 /////////////////////////////////////////////////////// -->
+
+	<h4> 22) Cuales son los principales sitios que visitas?  </h4>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover table-condensed">
+
+					<tr>
+						<th> Facebook </th>
+						<td> <?php echo $pregunta22_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Twitter </th>
+						<td> <?php echo $pregunta22_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Instagram </th>
+						<td> <?php echo $pregunta22_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Whatsapp  </th>
+						<td> <?php echo $pregunta22_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> Skype </th>
+						<td> <?php echo $pregunta22_opc5 ?> </td>
+					</tr>
+					<tr>
+						<th> Correo electrónico </th>
+						<td> <?php echo $pregunta22_opc6 ?> </td>
+					</tr>
+					<tr>
+						<th> YouTube </th>
+						<td> <?php echo $pregunta22_opc7 ?> </td>
+					</tr>
+					<tr>
+						<th> Plataformas del trabajo </th>
+						<td> <?php echo $pregunta22_opc8 ?> </td>
+					</tr>
+					<tr>
+						<th> Bolsas de Trabajo  </th>
+						<td> <?php echo $pregunta22_opc9 ?> </td>
+					</tr>
+					<tr>
+						<th> Facultad </th>
+						<td> <?php echo $pregunta22_opc10 ?> </td>
+					</tr>
+					<tr>
+						<th> Ebooks </th>
+						<td> <?php echo $pregunta22_opc11 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta22_opc12 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- /////////////////////////////////////     PREGUNTA 23 /////////////////////////////////////////////////////// -->
+
+	<h4> 23) Desde donde te contectas?  </h4>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover table-condensed">
+
+					<tr>
+						<th> Casa </th>
+						<td> <?php echo $pregunta23_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Escuela/Facultad </th>
+						<td> <?php echo $pregunta23_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Trabajo </th>
+						<td> <?php echo $pregunta23_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Casa de un amigo/Familiar  </th>
+						<td> <?php echo $pregunta23_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> Espacio público </th>
+						<td> <?php echo $pregunta23_opc5 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta23_opc6 ?> </td>
+					</tr>				
+				</table>
+			</div>
+		</div>
+	</div>
+
 	<br />
 
 

@@ -52,7 +52,8 @@
 
 		function index() {
 
-
+			debug($_POST);
+			
 			if (!empty($this->data)) {
 
 
@@ -111,6 +112,46 @@
 					$this->data['Encuesta']['pregunta_16'] = implode(',', $this->data['Encuesta']['pregunta_16']);;
 				}
 
+				////////////////////////////   PREGUNTA 20   /////////////////////////////
+
+				if(isset($this->request->data['Encuesta']['pregunta_20']['Si'])){
+
+					$this->request->data['Encuesta']['pregunta_20'] = $this->request->data['Encuesta']['pregunta_20']['Si'];
+				}
+
+				if(isset($this->request->data['Encuesta']['pregunta_20']['No'])){
+
+					$this->request->data['Encuesta']['pregunta_20'] = $this->request->data['Encuesta']['pregunta_20']['No'];
+				}
+
+						////////////////////////////   PREGUNTA 21   /////////////////////////////
+
+				if(isset($this->request->data['Encuesta']['pregunta_21']['Si'])){
+
+					$this->request->data['Encuesta']['pregunta_21'] = $this->request->data['Encuesta']['pregunta_21']['Si'];
+				}
+
+				if(isset($this->request->data['Encuesta']['pregunta_21']['No'])){
+
+					$this->request->data['Encuesta']['pregunta_21'] = $this->request->data['Encuesta']['pregunta_21']['No'];
+				}
+
+
+				////////////////////////////   PREGUNTA 22  //////////////////////////////////////////////////
+
+				if(isset($this->request->data['Encuesta']['pregunta_22'])){
+					// Convierto el array de opciones en un string donde cada elemento estara separado por una coma y este string sera lo que
+					// grabemos en la base de datos.
+					$this->request->data['Encuesta']['pregunta_22'] = implode(',', $this->request->data['Encuesta']['pregunta_22']);;
+				}
+
+					////////////////////////////   PREGUNTA 23  //////////////////////////////////////////////////
+
+				if(isset($this->request->data['Encuesta']['pregunta_23'])){
+					// Convierto el array de opciones en un string donde cada elemento estara separado por una coma y este string sera lo que
+					// grabemos en la base de datos.
+					$this->request->data['Encuesta']['pregunta_23'] = implode(',', $this->request->data['Encuesta']['pregunta_23']);;
+				}
 
 
 				///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -210,7 +251,24 @@
 			////////////////////////////  PREGUNTA 17 (VARIABLES)  //////////////////////////
 			$pregunta17_opc1 = $pregunta17_opc2 = $pregunta17_opc3 = $pregunta17_opc4  = 0;
 
+			////////////////////////////  PREGUNTA 18 (VARIABLES)  //////////////////////////
+			$pregunta18_opc1 = $pregunta18_opc2 = $pregunta18_opc3 = $pregunta18_opc4  = 0;
 
+			////////////////////////////  PREGUNTA 20 (VARIABLES) //////////////////////////
+			$pregunta20_Si = $pregunta20_No = 0;
+
+			////////////////////////////  PREGUNTA 20 (SI) (VARIABLES) //////////////////////////
+			$pregunta20_Si_opc1 = $pregunta20_Si_opc2 = $pregunta20_Si_opc3 = 0;
+
+			////////////////////////////  PREGUNTA 21 (VARIABLES) //////////////////////////
+			$pregunta21_Si = $pregunta21_No = 0;
+
+			////////////////////////////  PREGUNTA 22 (VARIABLES)  //////////////////////////
+			$pregunta22_opc1 = $pregunta22_opc2 = $pregunta22_opc3 = $pregunta22_opc4 = $pregunta22_opc5 = $pregunta22_opc6 =
+			$pregunta22_opc7 = $pregunta22_opc8 = $pregunta22_opc9 = $pregunta22_opc10 = $pregunta22_opc11 = $pregunta22_opc12 = 0;
+
+			////////////////////////////  PREGUNTA 23 (VARIABLES)  //////////////////////////
+			$pregunta23_opc1 = $pregunta23_opc2 = $pregunta23_opc3 = $pregunta23_opc4 = $pregunta23_opc5 = $pregunta23_opc6 = 0;
 
 			foreach($encuestas as $encuesta){
 
@@ -706,6 +764,152 @@
 				}
 
 
+				///////////////////////     PREGUNTA 18 /////////////////////////////////////
+
+				switch ($encuesta['Encuesta']['pregunta_18']) {
+					case '1':
+						$pregunta18_opc1++;
+						break ;
+					case '2':
+						$pregunta18_opc2++;
+						break ;
+					case '3':
+						$pregunta18_opc3++;
+						break ;
+					case '4':
+						$pregunta18_opc4++;
+						break ;
+					default:
+						break;
+				}
+
+				///////////////////////     PREGUNTA 20 
+				 /////////////////////////////////////
+
+					switch ($encuesta['Encuesta']['pregunta_20']) {
+						
+						case 'No':
+							$pregunta20_No++;							
+							break ;	
+						case '1':
+							$pregunta20_Si++;
+							$pregunta20_Si_opc1++;
+							break ;
+						case '2':
+							$pregunta20_Si++;
+							$pregunta20_Si_opc2++;
+							break ;
+						case '3':
+							$pregunta20_Si++;
+							$pregunta20_Si_opc3++;
+							break ;					
+						default:
+							break;
+					}
+				
+				///////////////////////     PREGUNTA 21 
+				 /////////////////////////////////////
+
+					switch ($encuesta['Encuesta']['pregunta_21']) {
+						
+						case 'No':
+							$pregunta21_No++;							
+							break ;	
+						case 'Si':
+							$pregunta21_Si++;
+							break ;	
+						default:
+							break;
+					}
+
+				///////////////////////     PREGUNTA 22 (Depende de 21) /////////////////////////////////////
+
+				// Si entra, significa que en 21 se respondio que SI tiene acceso a internet
+				if(!empty($encuesta['Encuesta']['pregunta_22'])){
+
+				// Separa el string en un elemento de array cada vez que encuentra una ",".
+				$opciones_preg22 = (explode(",", $encuesta['Encuesta']['pregunta_22']));
+
+				foreach ($opciones_preg22 as $opcion_preg22) {
+
+					switch ($opcion_preg22) {
+						case '1':
+							$pregunta22_opc1++;
+							break ;
+						case '2':
+							$pregunta22_opc2++;
+							break ;
+						case '3':
+							$pregunta22_opc3++;
+							break ;
+						case '4':
+							$pregunta22_opc4++;
+							break ;
+						case '5':
+							$pregunta22_opc5++;
+							break ;
+						case '6':
+							$pregunta22_opc6++;
+							break ;
+						case '7':
+							$pregunta22_opc7++;
+							break ;
+						case '8':
+							$pregunta22_opc8++;
+							break ;
+						case '9':
+							$pregunta22_opc9++;
+							break ;
+						case '10':
+							$pregunta22_opc10++;
+							break ;
+						case '11':
+							$pregunta22_opc11++;
+							break ;
+						case '12':
+							$pregunta22_opc12++;
+							break ;
+						default:
+							break;
+					}
+				}
+			}
+
+			///////////////////////     PREGUNTA 23 (Depende de 21) /////////////////////////////////////
+
+				// Si entra, significa que en 21 se respondio que SI tiene acceso a internet
+				if(!empty($encuesta['Encuesta']['pregunta_23'])){
+
+				// Separa el string en un elemento de array cada vez que encuentra una ",".
+				$opciones_preg23 = (explode(",", $encuesta['Encuesta']['pregunta_23']));
+
+				foreach ($opciones_preg23 as $opcion_preg23) {
+
+					switch ($opcion_preg23) {
+						case '1':
+							$pregunta23_opc1++;
+							break ;
+						case '2':
+							$pregunta23_opc2++;
+							break ;
+						case '3':
+							$pregunta23_opc3++;
+							break ;
+						case '4':
+							$pregunta23_opc4++;
+							break ;
+						case '5':
+							$pregunta23_opc5++;
+							break ;
+						case '6':
+							$pregunta23_opc6++;
+							break ;					
+						default:
+							break;
+					}
+				}
+			}
+
 			}  // cierra FOREACH
 
 
@@ -722,8 +926,7 @@
 							   'pregunta8_opc7', 'pregunta8_opc8', 'pregunta8_opc9', 'pregunta8_opc10'));
 			$this->set(compact('pregunta9_Si', 'pregunta9_No'));
 			$this->set(compact('pregunta9_Si_opc1', 'pregunta9_Si_opc2', 'pregunta9_Si_opc3', 'pregunta9_Si_opc4', 'pregunta9_Si_opc5'));
-			$this->set(compact('pregunta9_No_opc6', 'pregunta9_No_opc7','pregunta9_No_opc8','pregunta9_No_opc9','pregunta9_No_opc10',
-							   'pregunta9_No_opc11','pregunta9_No_opc12','pregunta9_No_opc13'));
+			$this->set(compact('pregunta9_No_opc6', 'pregunta9_No_opc7','pregunta9_No_opc8','pregunta9_No_opc9',								'pregunta9_No_opc10','pregunta9_No_opc11','pregunta9_No_opc12','pregunta9_No_opc13'));
 
 			$this->set(compact('pregunta10_Si', 'pregunta10_No', 'pregunta10_Si_opc1', 'pregunta10_Si_opc2', 'pregunta10_Si_opc3'));
 			$this->set(compact('pregunta11_opc1', 'pregunta11_opc2', 'pregunta11_opc3', 'pregunta11_opc4', 'pregunta11_opc5'));
@@ -733,10 +936,8 @@
 			$this->set(compact('pregunta13_opc1', 'pregunta13_opc2', 'pregunta13_opc3', 'pregunta13_opc4','pregunta13_opc5'));
 
 			$this->set(compact('pregunta14_Si', 'pregunta14_No'));
-			$this->set(compact('pregunta14_Si_opc1', 'pregunta14_Si_opc2', 'pregunta14_Si_opc3', 'pregunta14_Si_opc4', 'pregunta14_Si_opc5',
-			 				   'pregunta14_Si_opc6'));
-			$this->set(compact('pregunta14_No_opc7','pregunta14_No_opc8','pregunta14_No_opc9','pregunta14_No_opc10', 'pregunta14_No_opc11',
-							   'pregunta14_No_opc12','pregunta14_No_opc13', 'pregunta14_No_opc14', 'pregunta14_No_opc15'));
+			$this->set(compact('pregunta14_Si_opc1', 'pregunta14_Si_opc2', 'pregunta14_Si_opc3', 'pregunta14_Si_opc4', 							'pregunta14_Si_opc5','pregunta14_Si_opc6'));
+			$this->set(compact('pregunta14_No_opc7','pregunta14_No_opc8','pregunta14_No_opc9','pregunta14_No_opc10',							'pregunta14_No_opc11','pregunta14_No_opc12','pregunta14_No_opc13', 'pregunta14_No_opc14', 						'pregunta14_No_opc15'));
 
 			$this->set(compact('pregunta15_opc1', 'pregunta15_opc2', 'pregunta15_opc3', 'pregunta15_opc4', 'pregunta15_opc5',
 							   'pregunta15_opc6', 'pregunta15_opc7'));
@@ -746,6 +947,20 @@
 
 			$this->set(compact('pregunta17_opc1', 'pregunta17_opc2', 'pregunta17_opc3', 'pregunta17_opc4'));
 
+			$this->set(compact('pregunta18_opc1', 'pregunta18_opc2', 'pregunta18_opc3', 'pregunta18_opc4'));
+
+			$this->set(compact('pregunta20_Si', 'pregunta20_No'));
+
+			$this->set(compact('pregunta20_Si_opc1', 'pregunta20_Si_opc2', 'pregunta20_Si_opc3'));
+
+			$this->set(compact('pregunta21_Si', 'pregunta21_No'));
+
+			$this->set(compact('pregunta22_opc1', 'pregunta22_opc2', 'pregunta22_opc3', 'pregunta22_opc4','pregunta22_opc5',
+							   'pregunta22_opc6', 'pregunta22_opc7', 'pregunta22_opc8', 'pregunta22_opc9', 'pregunta22_opc10','pregunta22_opc11','pregunta22_opc12'));
+
+			$this->set(compact('pregunta23_opc1', 'pregunta23_opc2', 'pregunta23_opc3', 'pregunta23_opc4','pregunta23_opc5',
+							   'pregunta23_opc6'));
+		
 		} // cierra BUSCADOR;
 
 
