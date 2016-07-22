@@ -131,7 +131,7 @@
 					$this->data['Encuesta']['pregunta_21'] = $this->data['Encuesta']['pregunta_21']['Si'];
 				}
 
-				if(isset($this->rdata['Encuesta']['pregunta_21']['No'])){
+				if(isset($this->data['Encuesta']['pregunta_21']['No'])){
 
 					$this->data['Encuesta']['pregunta_21'] = $this->data['Encuesta']['pregunta_21']['No'];
 				}
@@ -140,16 +140,14 @@
 				////////////////////////////   PREGUNTA 22  //////////////////////////////////////////////////
 
 				if(isset($this->data['Encuesta']['pregunta_22'])){
-					// Convierto el array de opciones en un string donde cada elemento estara separado por una coma y este string sera lo que
-					// grabemos en la base de datos.
+
 					$this->data['Encuesta']['pregunta_22'] = implode(',', $this->data['Encuesta']['pregunta_22']);
 				}
 
 					////////////////////////////   PREGUNTA 23  //////////////////////////////////////////////////
 
 				if(isset($this->data['Encuesta']['pregunta_23'])){
-					// Convierto el array de opciones en un string donde cada elemento estara separado por una coma y este string sera lo que
-					// grabemos en la base de datos.
+
 					$this->data['Encuesta']['pregunta_23'] = implode(',', $this->data['Encuesta']['pregunta_23']);
 				}
 
