@@ -690,7 +690,7 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 col-md-5 col-sm-6 control-label" for="select_pregunta_26"> 26) Cuando necesitas atención médica o querpes saber algo sobre la salud, cuidado del cuerpo, vas al... </label>
+			<label class="col-xs-12 col-md-5 col-sm-6 control-label" for="select_pregunta_26"> 26) Cuando necesitas atención médica o queres saber algo sobre la salud, cuidado del cuerpo, vas al... </label>
 		</div>
 
 		<div class="row">
@@ -916,7 +916,7 @@
 					<option value="1"> Cuando se concibe al bebe </option>
 					<option value="2"> Durante el embarazo </option>
 					<option value="3"> Cuando nace </option>
-					<option value="4"> Cunado la mama lo dcide </option>
+					<option value="4"> Cuando la mama lo decide </option>
 				</select>
 			</div>
 		</div>
@@ -1023,7 +1023,7 @@
 						<option value="1"> Sólo en casa </option>
 						<option value="2"> En casa y con amigos </option>
 						<option value="3"> En una fiesta fuera de casa </option>
-						<option value="3"> Otros </option>
+						<option value="4"> Otros </option>
 					</select>
 				</div>
 			</div>
@@ -1155,8 +1155,8 @@
 				<div class="col-xs-12 col-md-5 col-sm-6">
 					<select id="select_pregunta_43" name="data[Encuesta][pregunta_43]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
-						<option value="Si"> Sí </option>
-						<option value="No"> No </option>
+						<option value="1"> Sí </option>
+						<option value="2"> No </option>
 					</select>
 				</div>
 			</div>
@@ -1174,8 +1174,8 @@
 				<div class="col-xs-12 col-md-5 col-sm-6">
 					<select id="select_pregunta_44" name="data[Encuesta][pregunta_44]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
-						<option value="Si"> Sí </option>
-						<option value="No"> No </option>
+						<option value="1"> Sí </option>
+						<option value="2"> No </option>
 					</select>
 				</div>
 			</div>
@@ -1193,8 +1193,8 @@
 				<div class="col-xs-12 col-md-5 col-sm-6">
 					<select id="select_pregunta_45" name="data[Encuesta][pregunta_45]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
-						<option value="Si"> Sí </option>
-						<option value="No"> No </option>
+						<option value="1"> Sí </option>
+						<option value="2"> No </option>
 					</select>
 				</div>
 			</div>
@@ -1208,7 +1208,7 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_46"> 46) Cual es el número a llamar en caso de violencia de gérero? </label>
+			<label class="col-xs-12 control-label" for="select_pregunta_46"> 46) Cual es el número a llamar en caso de violencia de género? </label>
 		</div>
 
 		<div class="row">
