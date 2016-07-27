@@ -515,7 +515,7 @@
 						<input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuesta][pregunta_19][Si][]" value="7" />
 						Otras
 						&nbsp;
-						<input id= "input_text_pregunta_19" type="text" disabled placeholder="Especificar..." name="data[Encuesta][pregunta_19][Otras]">
+						<input id= "input_text_pregunta_19" type="text" maxlength="40" data-toggle="tooltip"										  data-placement="right" title= "Hasta 40 caracteres" disabled placeholder="Especificar..." name="data[Encuesta][pregunta_19_otras]">
 					</li>
 				</ul>
 			</div>
@@ -579,10 +579,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-	<!-- ////////////////////////////////////////    PARTE DANIEL ///////////////////////////////////////////////////////////////////// -->
-	<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 
 	<div id="bloque_22_23_24" style="display:none">
@@ -743,7 +739,7 @@
 						<li> <input type="checkbox"  data-pregunta= "check_pregunta_27" name="data[Encuesta][pregunta_27][Si][]" value="6"> Violencias </li>
 						<li> <input type="checkbox"  data-pregunta= "check_pregunta_27" name="data[Encuesta][pregunta_27][Si][]" value="7"> 	    Otros
 							&nbsp;
-							<input id= "input_text_pregunta_27" type="text" disabled placeholder="Especificar..." name="data[Encuesta][pregunta_27][Otras]">
+							<input id= "input_text_pregunta_27" type="text" maxlength="40" data-toggle="tooltip"										  data-placement="right" title= "Hasta 40 caracteres" disabled placeholder="Especificar..." name="data[Encuesta][pregunta_27_otras]">
 						</li>
 					</ul>
 				</div>
@@ -790,7 +786,7 @@
 						<li> <input type="checkbox"  data-pregunta= "check_pregunta_28" name="data[Encuesta][pregunta_28][Si][]" value="6"> Violencias </li>
 						<li> <input type="checkbox"  data-pregunta= "check_pregunta_28" name="data[Encuesta][pregunta_28][Si][]" value="7">    	Otros
 							&nbsp;
-							<input id= "input_text_pregunta_28" type="text" disabled placeholder="Especificar..." name="data[Encuesta][pregunta_28][Otras]">
+							<input id= "input_text_pregunta_28" type="text" maxlength="40" data-toggle="tooltip"										  data-placement="right" title= "Hasta 40 caracteres" disabled placeholder="Especificar..." name="data[Encuesta][pregunta_28_otras]">
 						</li>
 					</ul>
 				</div>
@@ -1243,7 +1239,7 @@
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_47" name="data[Encuesta][pregunta_47][Si][]" value="7" />
 						Otros
 						&nbsp;
-						<input id= "input_text_pregunta_47" type="text" disabled placeholder="Especificar..." name="data[Encuesta][pregunta_47][Otras]">
+						<input id= "input_text_pregunta_47" type="text" maxlength="40" data-toggle="tooltip"										  data-placement="right" title= "Hasta 40 caracteres" disabled placeholder="Especificar..." name="data[Encuesta][pregunta_47_otras]">
 					</li>
 				</ul>
 			</div>
@@ -1261,3 +1257,13 @@
 	<?php echo $form->end();?>
 
 </div> <!-- Cierra CONTAINER -->
+
+
+
+<script type="text/javascript">
+
+	$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+	})
+
+</script>

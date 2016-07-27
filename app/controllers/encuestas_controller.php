@@ -112,6 +112,14 @@
 					$this->data['Encuesta']['pregunta_16'] = implode(',', $this->data['Encuesta']['pregunta_16']);
 				}
 
+
+				////////////////////////////   PREGUNTA 19 y PREGUNTA 19 OTRAS //////////////////////////////////////////////////
+
+				if(isset($this->data['Encuesta']['pregunta_19']['Si'])){
+
+					$this->data['Encuesta']['pregunta_19'] = implode(',', $this->data['Encuesta']['pregunta_19']['Si']);
+				}
+
 				////////////////////////////   PREGUNTA 20   /////////////////////////////
 
 				if(isset($this->data['Encuesta']['pregunta_20']['Si'])){
@@ -151,25 +159,38 @@
 					$this->data['Encuesta']['pregunta_23'] = implode(',', $this->data['Encuesta']['pregunta_23']);
 				}
 
+				////////////////////////////   PREGUNTA 27 y PREGUNTA 27 OTRAS //////////////////////////////////////////////////
+
+				if(isset($this->data['Encuesta']['pregunta_27']['Si'])){
+
+					$this->data['Encuesta']['pregunta_27'] = implode(',', $this->data['Encuesta']['pregunta_27']['Si']);
+				}
+
+				////////////////////////////   PREGUNTA 28 y PREGUNTA 28 OTRAS //////////////////////////////////////////////////
+
+				if(isset($this->data['Encuesta']['pregunta_28']['Si'])){
+
+					$this->data['Encuesta']['pregunta_28'] = implode(',', $this->data['Encuesta']['pregunta_28']['Si']);
+				}
 
 				////////////////////////////   PREGUNTA 30  //////////////////////////////////////////////////
 
 				if(isset($this->data['Encuesta']['pregunta_30'])){
-					
+
 					$this->data['Encuesta']['pregunta_30'] = implode(',', $this->data['Encuesta']['pregunta_30']);
 				}
 
 					////////////////////////////   PREGUNTA 31  //////////////////////////////////////////////////
 
 				if(isset($this->data['Encuesta']['pregunta_31'])){
-					
+
 					$this->data['Encuesta']['pregunta_31'] = implode(',', $this->data['Encuesta']['pregunta_31']);
 				}
 
 				////////////////////////////   PREGUNTA 34  //////////////////////////////////////////////////
 
 				if(isset($this->data['Encuesta']['pregunta_34'])){
-					
+
 					$this->data['Encuesta']['pregunta_34'] = implode(',', $this->data['Encuesta']['pregunta_34']);
 				}
 
@@ -180,7 +201,14 @@
 					$this->data['Encuesta']['pregunta_35'] = $this->data['Encuesta']['pregunta_35']['Si'];
 				}
 
-			
+				////////////////////////////   PREGUNTA 47 y PREGUNTA 47 OTRAS //////////////////////////////////////////////////
+
+				if(isset($this->data['Encuesta']['pregunta_47']['Si'])){
+
+					$this->data['Encuesta']['pregunta_47'] = implode(',', $this->data['Encuesta']['pregunta_47']['Si']);
+				}
+
+
 
 				///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 				///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -204,7 +232,6 @@
 
 			$encuestas = $this->Encuesta->find('all', array('recursive' => 1));
 
-			// debug($encuestas);
 
 			$cantidadEncuestas = count($encuestas);
 
@@ -286,6 +313,13 @@
 			////////////////////////////  PREGUNTA 18 (VARIABLES)  //////////////////////////
 			$pregunta18_opc1 = $pregunta18_opc2 = $pregunta18_opc3 = $pregunta18_opc4  = 0;
 
+			////////////////////////////  PREGUNTA 19 (VARIABLES)  //////////////////////////
+			$pregunta19_opc1 = $pregunta19_opc2 = $pregunta19_opc3 = $pregunta19_opc4 = $pregunta19_opc5 = $pregunta19_opc6 =
+			$pregunta19_opc7 = 0;
+
+			////////////////////////////  PREGUNTA 19 OTRAS (VARIABLES)  //////////////////////////
+			$pregunta19_otras = [];
+
 			////////////////////////////  PREGUNTA 20 (VARIABLES) //////////////////////////
 			$pregunta20_Si = $pregunta20_No = 0;
 
@@ -311,6 +345,20 @@
 			////////////////////////////  PREGUNTA 26 (VARIABLES)  //////////////////////////
 			$pregunta26_opc1 = $pregunta26_opc2 = $pregunta26_opc3 = $pregunta26_opc4 = $pregunta26_opc5 = $pregunta26_opc6 = 0;
 
+			////////////////////////////  PREGUNTA 27 (VARIABLES)  //////////////////////////
+			$pregunta27_opc1 = $pregunta27_opc2 = $pregunta27_opc3 = $pregunta27_opc4 = $pregunta27_opc5 = $pregunta27_opc6 =
+			$pregunta27_opc7 = 0;
+
+			////////////////////////////  PREGUNTA 27 OTRAS (VARIABLES)  //////////////////////////
+			$pregunta27_otras = [];
+
+			////////////////////////////  PREGUNTA 28 (VARIABLES)  //////////////////////////
+			$pregunta28_opc1 = $pregunta28_opc2 = $pregunta28_opc3 = $pregunta28_opc4 = $pregunta28_opc5 = $pregunta28_opc6 =
+			$pregunta28_opc7 = 0;
+
+			////////////////////////////  PREGUNTA 28 OTRAS (VARIABLES)  //////////////////////////
+			$pregunta28_otras = [];
+
 			////////////////////////////  PREGUNTA 29 (VARIABLES)  //////////////////////////
 			$pregunta29_opc1 = $pregunta29_opc2 = $pregunta29_opc3 = $pregunta29_opc4 = $pregunta29_opc5 = $pregunta29_opc6 = $pregunta29_opc7 = 0;
 
@@ -321,6 +369,10 @@
 			////////////////////////////  PREGUNTA 31 (VARIABLES)  //////////////////////////
 			$pregunta31_opc1 = $pregunta31_opc2 = $pregunta31_opc3 = $pregunta31_opc4 = $pregunta31_opc5 = $pregunta31_opc6 =
 			$pregunta31_opc7 = $pregunta31_opc8 = 0;
+
+			////////////////////////////  PREGUNTA 32 (VARIABLES) //////////////////////////
+			$pregunta32_Si = 0;
+			$pregunta32_opc1 = $pregunta32_opc2 = $pregunta32_opc3 = 0;
 
 			////////////////////////////  PREGUNTA 33 (VARIABLES)  //////////////////////////
 			$pregunta33_opc1 = $pregunta33_opc2 = $pregunta33_opc3 = $pregunta33_opc4 = 0;
@@ -368,6 +420,13 @@
 
 			////////////////////////////  PREGUNTA 46 (VARIABLES)  //////////////////////////
 			$pregunta46_opc1 = $pregunta46_opc2 = $pregunta46_opc3 = 0;
+
+			////////////////////////////  PREGUNTA 47 (VARIABLES)  //////////////////////////
+			$pregunta47_opc1 = $pregunta47_opc2 = $pregunta47_opc3 = $pregunta47_opc4 = $pregunta47_opc5 = $pregunta47_opc6 =
+			$pregunta47_opc7 = 0;
+
+			////////////////////////////  PREGUNTA 47 OTRAS (VARIABLES)  //////////////////////////
+			$pregunta47_otras = [];
 
 
 
@@ -603,33 +662,27 @@
 				///////////////////////     PREGUNTA 10 /////////////////////////////////////
 
 
-				// Si entra, significa que tiene NO o algun numeor (1,2,3)
+				// Si entra, significa que tiene NO o algun numero (1,2,3)
 				if(!empty($encuesta['Encuesta']['pregunta_10'])){
 
-					if($encuesta['Encuesta']['pregunta_10'] == 'No'){
-
-						$pregunta10_No++;
-					}
-
-					else{
-
-						// Si llega aca es poruqe es 1,2,3
-						switch ($encuesta['Encuesta']['pregunta_10']) {
-							case '1':
-								$pregunta10_Si++;
-								$pregunta10_Si_opc1++;
-								break ;
-							case '2':
-								$pregunta10_Si++;
-								$pregunta10_Si_opc2++;
-								break ;
-							case '3':
-								$pregunta10_Si++;
-								$pregunta10_Si_opc3++;
-								break ;
-							default:
-								break;
-						}
+					switch ($encuesta['Encuesta']['pregunta_10']) {
+						case 'No':
+							$pregunta10_No++;
+							break ;
+						case '1':
+							$pregunta10_Si++;
+							$pregunta10_Si_opc1++;
+							break ;
+						case '2':
+							$pregunta10_Si++;
+							$pregunta10_Si_opc2++;
+							break ;
+						case '3':
+							$pregunta10_Si++;
+							$pregunta10_Si_opc3++;
+							break ;
+						default:
+							break;
 					}
 				}
 
@@ -884,155 +937,196 @@
 						break;
 				}
 
-				///////////////////////     PREGUNTA 20
-				 /////////////////////////////////////
+				///////////////////////     PREGUNTA 19   /////////////////////////////////////
 
-					switch ($encuesta['Encuesta']['pregunta_20']) {
+				// Separa el string en un elemento de array cada vez que encuentra una ",".
+				$opciones_preg19 = (explode(",", $encuesta['Encuesta']['pregunta_19']));
 
-						case 'No':
-							$pregunta20_No++;
-							break ;
+				foreach ($opciones_preg19 as $opcion_preg19) {
+
+					switch ($opcion_preg19) {
 						case '1':
-							$pregunta20_Si++;
-							$pregunta20_Si_opc1++;
+							$pregunta19_opc1++;
 							break ;
 						case '2':
-							$pregunta20_Si++;
-							$pregunta20_Si_opc2++;
+							$pregunta19_opc2++;
 							break ;
 						case '3':
-							$pregunta20_Si++;
-							$pregunta20_Si_opc3++;
+							$pregunta19_opc3++;
+							break ;
+						case '4':
+							$pregunta19_opc4++;
+							break ;
+						case '5':
+							$pregunta19_opc5++;
+							break ;
+						case '6':
+							$pregunta19_opc6++;
+							break ;
+						case '7':
+							$pregunta19_opc7++;
 							break ;
 						default:
 							break;
 					}
+				}
 
-				///////////////////////     PREGUNTA 21
-				 /////////////////////////////////////
+				///////////////////////     PREGUNTA 19 OTRAS  /////////////////////////////////////
 
-					switch ($encuesta['Encuesta']['pregunta_21']) {
+				if(!empty($encuesta['Encuesta']['pregunta_19_otras'])){
 
-						case 'No':
-							$pregunta21_No++;
-							break ;
-						case 'Si':
-							$pregunta21_Si++;
-							break ;
-						default:
-							break;
-					}
+					// guardo en un array cada una de las respuestas dadas por el usuario
+					$pregunta19_otras[] = $encuesta['Encuesta']['pregunta_19_otras'];
+				}
+
+
+				///////////////////////     PREGUNTA 20 /////////////////////////////////////
+
+				switch ($encuesta['Encuesta']['pregunta_20']) {
+
+					case 'No':
+						$pregunta20_No++;
+						break ;
+					case '1':
+						$pregunta20_Si++;
+						$pregunta20_Si_opc1++;
+						break ;
+					case '2':
+						$pregunta20_Si++;
+						$pregunta20_Si_opc2++;
+						break ;
+					case '3':
+						$pregunta20_Si++;
+						$pregunta20_Si_opc3++;
+						break ;
+					default:
+						break;
+				}
+
+				///////////////////////     PREGUNTA 21 /////////////////////////////////////
+
+				switch ($encuesta['Encuesta']['pregunta_21']) {
+
+					case 'No':
+						$pregunta21_No++;
+						break ;
+					case 'Si':
+						$pregunta21_Si++;
+						break ;
+					default:
+						break;
+				}
 
 				///////////////////////     PREGUNTA 22 (Depende de 21) /////////////////////////////////////
 
 				// Si entra, significa que en 21 se respondio que SI tiene acceso a internet
 				if(!empty($encuesta['Encuesta']['pregunta_22'])){
 
-				// Separa el string en un elemento de array cada vez que encuentra una ",".
-				$opciones_preg22 = (explode(",", $encuesta['Encuesta']['pregunta_22']));
+					// Separa el string en un elemento de array cada vez que encuentra una ",".
+					$opciones_preg22 = (explode(",", $encuesta['Encuesta']['pregunta_22']));
 
-				foreach ($opciones_preg22 as $opcion_preg22) {
+					foreach ($opciones_preg22 as $opcion_preg22) {
 
-					switch ($opcion_preg22) {
+						switch ($opcion_preg22) {
+							case '1':
+								$pregunta22_opc1++;
+								break ;
+							case '2':
+								$pregunta22_opc2++;
+								break ;
+							case '3':
+								$pregunta22_opc3++;
+								break ;
+							case '4':
+								$pregunta22_opc4++;
+								break ;
+							case '5':
+								$pregunta22_opc5++;
+								break ;
+							case '6':
+								$pregunta22_opc6++;
+								break ;
+							case '7':
+								$pregunta22_opc7++;
+								break ;
+							case '8':
+								$pregunta22_opc8++;
+								break ;
+							case '9':
+								$pregunta22_opc9++;
+								break ;
+							case '10':
+								$pregunta22_opc10++;
+								break ;
+							case '11':
+								$pregunta22_opc11++;
+								break ;
+							case '12':
+								$pregunta22_opc12++;
+								break ;
+							default:
+								break;
+						}
+					}
+				}
+
+				///////////////////////     PREGUNTA 23 (Depende de 21) /////////////////////////////////////
+
+				// Si entra, significa que en 21 se respondio que SI tiene acceso a internet
+				if(!empty($encuesta['Encuesta']['pregunta_23'])){
+
+					// Separa el string en un elemento de array cada vez que encuentra una ",".
+					$opciones_preg23 = (explode(",", $encuesta['Encuesta']['pregunta_23']));
+
+					foreach ($opciones_preg23 as $opcion_preg23) {
+
+						switch ($opcion_preg23) {
+							case '1':
+								$pregunta23_opc1++;
+								break ;
+							case '2':
+								$pregunta23_opc2++;
+								break ;
+							case '3':
+								$pregunta23_opc3++;
+								break ;
+							case '4':
+								$pregunta23_opc4++;
+								break ;
+							case '5':
+								$pregunta23_opc5++;
+								break ;
+							case '6':
+								$pregunta23_opc6++;
+								break ;
+							default:
+								break;
+						}
+					}
+				}
+
+				///////////////////////     PREGUNTA 24 (Depende de 21) /////////////////////////////////////
+
+
+				// Si entra, significa que en 21 se respondio que SI tiene acceso a internet
+				if(!empty($encuesta['Encuesta']['pregunta_23'])){
+
+					switch ($encuesta['Encuesta']['pregunta_24']) {
 						case '1':
-							$pregunta22_opc1++;
+							$pregunta24_opc1++;
 							break ;
 						case '2':
-							$pregunta22_opc2++;
+							$pregunta24_opc2++;
 							break ;
 						case '3':
-							$pregunta22_opc3++;
-							break ;
-						case '4':
-							$pregunta22_opc4++;
-							break ;
-						case '5':
-							$pregunta22_opc5++;
-							break ;
-						case '6':
-							$pregunta22_opc6++;
-							break ;
-						case '7':
-							$pregunta22_opc7++;
-							break ;
-						case '8':
-							$pregunta22_opc8++;
-							break ;
-						case '9':
-							$pregunta22_opc9++;
-							break ;
-						case '10':
-							$pregunta22_opc10++;
-							break ;
-						case '11':
-							$pregunta22_opc11++;
-							break ;
-						case '12':
-							$pregunta22_opc12++;
+							$pregunta24_opc3++;
 							break ;
 						default:
 							break;
 					}
 				}
-			}
 
-			///////////////////////     PREGUNTA 23 (Depende de 21) /////////////////////////////////////
-
-				// Si entra, significa que en 21 se respondio que SI tiene acceso a internet
-				if(!empty($encuesta['Encuesta']['pregunta_23'])){
-
-				// Separa el string en un elemento de array cada vez que encuentra una ",".
-				$opciones_preg23 = (explode(",", $encuesta['Encuesta']['pregunta_23']));
-
-				foreach ($opciones_preg23 as $opcion_preg23) {
-
-					switch ($opcion_preg23) {
-						case '1':
-							$pregunta23_opc1++;
-							break ;
-						case '2':
-							$pregunta23_opc2++;
-							break ;
-						case '3':
-							$pregunta23_opc3++;
-							break ;
-						case '4':
-							$pregunta23_opc4++;
-							break ;
-						case '5':
-							$pregunta23_opc5++;
-							break ;
-						case '6':
-							$pregunta23_opc6++;
-							break ;
-						default:
-							break;
-					}
-				}
-			}
-
-			///////////////////////     PREGUNTA 24 (Depende de 21) /////////////////////////////////////
-
-				
-				// Si entra, significa que en 21 se respondio que SI tiene acceso a internet
-				if(!empty($encuesta['Encuesta']['pregunta_23'])){
-
-				switch ($encuesta['Encuesta']['pregunta_24']) {
-					case '1':
-						$pregunta24_opc1++;
-						break ;
-					case '2':
-						$pregunta24_opc2++;
-						break ;
-					case '3':
-						$pregunta24_opc3++;
-						break ;			
-					default:
-						break;
-				}
-			}
-
-			///////////////////////     PREGUNTA 25 /////////////////////////////////////
+				///////////////////////     PREGUNTA 25 /////////////////////////////////////
 
 				switch ($encuesta['Encuesta']['pregunta_25']) {
 					case '1':
@@ -1046,7 +1140,7 @@
 				}
 
 
-			///////////////////////     PREGUNTA 26 /////////////////////////////////////
+				///////////////////////     PREGUNTA 26 /////////////////////////////////////
 
 				switch ($encuesta['Encuesta']['pregunta_26']) {
 					case '1':
@@ -1071,7 +1165,91 @@
 						break;
 				}
 
-			///////////////////////     PREGUNTA 29 /////////////////////////////////////
+				///////////////////////     PREGUNTA 27   /////////////////////////////////////
+
+				$opciones_preg27 = (explode(",", $encuesta['Encuesta']['pregunta_27']));
+
+				foreach ($opciones_preg27 as $opcion_preg27) {
+
+					switch ($opcion_preg27) {
+						case '1':
+							$pregunta27_opc1++;
+							break ;
+						case '2':
+							$pregunta27_opc2++;
+							break ;
+						case '3':
+							$pregunta27_opc3++;
+							break ;
+						case '4':
+							$pregunta27_opc4++;
+							break ;
+						case '5':
+							$pregunta27_opc5++;
+							break ;
+						case '6':
+							$pregunta27_opc6++;
+							break ;
+						case '7':
+							$pregunta27_opc7++;
+							break ;
+						default:
+							break;
+					}
+				}
+
+				///////////////////////     PREGUNTA 27 OTRAS  /////////////////////////////////////
+
+				if(!empty($encuesta['Encuesta']['pregunta_27_otras'])){
+
+					// guardo en un array cada una de las respuestas dadas por el usuario
+					$pregunta27_otras[] = $encuesta['Encuesta']['pregunta_27_otras'];
+				}
+
+
+				///////////////////////     PREGUNTA 28   /////////////////////////////////////
+
+				$opciones_preg28 = (explode(",", $encuesta['Encuesta']['pregunta_28']));
+
+				foreach ($opciones_preg28 as $opcion_preg28) {
+
+					switch ($opcion_preg28) {
+						case '1':
+							$pregunta28_opc1++;
+							break ;
+						case '2':
+							$pregunta28_opc2++;
+							break ;
+						case '3':
+							$pregunta28_opc3++;
+							break ;
+						case '4':
+							$pregunta28_opc4++;
+							break ;
+						case '5':
+							$pregunta28_opc5++;
+							break ;
+						case '6':
+							$pregunta28_opc6++;
+							break ;
+						case '7':
+							$pregunta28_opc7++;
+							break ;
+						default:
+							break;
+					}
+				}
+
+				///////////////////////     PREGUNTA 28 OTRAS  /////////////////////////////////////
+
+				if(!empty($encuesta['Encuesta']['pregunta_28_otras'])){
+
+					// guardo en un array cada una de las respuestas dadas por el usuario
+					$pregunta28_otras[] = $encuesta['Encuesta']['pregunta_28_otras'];
+				}
+
+
+				///////////////////////     PREGUNTA 29 /////////////////////////////////////
 
 				switch ($encuesta['Encuesta']['pregunta_29']) {
 					case '1':
@@ -1099,7 +1277,7 @@
 				}
 
 
-			///////////////////////     PREGUNTA 30   /////////////////////////////////////
+				///////////////////////     PREGUNTA 30   /////////////////////////////////////
 
 				// Separa el string en un elemento de array cada vez que encuentra una ",".
 				$opciones_preg30 = (explode(",", $encuesta['Encuesta']['pregunta_30']));
@@ -1133,7 +1311,7 @@
 					}
 				}
 
-			///////////////////////     PREGUNTA 31   /////////////////////////////////////
+				///////////////////////     PREGUNTA 31   /////////////////////////////////////
 
 				// Separa el string en un elemento de array cada vez que encuentra una ",".
 				$opciones_preg31 = (explode(",", $encuesta['Encuesta']['pregunta_31']));
@@ -1170,7 +1348,26 @@
 					}
 				}
 
-			///////////////////////     PREGUNTA 33 /////////////////////////////////////
+				///////////////////////     PREGUNTA 32 /////////////////////////////////////
+
+				switch ($encuesta['Encuesta']['pregunta_32']) {
+					case '1':
+						$pregunta32_Si++;
+						$pregunta32_opc1++;
+						break ;
+					case '2':
+						$pregunta32_Si++;
+						$pregunta32_opc2++;
+						break ;
+					case '3':
+						$pregunta32_Si++;
+						$pregunta32_opc3++;
+						break ;
+					default:
+						break;
+				}
+
+				///////////////////////     PREGUNTA 33 /////////////////////////////////////
 
 				switch ($encuesta['Encuesta']['pregunta_33']) {
 					case '1':
@@ -1184,12 +1381,12 @@
 						break ;
 					case '4':
 						$pregunta33_opc4++;
-						break ;				
+						break ;
 					default:
 						break;
 				}
 
-			///////////////////////     PREGUNTA 34   /////////////////////////////////////
+				///////////////////////     PREGUNTA 34   /////////////////////////////////////
 
 				// Separa el string en un elemento de array cada vez que encuentra una ",".
 				$opciones_preg34 = (explode(",", $encuesta['Encuesta']['pregunta_34']));
@@ -1224,37 +1421,36 @@
 				}
 
 
-					///////////////////////     PREGUNTA 35
-				 /////////////////////////////////////
+				///////////////////////     PREGUNTA 35 /////////////////////////////////////
 
-					switch ($encuesta['Encuesta']['pregunta_35']) {
+				switch ($encuesta['Encuesta']['pregunta_35']) {
 
-						case 'No':
-							$pregunta35_No++;
-							break ;
-						case '1':
-							$pregunta35_Si++;
-							$pregunta35_Si_opc1++;
-							break ;
-						case '2':
-							$pregunta35_Si++;
-							$pregunta35_Si_opc2++;
-							break ;
-						case '3':
-							$pregunta35_Si++;
-							$pregunta35_Si_opc3++;
-							break ;
-						case '4':
-							$pregunta35_Si++;
-							$pregunta35_Si_opc4++;
-							break ;
-						case '5':
-							$pregunta35_Si++;
-							$pregunta35_Si_opc5++;
-							break ;
-						default:
-							break;
-					}
+					case 'No':
+						$pregunta35_No++;
+						break ;
+					case '1':
+						$pregunta35_Si++;
+						$pregunta35_Si_opc1++;
+						break ;
+					case '2':
+						$pregunta35_Si++;
+						$pregunta35_Si_opc2++;
+						break ;
+					case '3':
+						$pregunta35_Si++;
+						$pregunta35_Si_opc3++;
+						break ;
+					case '4':
+						$pregunta35_Si++;
+						$pregunta35_Si_opc4++;
+						break ;
+					case '5':
+						$pregunta35_Si++;
+						$pregunta35_Si_opc5++;
+						break ;
+					default:
+						break;
+				}
 
 				///////////////////////     PREGUNTA 36 (Depende de 35) /////////////////////////////////////
 
@@ -1270,7 +1466,7 @@
 							break ;
 						case '3':
 							$pregunta36_opc3++;
-							break ;					
+							break ;
 						default:
 							break;
 					}
@@ -1290,10 +1486,10 @@
 							break ;
 						case '3':
 							$pregunta37_opc3++;
-							break ;					
+							break ;
 						case '4':
 							$pregunta37_opc4++;
-							break ;				
+							break ;
 						default:
 							break;
 					}
@@ -1313,10 +1509,10 @@
 							break ;
 						case '3':
 							$pregunta38_opc3++;
-							break ;				
+							break ;
 						case '4':
 							$pregunta38_opc4++;
-							break ;			
+							break ;
 						case '5':
 							$pregunta38_opc5++;
 							break ;
@@ -1325,7 +1521,7 @@
 							break ;
 						case '7':
 							$pregunta38_opc7++;
-							break ;					
+							break ;
 						default:
 							break;
 					}
@@ -1345,16 +1541,16 @@
 							break ;
 						case '3':
 							$pregunta39_opc3++;
-							break ;					
+							break ;
 						case '4':
 							$pregunta39_opc4++;
-							break ;				
+							break ;
 						default:
 							break;
 					}
 				}
 
-			///////////////////////     PREGUNTA 40 /////////////////////////////////////
+				///////////////////////     PREGUNTA 40 /////////////////////////////////////
 
 				switch ($encuesta['Encuesta']['pregunta_40']) {
 					case '1':
@@ -1367,7 +1563,7 @@
 						break;
 				}
 
-			///////////////////////     PREGUNTA 41 /////////////////////////////////////
+				///////////////////////     PREGUNTA 41 /////////////////////////////////////
 
 				switch ($encuesta['Encuesta']['pregunta_41']) {
 					case '1':
@@ -1416,13 +1612,13 @@
 							break ;
 						case '3':
 							$pregunta42_opc3++;
-							break ;					
+							break ;
 						default:
 							break;
 					}
 				}
 
-			///////////////////////     PREGUNTA 43 (Depende de 41) /////////////////////////////////////
+				///////////////////////     PREGUNTA 43 (Depende de 41) /////////////////////////////////////
 
 				// Si entra, significa que en 35 se respondio que SI
 				if(!empty($encuesta['Encuesta']['pregunta_43'])){
@@ -1433,13 +1629,13 @@
 							break ;
 						case '2':
 							$pregunta43_opc2++;
-							break ;	
+							break ;
 						default:
 							break;
 					}
 				}
 
-			///////////////////////     PREGUNTA 44 (Depende de 41) /////////////////////////////////////
+				///////////////////////     PREGUNTA 44 (Depende de 41) /////////////////////////////////////
 
 				// Si entra, significa que en 35 se respondio que SI
 				if(!empty($encuesta['Encuesta']['pregunta_44'])){
@@ -1450,13 +1646,13 @@
 							break ;
 						case '2':
 							$pregunta44_opc2++;
-							break ;	
+							break ;
 						default:
 							break;
 					}
 				}
 
-			///////////////////////     PREGUNTA 45 (Depende de 41) /////////////////////////////////////
+				///////////////////////     PREGUNTA 45 (Depende de 41) /////////////////////////////////////
 
 				// Si entra, significa que en 35 se respondio que SI
 				if(!empty($encuesta['Encuesta']['pregunta_45'])){
@@ -1467,7 +1663,7 @@
 							break ;
 						case '2':
 							$pregunta45_opc2++;
-							break ;	
+							break ;
 						default:
 							break;
 					}
@@ -1484,9 +1680,50 @@
 						break ;
 					case '3':
 						$pregunta46_opc3++;
-						break ;	
+						break ;
 					default:
 						break;
+				}
+
+				///////////////////////     PREGUNTA 47   /////////////////////////////////////
+
+				$opciones_preg47 = (explode(",", $encuesta['Encuesta']['pregunta_47']));
+
+				foreach ($opciones_preg47 as $opcion_preg47) {
+
+					switch ($opcion_preg47) {
+						case '1':
+							$pregunta47_opc1++;
+							break ;
+						case '2':
+							$pregunta47_opc2++;
+							break ;
+						case '3':
+							$pregunta47_opc3++;
+							break ;
+						case '4':
+							$pregunta47_opc4++;
+							break ;
+						case '5':
+							$pregunta47_opc5++;
+							break ;
+						case '6':
+							$pregunta47_opc6++;
+							break ;
+						case '7':
+							$pregunta47_opc7++;
+							break ;
+						default:
+							break;
+					}
+				}
+
+				///////////////////////     PREGUNTA 47 OTRAS  /////////////////////////////////////
+
+				if(!empty($encuesta['Encuesta']['pregunta_47_otras'])){
+
+					// guardo en un array cada una de las respuestas dadas por el usuario
+					$pregunta47_otras[] = $encuesta['Encuesta']['pregunta_47_otras'];
 				}
 
 
@@ -1529,6 +1766,11 @@
 
 			$this->set(compact('pregunta18_opc1', 'pregunta18_opc2', 'pregunta18_opc3', 'pregunta18_opc4'));
 
+			$this->set(compact('pregunta19_opc1', 'pregunta19_opc2', 'pregunta19_opc3', 'pregunta19_opc4','pregunta19_opc5',
+							   'pregunta19_opc6', 'pregunta19_opc7'));
+
+			$this->set(compact('pregunta19_otras'));
+
 			$this->set(compact('pregunta20_Si', 'pregunta20_No'));
 
 			$this->set(compact('pregunta20_Si_opc1', 'pregunta20_Si_opc2', 'pregunta20_Si_opc3'));
@@ -1547,6 +1789,16 @@
 
 			$this->set(compact('pregunta26_opc1', 'pregunta26_opc2', 'pregunta26_opc3', 'pregunta26_opc4', 'pregunta26_opc5', 					'pregunta26_opc6'));
 
+			$this->set(compact('pregunta27_opc1', 'pregunta27_opc2', 'pregunta27_opc3', 'pregunta27_opc4','pregunta27_opc5',
+							   'pregunta27_opc6', 'pregunta27_opc7'));
+
+			$this->set(compact('pregunta27_otras'));
+
+			$this->set(compact('pregunta28_opc1', 'pregunta28_opc2', 'pregunta28_opc3', 'pregunta28_opc4','pregunta28_opc5',
+							   'pregunta28_opc6', 'pregunta28_opc7'));
+
+			$this->set(compact('pregunta28_otras'));
+
 			$this->set(compact('pregunta29_opc1', 'pregunta29_opc2', 'pregunta29_opc3', 'pregunta29_opc4', 'pregunta29_opc5', 					'pregunta29_opc6', 'pregunta29_opc7'));
 
 			$this->set(compact('pregunta30_opc1', 'pregunta30_opc2', 'pregunta30_opc3', 'pregunta30_opc4','pregunta30_opc5',
@@ -1554,6 +1806,9 @@
 
 			$this->set(compact('pregunta31_opc1', 'pregunta31_opc2', 'pregunta31_opc3', 'pregunta31_opc4','pregunta31_opc5',
 							   'pregunta31_opc6', 'pregunta31_opc7', 'pregunta31_opc8'));
+
+			$this->set(compact('pregunta32_Si'));
+			$this->set(compact('pregunta32_opc1', 'pregunta32_opc2', 'pregunta32_opc3'));
 
 			$this->set(compact('pregunta33_opc1', 'pregunta33_opc2', 'pregunta33_opc3', 'pregunta33_opc4'));
 
@@ -1587,9 +1842,10 @@
 
 			$this->set(compact('pregunta46_opc1', 'pregunta46_opc2', 'pregunta46_opc3'));
 
+			$this->set(compact('pregunta47_opc1', 'pregunta47_opc2', 'pregunta47_opc3', 'pregunta47_opc4','pregunta47_opc5',
+							   'pregunta47_opc6', 'pregunta47_opc7'));
 
-
-
+			$this->set(compact('pregunta47_otras'));
 
 		} // cierra BUSCADOR;
 

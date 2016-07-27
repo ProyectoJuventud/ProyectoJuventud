@@ -4,6 +4,7 @@
 
 	<h4> Total encuestas: <?php echo $cantidadEncuestas; ?> </h4>
 
+
 	<!-- /////////////////////////////////////     PREGUNTA 1 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 1) Edad </h4>
@@ -266,6 +267,7 @@
 						<th> Si </th>
 						<td> <?php echo $pregunta9_Si ?> </td>
 					</tr>
+					<tr>
 						<th> No </th>
 						<td> <?php echo $pregunta9_No ?> </td>
 					</tr>
@@ -765,6 +767,75 @@
 		</div>
 	</div>
 
+	<!-- /////////////////////////////////////     PREGUNTA 19 /////////////////////////////////////////////////////// -->
+
+	<h4> 19) Participás en organizaciones  </h4>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover table-condensed">
+
+					<tr>
+						<th> Políticas  </th>
+						<td> <?php echo $pregunta19_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Religiosas  </th>
+						<td> <?php echo $pregunta19_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Ambientales </th>
+						<td> <?php echo $pregunta19_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Humanitarias   </th>
+						<td> <?php echo $pregunta19_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> Culturales  </th>
+						<td> <?php echo $pregunta19_opc5 ?> </td>
+					</tr>
+					<tr>
+						<th> Recreativas  </th>
+						<td> <?php echo $pregunta19_opc6 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta19_opc7 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- /////////////////////////////////////     PREGUNTA 19 OTRAS /////////////////////////////////////////////////////// -->
+
+	<!-- Si alguien ha escrito algo, muestro esto -->
+	<?php if (count($pregunta19_otras) > 0){ ?>
+
+		<h4> 19) Respuestas dadas por usuarios en campo OTROS  </h4>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-5">
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered table-hover table-condensed">
+
+						<?php foreach ($pregunta19_otras as $respuesta_otras) { ?>
+
+						<tr>
+							<td> <?php echo $respuesta_otras ?> </td>
+						</tr>
+
+						<?php }?>
+
+					</table>
+				</div>
+			</div>
+		</div>
+
+	<?php } ?>
+
 	<!-- /////////////////////////////////////     PREGUNTA 20 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 20) Realizas algun deporte o actividad física?  </h4>
@@ -805,7 +876,7 @@
 					<tr>
 						<th> Más de 3 veces a la semana </th>
 						<td> <?php echo $pregunta20_Si_opc3 ?> </td>
-					</tr>					
+					</tr>
 				</table>
 			</div>
 		</div>
@@ -813,7 +884,7 @@
 
 	<br />
 
-<!-- /////////////////////////////////////     PREGUNTA 21 ////////////////////////////////////////////////////////////// -->
+	<!-- /////////////////////////////////////     PREGUNTA 21 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 21) Tenes acceso a internet  </h4>
 	<div class="row">
@@ -833,7 +904,7 @@
 		</div>
 	</div>
 
-<!-- /////////////////////////////////////     PREGUNTA 22 /////////////////////////////////////////////////////// -->
+	<!-- /////////////////////////////////////     PREGUNTA 22 /////////////////////////////////////////////////////// -->
 
 	<h4> 22) Cuales son los principales sitios que visitas?  </h4>
 
@@ -927,7 +998,7 @@
 					<tr>
 						<th> Otros </th>
 						<td> <?php echo $pregunta23_opc6 ?> </td>
-					</tr>				
+					</tr>
 				</table>
 			</div>
 		</div>
@@ -1021,6 +1092,146 @@
 			</div>
 		</div>
 	</div>
+
+
+	<!-- /////////////////////////////////////     PREGUNTA 27 /////////////////////////////////////////////////////// -->
+
+	<h4> 27) Has participado o recibido información en talleres o charlas relacionadas a tu salud en los últimos 6 meses?  </h4>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover table-condensed">
+
+					<tr>
+						<th> Metodos anticonceptivos y embarazo   </th>
+						<td> <?php echo $pregunta27_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Adicciones (alcohol, cigarrillos, drogas, etc)   </th>
+						<td> <?php echo $pregunta27_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Planificación familiar  </th>
+						<td> <?php echo $pregunta27_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Diversidad sexual   </th>
+						<td> <?php echo $pregunta27_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> Enfermedades estacionales o epidemias   </th>
+						<td> <?php echo $pregunta27_opc5 ?> </td>
+					</tr>
+					<tr>
+						<th> Violencias  </th>
+						<td> <?php echo $pregunta27_opc6 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta27_opc7 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- /////////////////////////////////////     PREGUNTA 27 OTRAS /////////////////////////////////////////////////////// -->
+
+	<!-- Si alguien ha escrito algo, muestro esto -->
+	<?php if (count($pregunta27_otras) > 0){ ?>
+
+		<h4> 27) Respuestas dadas por usuarios en campo OTROS  </h4>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-5">
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered table-hover table-condensed">
+
+						<?php foreach ($pregunta27_otras as $respuesta_otras) { ?>
+
+						<tr>
+							<td> <?php echo $respuesta_otras ?> </td>
+						</tr>
+
+						<?php }?>
+
+					</table>
+				</div>
+			</div>
+		</div>
+
+	<?php } ?>
+
+
+	<!-- /////////////////////////////////////     PREGUNTA 28 /////////////////////////////////////////////////////// -->
+
+	<h4> 28) Considerias que es importante que existieran talleres o charlas relacionadas con tu salud?   </h4>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover table-condensed">
+
+					<tr>
+						<th> Metodos anticonceptivos y embarazo   </th>
+						<td> <?php echo $pregunta28_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Adicciones (alcohol, cigarrillos, drogas, etc)   </th>
+						<td> <?php echo $pregunta28_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Planificación familiar  </th>
+						<td> <?php echo $pregunta28_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Diversidad sexual   </th>
+						<td> <?php echo $pregunta28_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> Enfermedades estacionales o epidemias   </th>
+						<td> <?php echo $pregunta28_opc5 ?> </td>
+					</tr>
+					<tr>
+						<th> Violencias  </th>
+						<td> <?php echo $pregunta28_opc6 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta28_opc7 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- /////////////////////////////////////     PREGUNTA 28 OTRAS /////////////////////////////////////////////////////// -->
+
+	<!-- Si alguien ha escrito algo, muestro esto -->
+	<?php if (count($pregunta28_otras) > 0){ ?>
+
+		<h4> 28) Respuestas dadas por usuarios en campo OTROS  </h4>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-5">
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered table-hover table-condensed">
+
+						<?php foreach ($pregunta28_otras as $respuesta_otras) { ?>
+
+						<tr>
+							<td> <?php echo $respuesta_otras ?> </td>
+						</tr>
+
+						<?php }?>
+
+					</table>
+				</div>
+			</div>
+		</div>
+
+	<?php } ?>
 
 	<!-- /////////////////////////////////////     PREGUNTA 29 ////////////////////////////////////////////////////////////// -->
 
@@ -1154,6 +1365,33 @@
 		</div>
 	</div>
 
+	<!-- /////////////////////////////////////     PREGUNTA 32 ////////////////////////////////////////////////////////////// -->
+
+	<h4> 32) Durante el embarazo te hiciste los chequeos correspondientes?  </h4>
+	<h5> Se aplica a personas que son mujeres y tuvieron hijos (<?php echo $pregunta32_Si ?>)  </h5>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+
+				<table class="table table-striped table-bordered table-hover table-condensed">
+					<tr>
+						<th> Si </th>
+						<td> <?php echo $pregunta32_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> No </th>
+						<td> <?php echo $pregunta32_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> No conozco cuales son </th>
+						<td> <?php echo $pregunta32_opc3 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
 	<!-- /////////////////////////////////////     PREGUNTA 33 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 33) Cuando comienza la paternidad? </h4>
@@ -1228,7 +1466,7 @@
 		</div>
 	</div>
 
-<!-- /////////////////////////////////////     PREGUNTA 35 ////////////////////////////////////////////////////////////// -->
+	<!-- /////////////////////////////////////     PREGUNTA 35 ////////////////////////////////////////////////////////////// -->
 
 	<h4> 35) Consumís alguna de las anteriores? </h4>
 	<div class="row">
@@ -1268,15 +1506,15 @@
 					<tr>
 						<th> 1 vez a la semana </th>
 						<td> <?php echo $pregunta35_Si_opc3 ?> </td>
-					</tr>			
-						<tr>
+					</tr>
+					<tr>
 						<th> 2 a 3 veces a la semana </th>
 						<td> <?php echo $pregunta35_Si_opc4 ?> </td>
-					</tr>		
-						<tr>
+					</tr>
+					<tr>
 						<th> Más de 3 veces por semana </th>
 						<td> <?php echo $pregunta35_Si_opc5 ?> </td>
-					</tr>				
+					</tr>
 				</table>
 			</div>
 		</div>
@@ -1304,7 +1542,7 @@
 					<tr>
 						<th> 25 a 29 </th>
 						<td> <?php echo $pregunta36_opc3 ?> </td>
-					</tr>					
+					</tr>
 
 				</table>
 			</div>
@@ -1333,12 +1571,12 @@
 					<tr>
 						<th> En una fiesta fuera de casa </th>
 						<td> <?php echo $pregunta37_opc3 ?> </td>
-					</tr>		
-						<tr>
+					</tr>
+					<tr>
 						<th> Otros </th>
 						<td> <?php echo $pregunta37_opc4 ?> </td>
-					</tr>		
-		
+					</tr>
+
 				</table>
 			</div>
 		</div>
@@ -1366,11 +1604,11 @@
 					<tr>
 						<th> Marihuana </th>
 						<td> <?php echo $pregunta38_opc3 ?> </td>
-					</tr>		
-						<tr>
+					</tr>
+					<tr>
 						<th> Paco </th>
 						<td> <?php echo $pregunta38_opc4 ?> </td>
-					</tr>	
+					</tr>
 					<tr>
 						<th> Alcohol </th>
 						<td> <?php echo $pregunta38_opc5 ?> </td>
@@ -1378,12 +1616,12 @@
 					<tr>
 						<th> Cigarrillos </th>
 						<td> <?php echo $pregunta38_opc6 ?> </td>
-					</tr>		
-						<tr>
+					</tr>
+					<tr>
 						<th> Otras </th>
 						<td> <?php echo $pregunta38_opc7 ?> </td>
-					</tr>			
-		
+					</tr>
+
 				</table>
 			</div>
 		</div>
@@ -1411,12 +1649,12 @@
 					<tr>
 						<th> En una fiesta fuera de casa </th>
 						<td> <?php echo $pregunta39_opc3 ?> </td>
-					</tr>		
-						<tr>
+					</tr>
+					<tr>
 						<th> Otros </th>
 						<td> <?php echo $pregunta39_opc4 ?> </td>
-					</tr>		
-		
+					</tr>
+
 				</table>
 			</div>
 		</div>
@@ -1510,7 +1748,7 @@
 					<tr>
 						<th> Periodicamente </th>
 						<td> <?php echo $pregunta42_opc3 ?> </td>
-					</tr>					
+					</tr>
 
 				</table>
 			</div>
@@ -1535,7 +1773,7 @@
 					<tr>
 						<th> No </th>
 						<td> <?php echo $pregunta43_opc2 ?> </td>
-					</tr>					
+					</tr>
 
 				</table>
 			</div>
@@ -1560,7 +1798,7 @@
 					<tr>
 						<th> No </th>
 						<td> <?php echo $pregunta44_opc2 ?> </td>
-					</tr>					
+					</tr>
 
 				</table>
 			</div>
@@ -1585,7 +1823,7 @@
 					<tr>
 						<th> No </th>
 						<td> <?php echo $pregunta45_opc2 ?> </td>
-					</tr>					
+					</tr>
 
 				</table>
 			</div>
@@ -1620,7 +1858,77 @@
 		</div>
 	</div>
 
-<!-- /////////////////////////////////////     Falta 19, 27, 28, 32, 47 ////////////////////////////////////////////////////////////// -->
+	<!-- /////////////////////////////////////     PREGUNTA 47 /////////////////////////////////////////////////////// -->
+
+	<h4> 47) Cuales consideras que son problemas de los jovenes? </h4>
+
+	<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-5">
+			<div class="table-responsive">
+				<table class="table table-striped table-bordered table-hover table-condensed">
+
+					<tr>
+						<th> Adicciones   </th>
+						<td> <?php echo $pregunta47_opc1 ?> </td>
+					</tr>
+					<tr>
+						<th> Primer empleo   </th>
+						<td> <?php echo $pregunta47_opc2 ?> </td>
+					</tr>
+					<tr>
+						<th> Bulling   </th>
+						<td> <?php echo $pregunta47_opc3 ?> </td>
+					</tr>
+					<tr>
+						<th> Maternidad/Paternidad temprana   </th>
+						<td> <?php echo $pregunta47_opc4 ?> </td>
+					</tr>
+					<tr>
+						<th> En Diversidad sexual   </th>
+						<td> <?php echo $pregunta47_opc5 ?> </td>
+					</tr>
+					<tr>
+						<th> Indigencia  </th>
+						<td> <?php echo $pregunta47_opc6 ?> </td>
+					</tr>
+					<tr>
+						<th> Otros </th>
+						<td> <?php echo $pregunta47_opc7 ?> </td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- /////////////////////////////////////     PREGUNTA 47 OTRAS /////////////////////////////////////////////////////// -->
+
+	<!-- Si alguien ha escrito algo, muestro esto -->
+	<?php if (count($pregunta47_otras) > 0){ ?>
+
+		<h4> 47) Respuestas dadas por usuarios en campo OTROS  </h4>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-5">
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered table-hover table-condensed">
+
+						<?php foreach ($pregunta47_otras as $respuesta_otras) { ?>
+
+						<tr>
+							<td> <?php echo $respuesta_otras ?> </td>
+						</tr>
+
+						<?php }?>
+
+					</table>
+				</div>
+			</div>
+		</div>
+
+	<?php } ?>
+
+
+
 
 	<br />
 

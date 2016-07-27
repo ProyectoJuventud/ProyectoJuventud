@@ -1,7 +1,6 @@
 
 $(document).ready(function () {
 
-
 	var departamentosDDL = $('#select_pregunta_5');
 	var municipiosDDL = $('#select_pregunta_6');
 
@@ -76,8 +75,8 @@ $(document).ready(function () {
 
 		var validation = $('#form_encuesta').data('formValidation');
 
-		/* El "val = 1" corresponde a MUJER. En "select_pregunta_7", el "val = 1" corresponde a que TIENE HIJOS*/
-		if($(this).val() == '1'){
+		/* El "val = 2" corresponde a MUJER. En "select_pregunta_7", el "val = 1" corresponde a que TIENE HIJOS*/
+		if($(this).val() == '2'){
 
 			if($('#select_pregunta_7').val() == '1'){
 
@@ -101,10 +100,10 @@ $(document).ready(function () {
 
 		var validation = $('#form_encuesta').data('formValidation');
 
-		/* El "val = 1" corresponde a si TIENE HIJOS . En "select_pregunta_2", el "val = 1" corresponde a que si es MUJER */
+		/* El "val = 1" corresponde a si TIENE HIJOS . En "select_pregunta_2", el "val = 2" corresponde a que si es MUJER */
 		if($(this).val() == '1'){
 
-			if($('#select_pregunta_2').val() == '1'){
+			if($('#select_pregunta_2').val() == '2'){
 
 				pregunta_32.fadeIn(400);
 			}
