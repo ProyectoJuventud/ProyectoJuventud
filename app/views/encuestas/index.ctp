@@ -1,11 +1,11 @@
 <?php echo $this->addScript($this->Html->css('validation_client_side')); ?>
-<?php echo $this->addScript($this->Html->css('styles')); ?>
+<?php echo $this->addScript($this->Html->css('styles_index')); ?>
 
 
 <?php echo $this->Html->script('validation_client_side', array('inline' => false, 'defer' => true)); ?>
 <?php echo $this->Html->script('bootstrap_validation_client_side', array('inline' => false, 'defer' => true)); ?>
 
-<?php echo $this->Html->script('codigoJquery', array('inline' => false, 'defer' => true)); ?>
+<?php echo $this->Html->script('codigoJquery_index', array('inline' => false, 'defer' => true)); ?>
 
 
 <!-- ////////////////////////////////////////////////// -->

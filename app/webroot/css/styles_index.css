@@ -1,0 +1,59 @@
+/* Acomodan el bloque de radios emergentes */
+div.opciones_radios{
+	padding-left: 21px;
+}
+
+/* Acomodan el bloque de checkboxes emergentes*/
+div.opciones_checkbox{
+	margin-top: -10px;
+}
+
+/*Estilo del mensaje emergente cuando se alcanza el limite de selecciones maximo en los checkboxes*/
+div.estilo_mensaje{
+	background: #FACE88;
+	border: 1px solid #FB9143;
+	padding: 0 4px;
+}
+
+
+/*/////////////////////////////////////     VALIDACIONES CLIENT-SIDE  ////////////////////////////////////////////////////////////////////////*/
+
+/*Para que el borde cuando lo marcamos al input, aparezca mas lento*/
+.form-control{
+  transition: all 0.4s;
+}
+
+/*Color del borde de los inputs cuando nos paramos encima Y  aun no es ni correcto ni incorrecto */
+.form-control:focus {
+    border-color: #2B6FA8;
+}
+
+/* Posicion y COLOR de la cruz para campo incorrecto.*/
+#form_encuesta .has-error .form-control-feedback {
+    margin-right: 30px;
+    color: #a94442;
+}
+
+/* Posicion y COLOR del tilde para campo correcto.*/
+#form_encuesta .has-success .form-control-feedback {
+    margin-right: 30px;
+    color: #2B6FA8;
+}
+
+/*Color TITULO*/
+.has-success .checkbox, .has-success .checkbox-inline, .has-success .control-label, .has-success .help-block, .has-success .radio, .has-success .radio-inline, .has-success.checkbox label, .has-success.checkbox-inline label, .has-success.radio label, .has-success.radio-inline label {
+    color: #2B6FA8;
+}
+
+/*Color que rodea el input cuando el mensaje es correcto pero NO ESTAMOS ENCIMA */
+#form_encuesta .has-success .form-control{
+	border-color: #2B6FA8;
+}
+
+/*Color que rodea el input cuando el mensaje es correcto y estamos ENCIMA*/
+#form_encuesta .has-success .form-control:focus{
+  	border-color: #2B6FA8;
+  	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075)  inset, 0 0 4px #3A92DC;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
