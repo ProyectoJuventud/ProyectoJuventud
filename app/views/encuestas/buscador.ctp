@@ -5,7 +5,6 @@
 
 <div class="container">
 
-
 	<h2> Filtros </h2>
 
 
@@ -123,6 +122,10 @@
 
 	<?php if($cantidadEncuestas > 0){ ?>
 
+
+		<h1><?php echo $this->Html->link('EXPORTAR', array('controller' => 'encuestas', 'action' => 'exportar')); ?></h1>
+
+
 		<h2> Resultados </h2>
 
 		<h4> Total encuestas encontradas: <?php echo $cantidadEncuestas; ?> </h4>
@@ -130,9 +133,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 1 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 1) Edad </h4>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 1) Edad </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -155,9 +160,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 2 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 2) Sexo </h4>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 2) Sexo </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -176,10 +183,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 3 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 3) Zona de origen </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 3) Zona de origen </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -198,10 +206,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 4 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 4) Zona de residencia </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 4) Zona de residencia </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -220,10 +229,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 5 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 5) Departamento de residencia </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 5) Departamento de residencia </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -303,10 +313,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 7 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 7) Hijos </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 7) Hijos </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -325,10 +336,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 8 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 8) Con quien vivis? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 8) Con quien vivis? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -379,10 +391,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 9 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 9) Estudias? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 9) Estudias? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -401,10 +414,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 9 SI y NO ////////////////////////////////////////////////////////////// -->
 
-		<h4> Personas que SI estudian (<?php echo $pregunta9_Si ?>). Nivel: </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> Personas que SI estudian (<?php echo $pregunta9_Si ?>). Nivel: </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -437,10 +451,11 @@
 		</div>
 
 
-		<h4> Personas que NO estudian (<?php echo $pregunta9_No ?>). Motivos: </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> Personas que NO estudian (<?php echo $pregunta9_No ?>). Motivos: </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -485,12 +500,13 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 10  ////////////////////////////////////////////////////////////// -->
 
-		<h4> 10) En base a las personas que seleccionaron Que NO estudian (<?php echo $pregunta9_No ?>) </h4>
-
-		<h4>Les gustarían estudiar? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 10) En base a las personas que seleccionaron Que NO estudian (<?php echo $pregunta9_No ?>) </h4>
+
+				<h4>Les gustarían estudiar? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -508,10 +524,12 @@
 			</div>
 		</div>
 
-		<h4> Personas que Si les gustaria estudiar (<?php echo $pregunta10_Si ?>). Motivos: </h4>
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> Personas que Si les gustaria estudiar (<?php echo $pregunta10_Si ?>). Motivos: </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -534,10 +552,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 11 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 11) Elegiste o eligirías una carrera según? </h4>
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 11) Elegiste o eligirías una carrera según? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -570,10 +590,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 12 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 12) A que edad comenzaste a trabajar? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 12) A que edad comenzaste a trabajar? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -602,11 +623,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 13 (depende de 12) /////////////////////////////////////////////////////// -->
 
-		<h4> De acuerdo a las personas que SI trabajan (<?php echo $pregunta12_Si ?>). </h4>
-		<h4> 13) Como conseguiste tu primer trabajo? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> De acuerdo a las personas que SI trabajan (<?php echo $pregunta12_Si ?>). </h4>
+				<h4> 13) Como conseguiste tu primer trabajo? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -639,11 +661,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 14 (depende de 12) ////////////////////////////////////////////////////// -->
 
-		<h4> De acuerdo a las personas que SI trabajan (<?php echo $pregunta12_Si ?>). </h4>
-		<h4> 14) Trabajaste el ultimo mes? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> De acuerdo a las personas que SI trabajan (<?php echo $pregunta12_Si ?>). </h4>
+				<h4> 14) Trabajaste el ultimo mes? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -662,10 +685,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 14 SI y NO  ////////////////////////////////////////////////////////////// -->
 
-		<h4> Personas que SI trabajaron el último mes (<?php echo $pregunta14_Si ?>). Tipo: </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> Personas que SI trabajaron el último mes (<?php echo $pregunta14_Si ?>). Tipo: </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -698,10 +722,11 @@
 			</div>
 		</div>
 
-		<h4> Personas que NO trabajaron el ultimo mes (<?php echo $pregunta14_No ?>). Motivos: </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> Personas que NO trabajaron el ultimo mes (<?php echo $pregunta14_No ?>). Motivos: </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -748,11 +773,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 15 (depende de 12) /////////////////////////////////////////////////////// -->
 
-		<h4> De acuerdo a las personas que SI trabajan (<?php echo $pregunta12_Si ?>). </h4>
-		<h4> 15) Eligieron su trabajo según </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> De acuerdo a las personas que SI trabajan (<?php echo $pregunta12_Si ?>). </h4>
+				<h4> 15) Eligieron su trabajo según </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -791,10 +817,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 16 /////////////////////////////////////////////////////// -->
 
-		<h4> 16) Cuales crees que son las principales dificultades para conseguir trabajo  </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 16) Cuales crees que son las principales dificultades para conseguir trabajo  </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -834,9 +861,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 17 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 17) Para llegar a tu Institución Educativa demorás...  </h4>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 17) Para llegar a tu Institución Educativa demorás...  </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -863,9 +892,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 18 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 18) Para llegar a tu trabajo demorás...  </h4>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 18) Para llegar a tu trabajo demorás...  </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -892,10 +923,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 19 /////////////////////////////////////////////////////// -->
 
-		<h4> 19) Participás en organizaciones  </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 19) Participás en organizaciones  </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -935,12 +967,13 @@
 		<!-- /////////////////////////////////////     PREGUNTA 19 OTRAS /////////////////////////////////////////////////////// -->
 
 		<!-- Si alguien ha escrito algo, muestro esto -->
-		<?php if (count($pregunta19_otras) > 0){ ?>
-
-			<h4> 19) Respuestas dadas por usuarios en campo OTROS  </h4>
+		<?php if (isset($pregunta19_otras)){ ?>
 
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-5">
+
+					<h4> 19) Respuestas dadas por usuarios en campo OTROS  </h4>
+
 					<div class="table-responsive">
 						<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -961,9 +994,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 20 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 20) Realizas algun deporte o actividad física?  </h4>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 20) Realizas algun deporte o actividad física?  </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
@@ -981,10 +1016,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 20 (SI) ////////////////////////////////////////////////////////////// -->
 
-		<h4> Personas que SI realizan algun deporte o actividad física? (<?php echo $pregunta20_Si ?>). Cantidad: </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> Personas que SI realizan algun deporte o actividad física? (<?php echo $pregunta20_Si ?>). Cantidad: </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1009,9 +1045,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 21 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 21) Tenes acceso a internet  </h4>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 21) Tenes acceso a internet  </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
@@ -1029,10 +1067,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 22 /////////////////////////////////////////////////////// -->
 
-		<h4> 22) Cuales son los principales sitios que visitas?  </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 22) Cuales son los principales sitios que visitas?  </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -1091,10 +1130,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 23 /////////////////////////////////////////////////////// -->
 
-		<h4> 23) Desde donde te contectas?  </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 23) Desde donde te contectas?  </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -1129,10 +1169,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 24 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 24) Con que frecuiencia te conectas? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 24) Con que frecuiencia te conectas? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1156,10 +1197,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 25 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 25) Conoces algún centro de salud carcano a tu residencia? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 25) Conoces algún centro de salud carcano a tu residencia? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1178,10 +1220,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 26 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 26) Cuando necesitas atención médica o queres saber algo sobre la salud, cuidado del cuerpo, vas al... </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 26) Cuando necesitas atención médica o queres saber algo sobre la salud, cuidado del cuerpo, vas al... </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1219,10 +1262,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 27 /////////////////////////////////////////////////////// -->
 
-		<h4> 27) Has participado o recibido información en talleres o charlas relacionadas a tu salud en los últimos 6 meses?  </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 27) Has participado o recibido información en talleres o charlas relacionadas a tu salud en los últimos 6 meses?  </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -1262,12 +1306,13 @@
 		<!-- /////////////////////////////////////     PREGUNTA 27 OTRAS /////////////////////////////////////////////////////// -->
 
 		<!-- Si alguien ha escrito algo, muestro esto -->
-		<?php if (count($pregunta27_otras) > 0){ ?>
-
-			<h4> 27) Respuestas dadas por usuarios en campo OTROS  </h4>
+		<?php if (isset($pregunta27_otras)){ ?>
 
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-5">
+
+					<h4> 27) Respuestas dadas por usuarios en campo OTROS  </h4>
+
 					<div class="table-responsive">
 						<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -1289,10 +1334,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 28 /////////////////////////////////////////////////////// -->
 
-		<h4> 28) Considerias que es importante que existieran talleres o charlas relacionadas con tu salud?   </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 28) Considerias que es importante que existieran talleres o charlas relacionadas con tu salud?   </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -1332,12 +1378,13 @@
 		<!-- /////////////////////////////////////     PREGUNTA 28 OTRAS /////////////////////////////////////////////////////// -->
 
 		<!-- Si alguien ha escrito algo, muestro esto -->
-		<?php if (count($pregunta28_otras) > 0){ ?>
-
-			<h4> 28) Respuestas dadas por usuarios en campo OTROS  </h4>
+		<?php if (isset($pregunta28_otras)){ ?>
 
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-5">
+
+					<h4> 28) Respuestas dadas por usuarios en campo OTROS  </h4>
+
 					<div class="table-responsive">
 						<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -1358,10 +1405,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 29 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 29) A que edad tuviste tu primer relación sexual? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 29) A que edad tuviste tu primer relación sexual? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1402,10 +1450,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 30 /////////////////////////////////////////////////////// -->
 
-		<h4> 30) Cuales de los siguientes métodos anticonceptivos crees que son eficientes?  </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 30) Cuales de los siguientes métodos anticonceptivos crees que son eficientes?  </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -1444,10 +1493,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 31 /////////////////////////////////////////////////////// -->
 
-		<h4> 31) Cuales de los siguientes métodos anticonceptivos crees que son eficientes?  </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 31) Cuales de los siguientes métodos anticonceptivos crees que son eficientes?  </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -1490,11 +1540,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 32 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 32) Durante el embarazo te hiciste los chequeos correspondientes?  </h4>
-		<h5> Se aplica a personas que son mujeres y tuvieron hijos (<?php echo $pregunta32_Si ?>)  </h5>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 32) Durante el embarazo te hiciste los chequeos correspondientes?  </h4>
+				<h5> Se aplica a personas que son mujeres y tuvieron hijos (<?php echo $pregunta32_Si ?>)  </h5>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1517,10 +1568,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 33 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 33) Cuando comienza la paternidad? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 33) Cuando comienza la paternidad? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1549,10 +1601,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 34 /////////////////////////////////////////////////////// -->
 
-		<h4> 34) Que considerás como drogas?  </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 34) Que considerás como drogas?  </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -1591,9 +1644,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 35 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 35) Consumís alguna de las anteriores? </h4>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 35) Consumís alguna de las anteriores? </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
@@ -1611,10 +1666,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 35 (SI) ////////////////////////////////////////////////////////////// -->
 
-		<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). Cantidad: </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). Cantidad: </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1645,11 +1701,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 36 (depende de 35) /////////////////////////////////////////////////////// -->
 
-		<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). </h4>
-		<h4> 36) A que edad comenzaste a consumir? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). </h4>
+				<h4> 36) A que edad comenzaste a consumir? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1674,11 +1731,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 37 (depende de 35) /////////////////////////////////////////////////////// -->
 
-		<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). </h4>
-		<h4> 37) En que lugar fue tu primer consumo? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). </h4>
+				<h4> 37) En que lugar fue tu primer consumo? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1707,11 +1765,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 38 (depende de 35) /////////////////////////////////////////////////////// -->
 
-		<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). </h4>
-		<h4> 38) Cual droga probaste por primera vez? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). </h4>
+				<h4> 38) Cual droga probaste por primera vez? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1752,11 +1811,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 39 (depende de 35) /////////////////////////////////////////////////////// -->
 
-		<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). </h4>
-		<h4> 39) Dónde y con quienes consumís? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). </h4>
+				<h4> 39) Dónde y con quienes consumís? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1785,10 +1845,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 40 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 40) Pensas que es un problema el consumo de drogas? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 40) Pensas que es un problema el consumo de drogas? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1807,10 +1868,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 41 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 41) Considerás que pasaste por alguna situación de violencia física o psicologica? Seleccionar aquellas que creas más relevante </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 41) Considerás que pasaste por alguna situación de violencia física o psicologica? Seleccionar aquellas que creas más relevante </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1851,11 +1913,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 42 (depende de 41) /////////////////////////////////////////////////////// -->
 
-		<h4> De acuerdo a las personas que SI pasaron por alguna situación de violencia física o psicologica (<?php echo $pregunta41_Si ?>). </h4>
-		<h4> 42) Con que frecuencia? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> De acuerdo a las personas que SI pasaron por alguna situación de violencia física o psicologica (<?php echo $pregunta41_Si ?>). </h4>
+				<h4> 42) Con que frecuencia? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1880,11 +1943,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 43 (depende de 41) /////////////////////////////////////////////////////// -->
 
-		<h4> De acuerdo a las personas que SI pasaron por alguna situación de violencia física o psicologica (<?php echo $pregunta41_Si ?>). </h4>
-		<h4> 43) Considerás que es necesario hacer la denuncia? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> De acuerdo a las personas que SI pasaron por alguna situación de violencia física o psicologica (<?php echo $pregunta41_Si ?>). </h4>
+				<h4> 43) Considerás que es necesario hacer la denuncia? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1905,11 +1969,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 44 (depende de 41) /////////////////////////////////////////////////////// -->
 
-		<h4> De acuerdo a las personas que SI pasaron por alguna situación de violencia física o psicologica (<?php echo $pregunta41_Si ?>). </h4>
-		<h4> 44) Lo has denunciado? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> De acuerdo a las personas que SI pasaron por alguna situación de violencia física o psicologica (<?php echo $pregunta41_Si ?>). </h4>
+				<h4> 44) Lo has denunciado? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1930,11 +1995,12 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 45 (depende de 41) /////////////////////////////////////////////////////// -->
 
-		<h4> De acuerdo a las personas que SI pasaron por alguna situación de violencia física o psicologica (<?php echo $pregunta41_Si ?>). </h4>
-		<h4> 45) Crees que es una problematica a tratar en ambas partes? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> De acuerdo a las personas que SI pasaron por alguna situación de violencia física o psicologica (<?php echo $pregunta41_Si ?>). </h4>
+				<h4> 45) Crees que es una problematica a tratar en ambas partes? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1955,10 +2021,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 46 ////////////////////////////////////////////////////////////// -->
 
-		<h4> 46) Cual es el número a llamar en caso de violencia de género? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 46) Cual es el número a llamar en caso de violencia de género? </h4>
+
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
@@ -1983,10 +2050,11 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 47 /////////////////////////////////////////////////////// -->
 
-		<h4> 47) Cuales consideras que son problemas de los jovenes? </h4>
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 47) Cuales consideras que son problemas de los jovenes? </h4>
+
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -2025,13 +2093,14 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 47 OTRAS /////////////////////////////////////////////////////// -->
 
-		<!-- Si alguien ha escrito algo, muestro esto -->
-		<?php if (count($pregunta47_otras) > 0){ ?>
-
-			<h4> 47) Respuestas dadas por usuarios en campo OTROS  </h4>
+		<!-- Si alguien ha escrito algo, muestro esto. Solo llega a la vista si hay algo en esta variable. -->
+		<?php if (isset($pregunta47_otras)){ ?>
 
 			<div class="row">
 				<div class="col-xs-12 col-sm-6 col-md-5">
+
+					<h4> 47) Respuestas dadas por usuarios en campo OTROS  </h4>
+
 					<div class="table-responsive">
 						<table class="table table-striped table-bordered table-hover table-condensed">
 
@@ -2053,7 +2122,7 @@
 
 
 
-	<?php echo $this->Html->link('Volver', array('controller' => 'encuestas', 'action' => 'index'));?>
+	<?php echo $this->Html->link('Volver', array('controller' => 'encuestas', 'action' => 'add'));?>
 
 	<br /><br />
 

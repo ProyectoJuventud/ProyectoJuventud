@@ -1,11 +1,11 @@
 <?php echo $this->addScript($this->Html->css('validation_client_side')); ?>
-<?php echo $this->addScript($this->Html->css('styles_index')); ?>
+<?php echo $this->addScript($this->Html->css('styles_add')); ?>
 
 
 <?php echo $this->Html->script('validation_client_side', array('inline' => false, 'defer' => true)); ?>
 <?php echo $this->Html->script('bootstrap_validation_client_side', array('inline' => false, 'defer' => true)); ?>
 
-<?php echo $this->Html->script('codigoJquery_index', array('inline' => false, 'defer' => true)); ?>
+<?php echo $this->Html->script('codigoJquery_add', array('inline' => false, 'defer' => true)); ?>
 
 
 <!-- ////////////////////////////////////////////////// -->
@@ -25,6 +25,8 @@
 
 	<div class="form-group has-feedback">
 
+		<!-- Es necesario tener el label aparte (en otra row), sino el icon de las validaciones client-side se ubica mal en
+		las preguntas donde el texto del label es muy largo, asi que por las dudas lo hago separado en todas las preguntas -->
 		<div class="row">
 			<label class="col-xs-12 control-label" for="select_pregunta_1"> 1) Edad </label>
 		</div>
@@ -364,12 +366,12 @@
 
 					<div class="opciones_radios">
 
-							<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="1"> Relación de dependencia Registrado (en blanco) </div>
-							<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="2"> Relación de dependencia Registrado (en negro) </div>
-							<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="3"> Emprendimiento propio o familiar </div>
-							<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="4"> Changas </div>
-							<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="5"> Trabajo de limpieza, cuidado de niños, ancianos, casas </div>
-							<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="6"> Otros </div>
+						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="1"> Relación de dependencia Registrado (en blanco) </div>
+						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="2"> Relación de dependencia Registrado (en negro) </div>
+						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="3"> Emprendimiento propio o familiar </div>
+						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="4"> Changas </div>
+						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="5"> Trabajo de limpieza, cuidado de niños, ancianos, casas </div>
+						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="6"> Otros </div>
 					</div>
 				</div>
 			</div>
@@ -877,7 +879,7 @@
 		</div>
 	</div>
 
-	<!-- ////////////////////////////////    PREGUNTA  32   ///////////////////////////////////////////////// -->
+	<!-- ////////////////////////////////    PREGUNTA  32  (Depende de 2 y 7)  ///////////////////////////////////////////////// -->
 
 	<div class="form-group has-feedback" id="pregunta_32" style="display:none">
 
@@ -1256,14 +1258,16 @@
 
 	<?php echo $form->end();?>
 
+	<br /><br />
+
 </div> <!-- Cierra CONTAINER -->
 
 
 
 <script type="text/javascript">
 
-	$(function () {
-			$('[data-toggle="tooltip"]').tooltip()
-	})
+$(function () {
+	$('[data-toggle="tooltip"]').tooltip()
+})
 
 </script>
