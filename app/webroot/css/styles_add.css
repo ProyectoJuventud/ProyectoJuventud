@@ -1,19 +1,112 @@
+/*///////////////////////////////////////////   GENERALES    //////////////////////////////////////////////////////////////*/
+
+
+h2.titulo_principal{
+  background: -webkit-linear-gradient(#C00AE1,black);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+h2.subtitulo_principal{
+  margin-bottom: 30px;
+}
+
 /* Acomodan el bloque de radios emergentes */
 div.opciones_radios{
-	padding-left: 21px;
+  padding-left: 21px;
 }
 
 /* Acomodan el bloque de checkboxes emergentes*/
 div.opciones_checkbox{
-	margin-top: -10px;
+  margin-top: -10px;
 }
 
 /*Estilo del mensaje emergente cuando se alcanza el limite de selecciones maximo en los checkboxes*/
 div.estilo_mensaje{
-	background: #FACE88;
-	border: 1px solid #FB9143;
-	padding: 0 4px;
+  background: #FACE88;
+  border: 1px solid #FB9143;
+  padding: 0 4px;
 }
+
+div.boton_enviar{
+  margin-top: 22px;
+}
+
+
+div.boton_estadisticas{
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+
+/*////////////////////////////////////////////////// HEADER ////////////////////////////////////////////////////////*/
+
+
+section {
+  width: 100%;
+  height:
+  auto;margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.wrapper {
+  background-color: rgb(165,54,146);
+  margin:0;
+  position: relative;
+  z-index:0;
+  margin-bottom: 5em;
+}
+
+*, *::before, *::after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.wrapper:after {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill: rgb(165,54,146);' /%3E%3C/svg%3E");
+}
+
+.logo {
+  max-width: 260px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 3em;
+}
+
+.logo a:hover{
+  background:none;
+}
+
+.wrapper:after {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  content: '';
+  display: block;
+  height: 6.5em;
+  position: absolute;
+  width: 100%;
+}
+
+.wrapper:after {
+  -moz-transform: scaleY(-1);
+  -webkit-transform: scaleY(-1);
+  -ms-transform: scaleY(-1);
+  transform: scaleY(-1);
+  bottom: -6.5em;
+  left: 0;
+}
+
+.wrapper.alt:after {
+  -moz-transform: scaleY(-1) scaleX(-1);
+  -webkit-transform: scaleY(-1) scaleX(-1);
+  -ms-transform: scaleY(-1) scaleX(-1);
+  transform: scaleY(-1) scaleX(-1);
+}
+
 
 
 /*/////////////////////////////////////     VALIDACIONES CLIENT-SIDE  ////////////////////////////////////////////////////////////////////////*/
@@ -56,4 +149,77 @@ div.estilo_mensaje{
   	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075)  inset, 0 0 4px #3A92DC;
 }
 
-/*//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+/*////////////////////////////////////////////////// VALIDATION SERVER - SIDE  ////////////////////////////////////////////////////////*/
+
+ /*Color mensajes de ERROR por servidor*/
+  div.error-message{
+    color: #982929;
+  }
+
+
+/*////////////////////////////////////////////////// FOOTER ////////////////////////////////////////////////////////*/
+
+#footer {
+  background-color: black;
+  color: #ffffff;
+  font-family: "Source Sans Pro",
+  Helvetica, sans-serif;
+}
+
+#footer .inner {
+  padding: 3em 0;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  display: flex;
+  -moz-flex-direction: row;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -moz-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 70%;
+}
+
+#footer a:hover {
+  background:none;
+}
+
+@media screen and (max-width: 1280px) {
+    #footer {
+      background-color: black;
+      background-size: auto, cover;
+      background-position: center, center;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    #footer {
+      padding-bottom: 1.3em;
+    }
+    #footer .inner {
+        padding: 3em 3em 1em 3em ;
+        display: block;
+        width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 736px) {
+    #footer {
+      padding-bottom: 1.2em;
+    }
+    #footer .inner {
+        padding: 2em 2em 0.1em 2em ;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    #footer .inner {
+      padding: 2em 1.5em 0.1em 1.5em ;
+    }
+}

@@ -5,17 +5,27 @@
 
 <div class="container">
 
-	<h2> Filtros </h2>
+	<div class="row boton_cerrar_sesion ">
+		<div class="text-right">
 
+			<?php echo $this->Html->link('Cerrar Sesion / Volver' , array('controller' => 'encuestas', 'action' => 'cerrar_sesion'),
+			 											   array('type' => 'button',
+		                                                         'class' => 'btn btn-primary btn-md')
+		    ); ?>
+		</div>
+	</div>
+
+
+	<h2> Filtrar resultados encuestas </h2>
 
 	<?php echo $form->create('Filtro', array('url' => array('controller' => 'encuestas', 'action' => 'buscador'))); ?>
 
 		<!-- /////////////////////////////////////     FILTRO EDAD  ////////////////////////////////////////////////////////////// -->
 
-		<div class="form-group has-feedback">
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-6">
 
-			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="form-group">
 
 					<?php echo $this->Form->input('filtro_edad', array(
 																'class' => 'form-control',
@@ -29,14 +39,12 @@
 
 				</div>
 			</div>
-		</div>
 
-		<!-- /////////////////////////////////////     FILTRO SEXO  ////////////////////////////////////////////////////////////// -->
+			<!-- /////////////////////////////////////     FILTRO SEXO  ////////////////////////////////////////////////////////////// -->
 
-		<div class="form-group has-feedback">
+			<div class="col-xs-12 col-sm-6 col-md-6">
 
-			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="form-group">
 
 					<?php echo $this->Form->input('filtro_sexo', array(
 																'class' => 'form-control',
@@ -49,15 +57,12 @@
 
 				</div>
 			</div>
-		</div>
 
+			<!-- /////////////////////////////////////     FILTRO ZONA RESIDENCIA   //////////////////////////////////////////////////////// -->
 
-		<!-- /////////////////////////////////////     FILTRO ZONA RESIDENCIA   //////////////////////////////////////////////////////// -->
+			<div class="col-xs-12 col-sm-6 col-md-6">
 
-		<div class="form-group has-feedback">
-
-			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="form-group has-feedback">
 
 					<?php echo $this->Form->input('filtro_zona_residencia', array(
 																'class' => 'form-control',
@@ -70,18 +75,17 @@
 
 				</div>
 			</div>
-		</div>
 
-		<!-- ////////////////////////////////    FILTRO DEPARTAMENTO   ///////////////////////////////////////////////// -->
 
-		<?php if(isset($condicion_departamento_value)){ ?>
-			<div class="departamento_seleccionado" id="<?php echo $condicion_departamento_value; ?>"></div>
-		<?php } ?>
+			<!-- ////////////////////////////////    FILTRO DEPARTAMENTO   ///////////////////////////////////////////////// -->
 
-		<div class="form-group has-feedback">
+			<?php if(isset($condicion_departamento_value)){ ?>
+				<div class="departamento_seleccionado" id="<?php echo $condicion_departamento_value; ?>"></div>
+			<?php } ?>
 
-			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-xs-12 col-sm-6 col-md-6">
+
+				<div class="form-group has-feedback">
 
 					<?php echo $this->Form->input('filtro_departamento', array(
 																'id' => 'filtro_departamento',
@@ -96,7 +100,13 @@
 			</div>
 		</div>
 
-	<?php echo $form->submit('Buscar', array('class' => 'btn btn-sm btn-info')); ?>
+    <?php echo $this->Form->button('<span class="glyphicon glyphicon-search"></span> &nbsp; Buscar',
+
+															    			 array('type' => 'submit',
+										    									   'escape' => false,
+										    									   'class'=>'btn btn-sm btn-info',
+																		));
+	?>
 
 	<?php echo $form->end();?>
 
@@ -106,9 +116,7 @@
 	<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 	<!-- ////////////////////////////////////////////     RESULTADO ESTADISTICAS   ///////////////////////////////////////// -->
 
-
 	<br /><br />
-
 
 	<?php if($cantidadEncuestas == 0){ ?>
 
@@ -122,14 +130,9 @@
 
 	<?php if($cantidadEncuestas > 0){ ?>
 
-
-		<h1><?php echo $this->Html->link('EXPORTAR', array('controller' => 'encuestas', 'action' => 'exportar')); ?></h1>
-
-
 		<h2> Resultados </h2>
 
 		<h4> Total encuestas encontradas: <?php echo $cantidadEncuestas; ?> </h4>
-
 
 		<!-- /////////////////////////////////////     PREGUNTA 1 ////////////////////////////////////////////////////////////// -->
 
@@ -142,15 +145,15 @@
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
-							<th>15 a 18 años</th>
+							<th> 15 a 18 años </th>
 							<td> <?php echo $pregunta1_opc1 ?> </td>
 						</tr>
 						<tr>
-							<th>19 a 24 años</th>
+							<th> 19 a 24 años </th>
 							<td> <?php echo $pregunta1_opc2 ?> </td>
 						</tr>
 						<tr>
-							<th>25 a 29 años</th>
+							<th> 25 a 29 años </th>
 							<td> <?php echo $pregunta1_opc3 ?> </td>
 						</tr>
 					</table>
@@ -169,11 +172,11 @@
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
-							<th>Masculino</th>
+							<th> Masculino </th>
 							<td> <?php echo $pregunta2_opc1 ?> </td>
 						</tr>
 						<tr>
-							<th>Femenino</th>
+							<th> Femenino </th>
 							<td> <?php echo $pregunta2_opc2 ?> </td>
 						</tr>
 					</table>
@@ -209,7 +212,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 4) Zona de residencia </h4>
+				<h4> 4) Zona de Residencia </h4>
 
 				<div class="table-responsive">
 
@@ -232,7 +235,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 5) Departamento de residencia </h4>
+				<h4> 5) Departamento de Residencia </h4>
 
 				<div class="table-responsive">
 
@@ -243,7 +246,7 @@
 						</tr>
 						<tr>
 							<th> Concordia </th>
-							<td><?php echo $pregunta5_opc2 ?>  </td>
+							<td> <?php echo $pregunta5_opc2 ?> </td>
 						</tr>
 						<tr>
 							<th> Diamante </th>
@@ -280,7 +283,6 @@
 						<tr>
 							<th> Nogoyá </th>
 							<td> <?php echo $pregunta5_opc11 ?> </td>
-
 						</tr>
 						<tr>
 							<th> Paraná </th>
@@ -339,7 +341,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 8) Con quien vivis? </h4>
+				<h4> 8) ¿Con quien vivis? </h4>
 
 				<div class="table-responsive">
 
@@ -394,13 +396,13 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 9) Estudias? </h4>
+				<h4> 9) ¿Estudias? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
-							<th> Si </th>
+							<th> Sí </th>
 							<td> <?php echo $pregunta9_Si ?> </td>
 						</tr>
 						<tr>
@@ -422,8 +424,6 @@
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
-
 						<tr>
 							<th> Estudios Primarios </th>
 							<td> <?php echo $pregunta9_Si_opc1 ?> </td>
@@ -444,12 +444,10 @@
 							<th> Otros </th>
 							<td> <?php echo $pregunta9_Si_opc5 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
 		</div>
-
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
@@ -459,7 +457,6 @@
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Trabajo o busco trabajo </th>
 							<td> <?php echo $pregunta9_No_opc6 ?> </td>
@@ -492,7 +489,6 @@
 							<th> Otro </th>
 							<td> <?php echo $pregunta9_No_opc13 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -505,14 +501,13 @@
 
 				<h4> 10) En base a las personas que seleccionaron Que NO estudian (<?php echo $pregunta9_No ?>) </h4>
 
-				<h4>Les gustarían estudiar? </h4>
+				<h4> ¿Les gustarían estudiar? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
-							<th> Si </th>
+							<th> Sí </th>
 							<td> <?php echo $pregunta10_Si ?> </td>
 						</tr>
 						<tr>
@@ -524,15 +519,16 @@
 			</div>
 		</div>
 
+		<!-- /////////////////////////// -->
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> Personas que Si les gustaria estudiar (<?php echo $pregunta10_Si ?>). Motivos: </h4>
+				<h4> Personas que SI les gustaria estudiar (<?php echo $pregunta10_Si ?>). Motivos: </h4>
 
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover table-condensed">
 
+					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
 							<th> Me aportaría sabers y conocimientos </th>
 							<td> <?php echo $pregunta10_Si_opc1 ?> </td>
@@ -552,16 +548,14 @@
 
 		<!-- /////////////////////////////////////     PREGUNTA 11 ////////////////////////////////////////////////////////////// -->
 
-
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 11) Elegiste o eligirías una carrera según? </h4>
+				<h4> 11) ¿Elegiste o eligirías una carrera según? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Gustos o deseos personales </th>
 							<td> <?php echo $pregunta11_opc1 ?> </td>
@@ -582,7 +576,6 @@
 							<th> Otros </th>
 							<td> <?php echo $pregunta11_opc5 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -593,30 +586,28 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 12) A que edad comenzaste a trabajar? </h4>
+				<h4> 12) ¿A que edad comenzaste a trabajar? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Nunca he trabajado </th>
 							<td> <?php echo $pregunta12_opc1 ?> </td>
 						</tr>
 						<tr>
-							<th> 15 a 18 </th>
+							<th> 15 a 18 años </th>
 							<td> <?php echo $pregunta12_opc2 ?> </td>
 						</tr>
 						<tr>
-							<th> 19 a 24 </th>
+							<th> 19 a 24 años </th>
 							<td> <?php echo $pregunta12_opc3 ?> </td>
 						</tr>
 						<tr>
-							<th> 25 a 29 </th>
+							<th> 25 a 29 años </th>
 							<td> <?php echo $pregunta12_opc4 ?> </td>
 						</tr>
 					</table>
-
 				</div>
 			</div>
 		</div>
@@ -627,12 +618,11 @@
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
 				<h4> De acuerdo a las personas que SI trabajan (<?php echo $pregunta12_Si ?>). </h4>
-				<h4> 13) Como conseguiste tu primer trabajo? </h4>
+				<h4> 13) ¿Como conseguiste tu primer trabajo? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Presentando CV en comercio/fabrica/empresa </th>
 							<td> <?php echo $pregunta13_opc1 ?> </td>
@@ -653,7 +643,6 @@
 							<th> Otros </th>
 							<td> <?php echo $pregunta13_opc5 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -665,13 +654,13 @@
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
 				<h4> De acuerdo a las personas que SI trabajan (<?php echo $pregunta12_Si ?>). </h4>
-				<h4> 14) Trabajaste el ultimo mes? </h4>
+				<h4> 14) ¿Trabajaste el último mes? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
-							<th> Si </th>
+							<th> Sí </th>
 							<td> <?php echo $pregunta14_Si ?> </td>
 						</tr>
 						<tr>
@@ -717,6 +706,7 @@
 							<th> Otros </th>
 							<td> <?php echo $pregunta14_Si_opc6 ?> </td>
 						</tr>
+
 					</table>
 				</div>
 			</div>
@@ -725,7 +715,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> Personas que NO trabajaron el ultimo mes (<?php echo $pregunta14_No ?>). Motivos: </h4>
+				<h4> Personas que NO trabajaron el último mes (<?php echo $pregunta14_No ?>). Motivos: </h4>
 
 				<div class="table-responsive">
 
@@ -763,7 +753,7 @@
 							<td> <?php echo $pregunta14_No_opc14 ?> </td>
 						</tr>
 						<tr>
-							<th> Otro </th>
+							<th> Otros </th>
 							<td> <?php echo $pregunta14_No_opc15 ?> </td>
 						</tr>
 					</table>
@@ -807,7 +797,7 @@
 							<td> <?php echo $pregunta15_opc6 ?> </td>
 						</tr>
 						<tr>
-							<th> otros </th>
+							<th> Otros </th>
 							<td> <?php echo $pregunta15_opc7 ?> </td>
 						</tr>
 					</table>
@@ -820,11 +810,11 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 16) Cuales crees que son las principales dificultades para conseguir trabajo  </h4>
+				<h4> 16) ¿Cuales crees que son las principales dificultades para conseguir trabajo?  </h4>
 
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover table-condensed">
 
+					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
 							<th> Poca disponibilidad horaria </th>
 							<td> <?php echo $pregunta16_opc1 ?> </td>
@@ -929,8 +919,8 @@
 				<h4> 19) Participás en organizaciones  </h4>
 
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover table-condensed">
 
+					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
 							<th> Políticas  </th>
 							<td> <?php echo $pregunta19_opc1 ?> </td>
@@ -944,7 +934,7 @@
 							<td> <?php echo $pregunta19_opc3 ?> </td>
 						</tr>
 						<tr>
-							<th> Humanitarias   </th>
+							<th> Humanitarias </th>
 							<td> <?php echo $pregunta19_opc4 ?> </td>
 						</tr>
 						<tr>
@@ -975,12 +965,13 @@
 					<h4> 19) Respuestas dadas por usuarios en campo OTROS  </h4>
 
 					<div class="table-responsive">
+
 						<table class="table table-striped table-bordered table-hover table-condensed">
 
 							<?php foreach ($pregunta19_otras as $respuesta_otras) { ?>
 
 							<tr>
-								<td> <?php echo $respuesta_otras ?> </td>
+								<td> <?php echo h($respuesta_otras) ?> </td>
 							</tr>
 
 							<?php }?>
@@ -997,12 +988,13 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 20) Realizas algun deporte o actividad física?  </h4>
+				<h4> 20) ¿Realizas algún deporte o actividad física?  </h4>
 
 				<div class="table-responsive">
+
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
-							<th> Si </th>
+							<th> Sí </th>
 							<td> <?php echo $pregunta20_Si ?> </td>
 						</tr>
 						<tr>
@@ -1019,7 +1011,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> Personas que SI realizan algun deporte o actividad física? (<?php echo $pregunta20_Si ?>). Cantidad: </h4>
+				<h4> Personas que SI realizan algun deporte o actividad física (<?php echo $pregunta20_Si ?>). Cantidad: </h4>
 
 				<div class="table-responsive">
 
@@ -1048,12 +1040,12 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 21) Tenes acceso a internet  </h4>
+				<h4> 21) ¿Tenes acceso a internet?  </h4>
 
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
-							<th> Si </th>
+							<th> Sí </th>
 							<td> <?php echo $pregunta21_Si ?> </td>
 						</tr>
 						<tr>
@@ -1070,11 +1062,11 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 22) Cuales son los principales sitios que visitas?  </h4>
+				<h4> 22) ¿Cuales son los principales sitios que visitas?  </h4>
 
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover table-condensed">
 
+					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
 							<th> Facebook </th>
 							<td> <?php echo $pregunta22_opc1 ?> </td>
@@ -1133,11 +1125,11 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 23) Desde donde te contectas?  </h4>
+				<h4> 23) ¿Desde donde te contectas?  </h4>
 
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover table-condensed">
 
+					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
 							<th> Casa </th>
 							<td> <?php echo $pregunta23_opc1 ?> </td>
@@ -1172,12 +1164,11 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 24) Con que frecuiencia te conectas? </h4>
+				<h4> 24) ¿Con que frecuencia te conectas? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Ocasionalmente </th>
 							<td> <?php echo $pregunta24_opc1 ?> </td>
@@ -1200,13 +1191,13 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 25) Conoces algún centro de salud carcano a tu residencia? </h4>
+				<h4> 25) ¿Conoces algún centro de salud cercano a tu residencia? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
-							<th> Si </th>
+							<th> Sí </th>
 							<td> <?php echo $pregunta25_opc1 ?> </td>
 						</tr>
 						<tr>
@@ -1228,7 +1219,6 @@
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Centro de salud </th>
 							<td> <?php echo $pregunta26_opc1 ?> </td>
@@ -1246,57 +1236,78 @@
 							<td> <?php echo $pregunta26_opc4 ?> </td>
 						</tr>
 						<tr>
-							<th> Busco soluciones en la web </th>
+							<th> Busco soluciones en la Web </th>
 							<td> <?php echo $pregunta26_opc5 ?> </td>
 						</tr>
 						<tr>
 							<th> Ningun lado, me quedo en casa </th>
 							<td> <?php echo $pregunta26_opc6 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
 		</div>
 
 
-		<!-- /////////////////////////////////////     PREGUNTA 27 /////////////////////////////////////////////////////// -->
+		<!-- /////////////////////////////////////     PREGUNTA 27 ////////////////////////////////////////////////////////////// -->
 
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 27) Has participado o recibido información en talleres o charlas relacionadas a tu salud en los últimos 6 meses?  </h4>
+				<h4> 27) ¿Han participado o recibido información en talleres o charlas relacionadas a tu salud en los últimos 6 meses? </h4>
 
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover table-condensed">
 
+					<table class="table table-striped table-bordered table-hover table-condensed">
+						<tr>
+							<th> Sí </th>
+							<td> <?php echo $pregunta27_Si ?> </td>
+						</tr>
+						<tr>
+							<th> No </th>
+							<td> <?php echo $pregunta27_No ?> </td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 27) De acuerdo a las personas que SI (<?php echo $pregunta27_Si ?>) han participado o recibido información en talleres o charlas </h4>
+
+				<div class="table-responsive">
+
+					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
 							<th> Metodos anticonceptivos y embarazo   </th>
-							<td> <?php echo $pregunta27_opc1 ?> </td>
+							<td> <?php echo $pregunta27_Si_opc1 ?> </td>
 						</tr>
 						<tr>
 							<th> Adicciones (alcohol, cigarrillos, drogas, etc)   </th>
-							<td> <?php echo $pregunta27_opc2 ?> </td>
+							<td> <?php echo $pregunta27_Si_opc2 ?> </td>
 						</tr>
 						<tr>
 							<th> Planificación familiar  </th>
-							<td> <?php echo $pregunta27_opc3 ?> </td>
+							<td> <?php echo $pregunta27_Si_opc3 ?> </td>
 						</tr>
 						<tr>
 							<th> Diversidad sexual   </th>
-							<td> <?php echo $pregunta27_opc4 ?> </td>
+							<td> <?php echo $pregunta27_Si_opc4 ?> </td>
 						</tr>
 						<tr>
 							<th> Enfermedades estacionales o epidemias   </th>
-							<td> <?php echo $pregunta27_opc5 ?> </td>
+							<td> <?php echo $pregunta27_Si_opc5 ?> </td>
 						</tr>
 						<tr>
 							<th> Violencias  </th>
-							<td> <?php echo $pregunta27_opc6 ?> </td>
+							<td> <?php echo $pregunta27_Si_opc6 ?> </td>
 						</tr>
 						<tr>
 							<th> Otros </th>
-							<td> <?php echo $pregunta27_opc7 ?> </td>
+							<td> <?php echo $pregunta27_Si_opc7 ?> </td>
 						</tr>
 					</table>
 				</div>
@@ -1314,12 +1325,13 @@
 					<h4> 27) Respuestas dadas por usuarios en campo OTROS  </h4>
 
 					<div class="table-responsive">
+
 						<table class="table table-striped table-bordered table-hover table-condensed">
 
 							<?php foreach ($pregunta27_otras as $respuesta_otras) { ?>
 
 							<tr>
-								<td> <?php echo $respuesta_otras ?> </td>
+								<td> <?php echo h($respuesta_otras) ?> </td>
 							</tr>
 
 							<?php }?>
@@ -1337,38 +1349,60 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 28) Considerias que es importante que existieran talleres o charlas relacionadas con tu salud?   </h4>
+				<h4> 28) ¿Considerías que es importante que existieran talleres o charlas relacionadas con tu salud?  </h4>
 
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover table-condensed">
 
+					<table class="table table-striped table-bordered table-hover table-condensed">
+						<tr>
+							<th> Sí </th>
+							<td> <?php echo $pregunta28_Si ?> </td>
+						</tr>
+						<tr>
+							<th> No </th>
+							<td> <?php echo $pregunta28_No ?> </td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-12 col-sm-6 col-md-5">
+
+				<h4> 28) De acuerdo a las personas que SI (<?php echo $pregunta28_Si ?>) consideran que es importante que existieran
+					talleres o charlas  </h4>
+
+				<div class="table-responsive">
+
+					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
 							<th> Metodos anticonceptivos y embarazo   </th>
-							<td> <?php echo $pregunta28_opc1 ?> </td>
+							<td> <?php echo $pregunta28_Si_opc1 ?> </td>
 						</tr>
 						<tr>
 							<th> Adicciones (alcohol, cigarrillos, drogas, etc)   </th>
-							<td> <?php echo $pregunta28_opc2 ?> </td>
+							<td> <?php echo $pregunta28_Si_opc2 ?> </td>
 						</tr>
 						<tr>
 							<th> Planificación familiar  </th>
-							<td> <?php echo $pregunta28_opc3 ?> </td>
+							<td> <?php echo $pregunta28_Si_opc3 ?> </td>
 						</tr>
 						<tr>
 							<th> Diversidad sexual   </th>
-							<td> <?php echo $pregunta28_opc4 ?> </td>
+							<td> <?php echo $pregunta28_Si_opc4 ?> </td>
 						</tr>
 						<tr>
 							<th> Enfermedades estacionales o epidemias   </th>
-							<td> <?php echo $pregunta28_opc5 ?> </td>
+							<td> <?php echo $pregunta28_Si_opc5 ?> </td>
 						</tr>
 						<tr>
 							<th> Violencias  </th>
-							<td> <?php echo $pregunta28_opc6 ?> </td>
+							<td> <?php echo $pregunta28_Si_opc6 ?> </td>
 						</tr>
 						<tr>
 							<th> Otros </th>
-							<td> <?php echo $pregunta28_opc7 ?> </td>
+							<td> <?php echo $pregunta28_Si_opc7 ?> </td>
 						</tr>
 					</table>
 				</div>
@@ -1386,12 +1420,13 @@
 					<h4> 28) Respuestas dadas por usuarios en campo OTROS  </h4>
 
 					<div class="table-responsive">
+
 						<table class="table table-striped table-bordered table-hover table-condensed">
 
 							<?php foreach ($pregunta28_otras as $respuesta_otras) { ?>
 
 							<tr>
-								<td> <?php echo $respuesta_otras ?> </td>
+								<td> <?php echo h($respuesta_otras) ?> </td>
 							</tr>
 
 							<?php }?>
@@ -1408,38 +1443,37 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 29) A que edad tuviste tu primer relación sexual? </h4>
+				<h4> 29) ¿A que edad tuviste tu primer relación sexual? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Nunca </th>
 							<td> <?php echo $pregunta29_opc1 ?> </td>
 						</tr>
 						<tr>
-							<th> 13 </th>
+							<th> 13 años </th>
 							<td> <?php echo $pregunta29_opc2 ?> </td>
 						</tr>
 						<tr>
-							<th> 14 </th>
+							<th> 14 años </th>
 							<td> <?php echo $pregunta29_opc3 ?> </td>
 						</tr>
 						<tr>
-							<th> 15 </th>
+							<th> 15 años </th>
 							<td> <?php echo $pregunta29_opc4 ?> </td>
 						</tr>
 						<tr>
-							<th> 16 </th>
+							<th> 16 años </th>
 							<td> <?php echo $pregunta29_opc5 ?> </td>
 						</tr>
 						<tr>
-							<th> 17 </th>
+							<th> 17 años </th>
 							<td> <?php echo $pregunta29_opc6 ?> </td>
 						</tr>
 						<tr>
-							<th> 18 o más </th>
+							<th> 18 años o más </th>
 							<td> <?php echo $pregunta29_opc7 ?> </td>
 						</tr>
 					</table>
@@ -1453,11 +1487,11 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 30) Cuales de los siguientes métodos anticonceptivos crees que son eficientes?  </h4>
+				<h4> 30) ¿Cuales de los siguientes métodos anticonceptivos crees que son eficientes?  </h4>
 
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover table-condensed">
 
+					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
 							<th> Método del calendario </th>
 							<td> <?php echo $pregunta30_opc1 ?> </td>
@@ -1496,13 +1530,13 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 31) Cuales de los siguientes métodos anticonceptivos crees que son eficientes?  </h4>
+				<h4> 31) ¿Cual utilizás frecuentemente?  </h4>
 
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover table-condensed">
 
+					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
-							<th> Método del calendario </th>
+							<th> Pastillas anticonceptivas </th>
 							<td> <?php echo $pregunta31_opc1 ?> </td>
 						</tr>
 						<tr>
@@ -1510,11 +1544,11 @@
 							<td> <?php echo $pregunta31_opc2 ?> </td>
 						</tr>
 						<tr>
-							<th> Pastillas anticonceptivas </th>
+							<th> Pastillas del "Dia despues"</th>
 							<td> <?php echo $pregunta31_opc3 ?> </td>
 						</tr>
 						<tr>
-							<th> Pastillas del "Dia despues"  </th>
+							<th> Método del calendario  </th>
 							<td> <?php echo $pregunta31_opc4 ?> </td>
 						</tr>
 						<tr>
@@ -1543,14 +1577,14 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 32) Durante el embarazo te hiciste los chequeos correspondientes?  </h4>
+				<h4> 32) ¿Durante el embarazo te hiciste los chequeos correspondientes?  </h4>
 				<h5> Se aplica a personas que son mujeres y tuvieron hijos (<?php echo $pregunta32_Si ?>)  </h5>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
-							<th> Si </th>
+							<th> Sí </th>
 							<td> <?php echo $pregunta32_opc1 ?> </td>
 						</tr>
 						<tr>
@@ -1571,12 +1605,11 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 33) Cuando comienza la paternidad? </h4>
+				<h4> 33) ¿Cuando comienza la paternidad? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Cuando se concibe al bebe </th>
 							<td> <?php echo $pregunta33_opc1 ?> </td>
@@ -1593,7 +1626,6 @@
 							<th> Cuando la mama lo decide </th>
 							<td> <?php echo $pregunta33_opc4 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -1604,11 +1636,11 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 34) Que considerás como drogas?  </h4>
+				<h4> 34) ¿Que considerás como drogas?  </h4>
 
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover table-condensed">
 
+					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
 							<th> Cocaina </th>
 							<td> <?php echo $pregunta34_opc1 ?> </td>
@@ -1647,12 +1679,13 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 35) Consumís alguna de las anteriores? </h4>
+				<h4> 35) ¿Consumís alguna de las anteriores? </h4>
 
 				<div class="table-responsive">
+
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
-							<th> Si </th>
+							<th> Sí </th>
 							<td> <?php echo $pregunta35_Si ?> </td>
 						</tr>
 						<tr>
@@ -1705,25 +1738,23 @@
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
 				<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). </h4>
-				<h4> 36) A que edad comenzaste a consumir? </h4>
+				<h4> 36) ¿A que edad comenzaste a consumir? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
-							<th> 15 a 18 </th>
+							<th> 15 a 18 años</th>
 							<td> <?php echo $pregunta36_opc1 ?> </td>
 						</tr>
 						<tr>
-							<th> 19 a 24 </th>
+							<th> 19 a 24 años</th>
 							<td> <?php echo $pregunta36_opc2 ?> </td>
 						</tr>
 						<tr>
-							<th> 25 a 29 </th>
+							<th> 25 a 29 años</th>
 							<td> <?php echo $pregunta36_opc3 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -1735,12 +1766,11 @@
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
 				<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). </h4>
-				<h4> 37) En que lugar fue tu primer consumo? </h4>
+				<h4> 37) ¿En que lugar fue tu primer consumo? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Solo en casa </th>
 							<td> <?php echo $pregunta37_opc1 ?> </td>
@@ -1757,7 +1787,6 @@
 							<th> Otros </th>
 							<td> <?php echo $pregunta37_opc4 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -1769,12 +1798,11 @@
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
 				<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). </h4>
-				<h4> 38) Cual droga probaste por primera vez? </h4>
+				<h4> 38) ¿Cual droga probaste por primera vez? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Cocaina </th>
 							<td> <?php echo $pregunta38_opc1 ?> </td>
@@ -1803,7 +1831,6 @@
 							<th> Otras </th>
 							<td> <?php echo $pregunta38_opc7 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -1815,12 +1842,11 @@
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
 				<h4> De acuerdo a las personas que SI consumen alguna droga (<?php echo $pregunta35_Si ?>). </h4>
-				<h4> 39) Dónde y con quienes consumís? </h4>
+				<h4> 39) ¿Dónde y con quienes consumís? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Solo en casa </th>
 							<td> <?php echo $pregunta39_opc1 ?> </td>
@@ -1837,7 +1863,6 @@
 							<th> Otros </th>
 							<td> <?php echo $pregunta39_opc4 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -1848,13 +1873,13 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 40) Pensas que es un problema el consumo de drogas? </h4>
+				<h4> 40) ¿Pensas que es un problema el consumo de drogas? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
-							<th> Si </th>
+							<th> Sí </th>
 							<td> <?php echo $pregunta40_opc1 ?> </td>
 						</tr>
 						<tr>
@@ -1871,12 +1896,11 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 41) Considerás que pasaste por alguna situación de violencia física o psicologica? Seleccionar aquellas que creas más relevante </h4>
+				<h4> 41) ¿Considerás que pasaste por alguna situación de violencia física o psicologica? Seleccionar aquellas que creas más relevante </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Nunca </th>
 							<td> <?php echo $pregunta41_opc1 ?> </td>
@@ -1906,7 +1930,6 @@
 							<td> <?php echo $pregunta41_opc7 ?> </td>
 						</tr>
 					</table>
-
 				</div>
 			</div>
 		</div>
@@ -1917,12 +1940,11 @@
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
 				<h4> De acuerdo a las personas que SI pasaron por alguna situación de violencia física o psicologica (<?php echo $pregunta41_Si ?>). </h4>
-				<h4> 42) Con que frecuencia? </h4>
+				<h4> 42) ¿Con que frecuencia? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> Al menos una vez </th>
 							<td> <?php echo $pregunta42_opc1 ?> </td>
@@ -1935,7 +1957,6 @@
 							<th> Periodicamente </th>
 							<td> <?php echo $pregunta42_opc3 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -1947,21 +1968,19 @@
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
 				<h4> De acuerdo a las personas que SI pasaron por alguna situación de violencia física o psicologica (<?php echo $pregunta41_Si ?>). </h4>
-				<h4> 43) Considerás que es necesario hacer la denuncia? </h4>
+				<h4> 43) ¿Considerás que es necesario hacer la denuncia? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
-							<th> Si </th>
+							<th> Sí </th>
 							<td> <?php echo $pregunta43_opc1 ?> </td>
 						</tr>
 						<tr>
 							<th> No </th>
 							<td> <?php echo $pregunta43_opc2 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -1973,21 +1992,19 @@
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
 				<h4> De acuerdo a las personas que SI pasaron por alguna situación de violencia física o psicologica (<?php echo $pregunta41_Si ?>). </h4>
-				<h4> 44) Lo has denunciado? </h4>
+				<h4> 44) ¿Lo has denunciado? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
-							<th> Si </th>
+							<th> Sí </th>
 							<td> <?php echo $pregunta44_opc1 ?> </td>
 						</tr>
 						<tr>
 							<th> No </th>
 							<td> <?php echo $pregunta44_opc2 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -1999,21 +2016,19 @@
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
 				<h4> De acuerdo a las personas que SI pasaron por alguna situación de violencia física o psicologica (<?php echo $pregunta41_Si ?>). </h4>
-				<h4> 45) Crees que es una problematica a tratar en ambas partes? </h4>
+				<h4> 45) ¿Crees que es una problematica a tratar en ambas partes? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
-							<th> Si </th>
+							<th> Sí </th>
 							<td> <?php echo $pregunta45_opc1 ?> </td>
 						</tr>
 						<tr>
 							<th> No </th>
 							<td> <?php echo $pregunta45_opc2 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -2024,12 +2039,11 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 46) Cual es el número a llamar en caso de violencia de género? </h4>
+				<h4> 46) ¿Cual es el número a llamar en caso de violencia de género? </h4>
 
 				<div class="table-responsive">
 
 					<table class="table table-striped table-bordered table-hover table-condensed">
-
 						<tr>
 							<th> 144 </th>
 							<td> <?php echo $pregunta46_opc1 ?> </td>
@@ -2042,7 +2056,6 @@
 							<th> 110 </th>
 							<td> <?php echo $pregunta46_opc3 ?> </td>
 						</tr>
-
 					</table>
 				</div>
 			</div>
@@ -2053,11 +2066,11 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6 col-md-5">
 
-				<h4> 47) Cuales consideras que son problemas de los jovenes? </h4>
+				<h4> 47) ¿Cuales consideras que son problemas de los jovenes? </h4>
 
 				<div class="table-responsive">
-					<table class="table table-striped table-bordered table-hover table-condensed">
 
+					<table class="table table-striped table-bordered table-hover table-condensed">
 						<tr>
 							<th> Adicciones   </th>
 							<td> <?php echo $pregunta47_opc1 ?> </td>
@@ -2102,12 +2115,13 @@
 					<h4> 47) Respuestas dadas por usuarios en campo OTROS  </h4>
 
 					<div class="table-responsive">
+
 						<table class="table table-striped table-bordered table-hover table-condensed">
 
 							<?php foreach ($pregunta47_otras as $respuesta_otras) { ?>
 
 							<tr>
-								<td> <?php echo $respuesta_otras ?> </td>
+								<td> <?php echo h($respuesta_otras) ?> </td>
 							</tr>
 
 							<?php }?>
@@ -2118,12 +2132,22 @@
 			</div>
 
 		<?php } ?>
+
+		<div class="row boton_exportar">
+			<div class="col-xs-12">
+
+				<h1><?php echo $this->Html->link('<i class="glyphicon glyphicon-export"></i> &nbsp; EXPORTAR A EXCEL', array('controller' => 'encuestas', 'action' => 'exportar'),
+
+				 											array('type' => 'button',
+		                                                          'class' => 'btn btn-primary btn-lg',
+		                                                          'escape' => false
+															));
+					?>
+				</h1>
+			</div>
+		</div>
+
 	<?php } ?>
 
-
-
-	<?php echo $this->Html->link('Volver', array('controller' => 'encuestas', 'action' => 'add'));?>
-
-	<br /><br />
 
 </div> <!-- Cierra CONTAINER -->

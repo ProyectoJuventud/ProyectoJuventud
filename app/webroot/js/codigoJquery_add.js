@@ -1,6 +1,13 @@
 
 $(document).ready(function () {
 
+	// Para que, al abrir la ventana MODAL de pass, el cursor se pare en el campo input
+	$('#ventana_modal').on('shown.bs.modal', function () {
+    	$('#campo_pass').focus();
+	});
+
+	///////////////////////////////////////////////////////
+
 	var departamentosDDL = $('#select_pregunta_5');
 	var municipiosDDL = $('#select_pregunta_6');
 
@@ -19,7 +26,7 @@ $(document).ready(function () {
 				departamentosDDL.append($('<option/>', { value: departamento.Departamento.id, text: departamento.Departamento.nombre_departamento}));
 			});
 		},
-		error: function (err) {
+		error: function () {
 			alert('Se produjo un error al cargar la lista de Departamentos.');
 		}
 	});
@@ -493,9 +500,35 @@ $(document).ready(function () {
 
 	////////////////////////////////    PREGUNTA  31   ////////////////////////////////////////////////
 
+	//  En este checkboxes ademas bloquear de tener que bloquear a los checkboxes cuando ya he marcado 3 (que es lo uqe hago
+	// en la primer linea a continuacion), debo de desmarcar y  bloquear el resto de los checkboxes cuando marco la ultima opcion
+	// "ninguno de los anteriores".
 	$('input[data-pregunta= "check_pregunta_31"]').click(function () {
 
 		disableCheckboxes('pregunta_31', 3);
+
+		//  Todos los checkboxes excepto el que acabo de marcar o desmarcar (THIS)
+		var AllCheckboexExceptThis_preg31 = $('input[data-pregunta="check_pregunta_31"]').not(this);
+
+		// El value "8" es "ninguno de los anteriores"
+		if($(this).val() == '8'){
+
+			//  Si lo esoty marcando al "ni uno de los anteriores", entonces
+			if($(this).is(":checked")){
+
+				//  Desmarco a todos los checkbox (e excepcion de THIS).
+				AllCheckboexExceptThis_preg31.attr('checked', false);
+
+				//  Y Desactivo todos los checkbox (e excepcion de THIS).
+				AllCheckboexExceptThis_preg31.attr('disabled', true);
+			}
+
+			// si lo desmarco, activo el resto de los checkboxes
+			else
+			{
+				AllCheckboexExceptThis_preg31.attr('disabled', false);
+			}
+		}
 	});
 
 	////////////////////////////////    PREGUNTA  34   ////////////////////////////////////////////////
@@ -649,45 +682,45 @@ $(document).ready(function () {
 
     	fields: {
 
-    		// 'data[Encuesta][pregunta_1]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_1]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_2]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_2]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_3]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_3]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_4]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_4]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_5]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_5]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
     		// 'data[Encuesta][pregunta_6]': {
     		// 	validators: {
@@ -697,196 +730,196 @@ $(document).ready(function () {
     		// 	}
     		// },
 
-    		// 'data[Encuesta][pregunta_7]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_7]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_8]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_8]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_9]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_9]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_9][Si]':{
+    		'data[Encuesta][pregunta_9][Si]':{
 
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_9][No]':{
+    		'data[Encuesta][pregunta_9][No]':{
 
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_10]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_10]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_10][Si]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_10][Si]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_11]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_11]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_12]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_12]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_13]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_13]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_14]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_14]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_14][Si]':{
+    		'data[Encuesta][pregunta_14][Si]':{
 
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_14][No]':{
+    		'data[Encuesta][pregunta_14][No]':{
 
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_15]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_15]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_16][]': {
-      //           validators: {
-      //               choice: {
-      //                   min: 1,
-      //                   message: 'Debe seleccionar al menos una opción'
-      //               }
-      //           }
-      //       },
+    		'data[Encuesta][pregunta_16][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
 
-    		// 'data[Encuesta][pregunta_17]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_17]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-      //       'data[Encuesta][pregunta_18]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+            'data[Encuesta][pregunta_18]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-      //       'data[Encuesta][pregunta_20]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+            'data[Encuesta][pregunta_20]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_20][Si]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_20][Si]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_21]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_21]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_22][]': {
-      //           validators: {
-      //               choice: {
-      //                   min: 1,
-      //                   message: 'Debe seleccionar al menos una opción'
-      //               }
-      //           }
-      //       },
+    		'data[Encuesta][pregunta_22][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
 
-		    // 'data[Encuesta][pregunta_23][]': {
-      //           validators: {
-      //               choice: {
-      //                   min: 1,
-      //                   message: 'Debe seleccionar al menos una opción'
-      //               }
-      //           }
-      //       },
+		    'data[Encuesta][pregunta_23][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
 
-      //       'data[Encuesta][pregunta_24]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+            'data[Encuesta][pregunta_24]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
     		'data[Encuesta][pregunta_25]': {
     			validators: {
@@ -921,186 +954,186 @@ $(document).ready(function () {
                 }
             },
 
-      //       'data[Encuesta][pregunta_28]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+            'data[Encuesta][pregunta_28]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-      //       'data[Encuesta][pregunta_28][Si][]': {
-      //           validators: {
-      //               choice: {
-      //                   min: 1,
-      //                   message: 'Debe seleccionar al menos una opción'
-      //               }
-      //           }
-      //       },
+            'data[Encuesta][pregunta_28][Si][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
 
-      //       'data[Encuesta][pregunta_29]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+            'data[Encuesta][pregunta_29]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-      //       'data[Encuesta][pregunta_30][]': {
-      //           validators: {
-      //               choice: {
-      //                   min: 1,
-      //                   message: 'Debe seleccionar al menos una opción'
-      //               }
-      //           }
-      //       },
+            'data[Encuesta][pregunta_30][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
 
-      //       'data[Encuesta][pregunta_31][]': {
-      //           validators: {
-      //               choice: {
-      //                   min: 1,
-      //                   message: 'Debe seleccionar al menos una opción'
-      //               }
-      //           }
-      //       },
+            'data[Encuesta][pregunta_31][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
 
-      //       'data[Encuesta][pregunta_32]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+            'data[Encuesta][pregunta_32]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_33]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_33]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-	   		// 'data[Encuesta][pregunta_34][]': {
-      //           validators: {
-      //               choice: {
-      //                   min: 1,
-      //                   message: 'Debe seleccionar al menos una opción'
-      //               }
-      //           }
-      //       },
+	   		'data[Encuesta][pregunta_34][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            },
 
-      // 		'data[Encuesta][pregunta_35]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+      		'data[Encuesta][pregunta_35]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_35][Si]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_35][Si]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_36]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_36]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_37]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_37]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_38]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_38]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_39]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_39]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_40]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_40]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_41]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_41]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-      // 		'data[Encuesta][pregunta_42]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+      		'data[Encuesta][pregunta_42]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_43]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_43]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_44]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_44]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_45]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_45]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_46]': {
-    		// 	validators: {
-    		// 		notEmpty: {
-    		// 			message: 'Debe seleccionar una opción'
-    		// 		}
-    		// 	}
-    		// },
+    		'data[Encuesta][pregunta_46]': {
+    			validators: {
+    				notEmpty: {
+    					message: 'Debe seleccionar una opción'
+    				}
+    			}
+    		},
 
-    		// 'data[Encuesta][pregunta_47][Si][]': {
-      //           validators: {
-      //               choice: {
-      //                   min: 1,
-      //                   message: 'Debe seleccionar al menos una opción'
-      //               }
-      //           }
-      //       }
+    		'data[Encuesta][pregunta_47][Si][]': {
+                validators: {
+                    choice: {
+                        min: 1,
+                        message: 'Debe seleccionar al menos una opción'
+                    }
+                }
+            }
 
     	}
     });

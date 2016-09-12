@@ -1,3 +1,10 @@
+
+/*/////////////////////////////////////     GENERALES   ////////////////////////////////////////////////////////////////////////*/
+
+div.boton_cerrar_sesion{
+  margin-top: 20px;
+}
+
 /* Acomodan el bloque de radios emergentes */
 div.opciones_radios{
 	padding-left: 21px;
@@ -13,6 +20,11 @@ div.estilo_mensaje{
 	background: #FACE88;
 	border: 1px solid #FB9143;
 	padding: 0 4px;
+}
+
+div.boton_exportar{
+  margin-top: 7px;
+  margin-bottom: 20px;
 }
 
 

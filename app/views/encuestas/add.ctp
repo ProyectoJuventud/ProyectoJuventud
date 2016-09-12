@@ -1,5 +1,6 @@
 <?php echo $this->addScript($this->Html->css('validation_client_side')); ?>
 <?php echo $this->addScript($this->Html->css('styles_add')); ?>
+<?php echo $this->addScript($this->Html->css('animate.min')); ?>
 
 
 <?php echo $this->Html->script('validation_client_side', array('inline' => false, 'defer' => true)); ?>
@@ -8,37 +9,121 @@
 <?php echo $this->Html->script('codigoJquery_add', array('inline' => false, 'defer' => true)); ?>
 
 
-<!-- ////////////////////////////////////////////////// -->
 
+<!-- ///////////////////////////    HEADER   /////////////////////// -->
 
-<?php echo $this->Html->link('Estadisticas', array('controller' => 'encuestas', 'action' => 'buscador')); ?>
+<section id="Uno" class="wrapper">
+	<div class="inner">
+		<div class="logo">
+			<a href='http://www.entrerios.gob.ar/juventud/'>
+				<img src="http://entrerios.gob.ar/juventud/images/juventudes-entrerrianas.png"/>
+			</a>
+		</div>
+	</div>
+</section>
+
+<!-- ///////////////////////////////////////////////////////////////////// -->
 
 <div class="container">
 
-	<h2> Encuesta Juventud </h2>
+	<!-- ////////////////////////////////////   CONFIGURACION VENTANA MODAL ///////////////////////////////////////////////////// -->
+	<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-	<!--  Cambiar nombre de ID aca para desactivar las validaciones de los campos-->
+    <div class="modal fade" id="ventana_modal" tabindex="1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-md">
+
+          <div class="modal-content">
+
+            <!-- ///////////////////////////////////////////////-->
+
+            <div class="modal-header">
+
+              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only"> Cerrar </span></button>
+
+              <h4 class="modal-title" id="ModalLabel"> Ingrese Contraseña </h4>
+
+            </div> <!-- Fin de cabecera-->
+
+            <!-- ///////////////////////////////////////////////-->
+
+            <!-- Cuerpo del modal -->
+            <div class="modal-body">
+
+            	<?php echo $this->Form->create('Acceso', array('url' => array('controller' => 'encuestas', 'action' => 'verificar_acceso'))); ?>
+
+            		<?php echo $this->Form->input('pass', array('label' => 'Contraseña',
+            												    'class' => 'form-control',
+            												    'id' => 'campo_pass'
+            												)
+					); ?>
+
+            </div>
+
+            <!-- ///////////////////////////////////////////////-->
+
+            <!-- Aca el pie del formulario con los botones -->
+            <div class="modal-footer">
+
+            	<?php echo $form->submit('Aceptar', array('class' => 'btn btn-sm btn-danger')); ?>
+
+				<?php echo $form->end();?>
+
+            </div> <!--Cierro el footer -->
+
+
+          </div> <!-- Cierro el "modal-content"-->
+        </div> <!-- Cierro el "modal-dialog"-->
+
+    </div> <!-- Cierro el "modal"-->
+
+
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+	<h2 class="text-center titulo_principal animated flipInX"> GRACIAS </h2>
+	<h2 class="text-center subtitulo_principal animated slideInUp"> Por formar parte del diagnóstico de juventudes! </h2>
+
+
 	<?php echo $form->create('Encuesta', array('id' => 'form_encuesta')); ?>
 
 
 	<!-- ////////////////////////////////    PREGUNTA  1   ///////////////////////////////////////////////// -->
 
+	<!-- Algunas preguntas estan en formato de Cakephp para que le ande las validaciones server-side. Por alguna razon
+	cuando estan en HTML puro no funcionan. No hago a todas en formato Cakephp poruqe es mucho viaje, solo a las mas faciles
+	para que al menos si alguien desactiva javascript, no pueda submitear la encuesta (al menos si no respondio alguna
+	de las preguntas que tienen validacion server.side).-->
 	<div class="form-group has-feedback">
 
-		<!-- Es necesario tener el label aparte (en otra row), sino el icon de las validaciones client-side se ubica mal en
+		<!--Es necesario tener el label aparte (en otra row), sino el icon de las validaciones client-side se ubica mal en
 		las preguntas donde el texto del label es muy largo, asi que por las dudas lo hago separado en todas las preguntas -->
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_1"> 1) Edad </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_1"> 1) Edad </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_1" name="data[Encuesta][pregunta_1]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> 15 a 18 </option>
-					<option value="2"> 19 a 24 </option>
-					<option value="3"> 25 a 29 </option>
-				</select>
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+				<?php echo $form->input('pregunta_1', array(
+															'id' => 'select_pregunta_1',
+															'class' => 'form-control',
+															'label' => false,
+															'type' => 'select',
+					  										'empty' => array(
+																	        '' => array(
+																	            'name' => 'Elija una opción..',
+																	            'value' => '',
+																	            'disabled' => true,
+																	            'selected' => true
+																	        )),
+					  										'options' => array(
+															            '1'=>'15 a 18 años',
+														    			'2'=>'19 a 24 años',
+														    			'3'=>'25 a 29 años'
+														    )
+				)); ?>
+
 			</div>
 		</div>
 	</div>
@@ -48,16 +133,30 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_2"> 2) Sexo </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_2"> 2) Sexo </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_2" name="data[Encuesta][pregunta_2]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> Masculino </option>
-					<option value="2"> Femenino </option>
-				</select>
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+				<?php echo $form->input('pregunta_2', array(
+															'id' => 'select_pregunta_2',
+															'class' => 'form-control',
+															'label' => false,
+															'type' => 'select',
+					  										'empty' => array(
+																	        '' => array(
+																	            'name' => 'Elija una opción..',
+																	            'value' => '',
+																	            'disabled' => true,
+																	            'selected' => true
+																	        )),
+					  										'options' => array(
+															            '1'=>'Masculino',
+														    			'2'=>'Femenino'
+														    )
+				)); ?>
+
 			</div>
 		</div>
 	</div>
@@ -67,16 +166,30 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_3"> 3) Zona de Origen </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_3"> 3) Zona de Origen </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_3" name="data[Encuesta][pregunta_3]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> Urbana </option>
-					<option value="2"> Rural </option>
-				</select>
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+				<?php echo $form->input('pregunta_3', array(
+															'id' => 'select_pregunta_3',
+															'class' => 'form-control',
+															'label' => false,
+															'type' => 'select',
+					  										'empty' => array(
+																	        '' => array(
+																	            'name' => 'Elija una opción..',
+																	            'value' => '',
+																	            'disabled' => true,
+																	            'selected' => true
+																	        )),
+					  										'options' => array(
+															            '1'=>'Urbana',
+														    			'2'=>'Rural'
+														    )
+				)); ?>
+
 			</div>
 		</div>
 	</div>
@@ -86,30 +199,45 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_4"> 4) Zona de Residencia </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_4"> 4) Zona de Residencia </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_4" name="data[Encuesta][pregunta_4]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> Urbana </option>
-					<option value="2"> Rural </option>
-				</select>
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+				<?php echo $form->input('pregunta_4', array(
+															'id' => 'select_pregunta_4',
+															'class' => 'form-control',
+															'label' => false,
+															'type' => 'select',
+					  										'empty' => array(
+																	        '' => array(
+																	            'name' => 'Elija una opción..',
+																	            'value' => '',
+																	            'disabled' => true,
+																	            'selected' => true
+																	        )),
+					  										'options' => array(
+															            '1'=>'Urbana',
+														    			'2'=>'Rural'
+														    )
+				)); ?>
+
 			</div>
 		</div>
 	</div>
 
 	<!-- ////////////////////////////////    PREGUNTA  5   ///////////////////////////////////////////////// -->
 
+	<!--  Esta como usa AJAX mejor ni la toco -->
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_5"> 5) Departamento de Residencia </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_5"> 5) Departamento de Residencia </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_5" name="data[Encuesta][pregunta_5]" class="form-control">
 					<option selected disabled value=""> Seleccione un Departamento.. </option>
 				</select>
@@ -119,14 +247,15 @@
 
 	<!-- ////////////////////////////////    PREGUNTA  6   ///////////////////////////////////////////////// -->
 
+	<!--  Esta como usa AJAX mejor ni la toco -->
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_6"> 6) Municipio de Residencia </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_6"> 6) Municipio de Residencia </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_6" name="data[Encuesta][pregunta_6]" class="form-control">
 					<option selected disabled value=""> Seleccione un Municipio.. </option>
 				</select>
@@ -139,16 +268,30 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_7"> 7) Tenes hijos? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_7"> 7) ¿Tenes hijos? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_7" name="data[Encuesta][pregunta_7]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> Si </option>
-					<option value="2"> No </option>
-				</select>
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+				<?php echo $form->input('pregunta_7', array(
+															'id' => 'select_pregunta_7',
+															'class' => 'form-control',
+															'label' => false,
+															'type' => 'select',
+					  										'empty' => array(
+																	        '' => array(
+																	            'name' => 'Elija una opción..',
+																	            'value' => '',
+																	            'disabled' => true,
+																	            'selected' => true
+																	        )),
+					  										'options' => array(
+															            '1'=>'Sí',
+														    			'2'=>'No'
+														    )
+				)); ?>
+
 			</div>
 		</div>
 	</div>
@@ -158,24 +301,38 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_8"> 8) Con quien vivis? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_8"> 8) ¿Con quien vivis? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_8" name="data[Encuesta][pregunta_8]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> Padres </option>
-					<option value="2"> Padre/Madre con su conyuge </option>
-					<option value="3"> Hermanos </option>
-					<option value="4"> Familiar </option>
-					<option value="5"> Hijos </option>
-					<option value="6"> Pareja </option>
-					<option value="7"> Pareja con sus hijos </option>
-					<option value="8"> Amigos </option>
-					<option value="9"> Solo </option>
-					<option value="10"> Otro </option>
-				</select>
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+				<?php echo $form->input('pregunta_8', array(
+															'id' => 'select_pregunta_8',
+															'class' => 'form-control',
+															'label' => false,
+															'type' => 'select',
+					  										'empty' => array(
+																	        '' => array(
+																	            'name' => 'Elija una opción..',
+																	            'value' => '',
+																	            'disabled' => true,
+																	            'selected' => true
+																	        )),
+					  										'options' => array(
+															            '1'=>'Padres',
+														    			'2'=>'Padre/Madre con su conyuge',
+														    			'3'=>'Hermanos',
+														    			'4'=>'Familiar',
+														    			'5'=>'Hijos',
+														    			'6'=>'Pareja',
+														    			'7'=>'Pareja con sus hijos',
+														    			'8'=>'Amigos',
+														    			'9'=>'Solo',
+														    			'10'=>'Otro',
+														    )
+				)); ?>
+
 			</div>
 		</div>
 	</div>
@@ -185,11 +342,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_9"> 9) Estudias? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_9"> 9) ¿Estudias? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_9" name="data[Encuesta][pregunta_9]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
 					<option value="Si"> Sí </option>
@@ -202,7 +359,7 @@
 	<div class="form-group has-feedback" id="opciones_si_pregunta_9" style="display:none">
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 
 				<!-- La clase "opciones_radios" esta en Styles.css, ponindo esto mas a la derecha porque es un submodulo de la preg 7. -->
 				<div class= "opciones_radios">
@@ -220,7 +377,7 @@
 	<div class="form-group has-feedback" id="opciones_no_pregunta_9" style="display:none">
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 
 				<!-- La clase "opciones_radios" esta en Styles.css, ponindo esto mas a la derecha porque es un submodulo de la preg 7. -->
 				<div class= "opciones_radios">
@@ -243,11 +400,11 @@
 	<div class="form-group has-feedback" id="pregunta_10" style="display:none">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_10"> 10) Te gustaría estudiar? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_10"> 10) ¿Te gustaría estudiar? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_10" name="data[Encuesta][pregunta_10]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
 					<option value="Si"> Sí </option>
@@ -260,7 +417,7 @@
 	<div class="form-group has-feedback" id="opciones_si_pregunta_10" style="display:none">
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 
 				<div class="opciones_radios">
 
@@ -277,11 +434,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_11"> 11) Elegiste o elegirías una carrera según? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_11"> 11) ¿Elegiste o elegirías una carrera según? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_11" name="data[Encuesta][pregunta_11]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
 					<option value="1"> Gustos o deseos personales </option>
@@ -299,17 +456,17 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_12"> 12) A que edad comenzaste a trabajar? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_12"> 12) ¿A que edad comenzaste a trabajar? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_12" name="data[Encuesta][pregunta_12]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
 					<option value="1"> Nunca he trabajado </option>
-					<option value="2"> 15 a 18 </option>
-					<option value="3"> 19 a 24 </option>
-					<option value="4"> 25 a 29 </option>
+					<option value="2"> 15 a 18 años </option>
+					<option value="3"> 19 a 24 años </option>
+					<option value="4"> 25 a 29 años </option>
 				</select>
 			</div>
 		</div>
@@ -323,11 +480,11 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label class="col-xs-12 control-label" for="select_pregunta_13"> 13) Como conseguiste tu primer trabajo? </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_13"> 13) ¿Como conseguiste tu primer trabajo? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<select id="select_pregunta_13" name="data[Encuesta][pregunta_13]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
 						<option value="1"> Presentación de CV en comercio/fábrica/empresa </option>
@@ -345,11 +502,11 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label class="col-xs-12 control-label" for="select_pregunta_14"> 14) Trabajaste el último mes? </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_14"> 14) ¿Trabajaste el último mes? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<select id="select_pregunta_14" name="data[Encuesta][pregunta_14]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
 						<option value="Si"> Sí </option>
@@ -362,12 +519,12 @@
 		<div class="form-group has-feedback" id="opciones_si_pregunta_14" style="display:none">
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 
 					<div class="opciones_radios">
 
 						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="1"> Relación de dependencia Registrado (en blanco) </div>
-						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="2"> Relación de dependencia Registrado (en negro) </div>
+						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="2"> Relación de dependencia no Registrado (en negro) </div>
 						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="3"> Emprendimiento propio o familiar </div>
 						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="4"> Changas </div>
 						<div> <input type="radio"  data-pregunta="radio_si_pregunta_14" name="data[Encuesta][pregunta_14][Si]" value="5"> Trabajo de limpieza, cuidado de niños, ancianos, casas </div>
@@ -380,7 +537,7 @@
 		<div class="form-group has-feedback" id="opciones_no_pregunta_14" style="display:none">
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 
 					<div class="opciones_radios">
 
@@ -403,11 +560,11 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label class="col-xs-12 control-label" for="select_pregunta_15"> 15) Elegiste tu trabajo según </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_15"> 15) Elegiste tu trabajo según... </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<select id="select_pregunta_15" name="data[Encuesta][pregunta_15]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
 						<option value="1"> Profesión/Conocimientos técnicos</option>
@@ -430,11 +587,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label id="label_pregunta_16" class="col-xs-12 control-label" for="select_pregunta_16"> 16) Cuales crees que son las principales dificultades para conseguir trabajo </label>
+			<label id="label_pregunta_16" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_16"> 16) ¿Cuales crees que son las principales dificultades para conseguir trabajo? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<ul class="checkbox">
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_16" name="data[Encuesta][pregunta_16][]" value="1" /> Poca disponibilidad horaria   </li>
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_16" name="data[Encuesta][pregunta_16][]" value="2" /> Poca oferta   </li>
@@ -448,7 +605,7 @@
 		</div>
 
 		<div class="row">
-			<div id="mensaje_alerta_pregunta_16" class="col-xs-12 col-md-5 col-sm-6"></div>
+			<div id="mensaje_alerta_pregunta_16" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6"></div>
 		</div>
 	</div>
 
@@ -458,11 +615,11 @@
 	<div class="form-group has-feedback" id="pregunta_17" style="display:none">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_17"> 17) Para llegar a tu Institución Educativa demorás... </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_17"> 17) Para llegar a tu Institución Educativa demorás... </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_17" name="data[Encuesta][pregunta_17]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
 					<option value="1"> De 0 a 30 minutos </option>
@@ -480,11 +637,11 @@
 	<div class="form-group has-feedback" id="pregunta_18" style="display:none">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_18"> 18) Para llegar a tu trabajo demorás... </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_18"> 18) Para llegar a tu trabajo demorás... </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_18" name="data[Encuesta][pregunta_18]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
 					<option value="1"> De 0 a 30 minutos </option>
@@ -501,11 +658,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label id="label_pregunta_19" class="col-xs-12 control-label" for="select_pregunta_19"> 19) Participás en organizaciones </label>
+			<label id="label_pregunta_19" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_19"> 19) ¿Participás en organizaciones? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<ul class="checkbox">
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuesta][pregunta_19][Si][]" value="1" />  Políticas </li>
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_19" name="data[Encuesta][pregunta_19][Si][]" value="2"/>  Religiosas </li>
@@ -524,7 +681,7 @@
 		</div>
 
 		<div class="row">
-			<div id="mensaje_alerta_pregunta_19" class="col-xs-12 col-md-5 col-sm-6"></div>
+			<div id="mensaje_alerta_pregunta_19" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6"></div>
 		</div>
 
 	</div>
@@ -534,11 +691,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_20"> 20) Realizas algun deporte o actividad física? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_20"> 20) ¿Realizas algun deporte o actividad física? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_20" name="data[Encuesta][pregunta_20]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
 					<option value="Si"> Sí </option>
@@ -551,7 +708,7 @@
 	<div class="form-group has-feedback" id="opciones_si_pregunta_20" style="display:none">
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 
 				<div class="opciones_radios">
 
@@ -568,14 +725,14 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_21"> 21) Tenes acceso a internet </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_21"> 21) ¿Tenes acceso a internet? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_21" name="data[Encuesta][pregunta_21]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="Si"> Si </option>
+					<option value="Si"> Sí </option>
 					<option value="No"> No </option>
 				</select>
 			</div>
@@ -590,11 +747,11 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label id="label_pregunta_22" class="col-xs-12 control-label" for="select_pregunta_22"> 22) Cuales son los principales sitios que visitas? </label>
+				<label id="label_pregunta_22" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_22"> 22) ¿Cuales son los principales sitios que visitas? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<ul class="checkbox">
 						<li><input type ="checkbox"  data-pregunta= "check_pregunta_22" name="data[Encuesta][pregunta_22][]" value="1" />  Facebook </li>
 						<li><input type ="checkbox"  data-pregunta= "check_pregunta_22" name="data[Encuesta][pregunta_22][]" value="2" />  Twitter </li>
@@ -613,7 +770,7 @@
 			</div>
 
 			<div class="row">
-				<div id="mensaje_alerta_pregunta_22" class="col-xs-12 col-md-5 col-sm-6"></div>
+				<div id="mensaje_alerta_pregunta_22" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6"></div>
 			</div>
 		</div>
 
@@ -622,11 +779,11 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label id="label_pregunta_23" class="col-xs-12 control-label" for="select_pregunta_23"> 23) Desde donde te contectas? </label>
+				<label id="label_pregunta_23" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_23"> 23) ¿Desde donde te contectas? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<ul class="checkbox">
 						<li><input type ="checkbox"  data-pregunta= "check_pregunta_23" name="data[Encuesta][pregunta_23][]" value="1" />  Casa </li>
 						<li><input type ="checkbox"  data-pregunta= "check_pregunta_23" name="data[Encuesta][pregunta_23][]" value="2"/>  Escuela/Facultad </li>
@@ -639,7 +796,7 @@
 			</div>
 
 			<div class="row">
-				<div id="mensaje_alerta_pregunta_23" class="col-xs-12 col-md-5 col-sm-6"></div>
+				<div id="mensaje_alerta_pregunta_23" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6"></div>
 			</div>
 		</div>
 
@@ -647,11 +804,11 @@
 
 		<div class="form-group has-feedback">
 			<div class="row">
-				<label class="col-xs-12 control-label" for="select_pregunta_24"> 24) Con que frecuiencia te conectas? </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_24"> 24) ¿Con que frecuencia te conectas? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<select id="select_pregunta_24" name="data[Encuesta][pregunta_24]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
 						<option value="1"> Ocasionalmente </option>
@@ -669,16 +826,30 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_25"> 25) Conoces algún centro de salud carcano a tu residencia? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_25"> 25) ¿Conoces algún centro de salud cercano a tu residencia? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_25" name="data[Encuesta][pregunta_25]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> Sí </option>
-					<option value="2"> No </option>
-				</select>
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+				<?php echo $form->input('pregunta_25', array(
+															'id' => 'select_pregunta_25',
+															'class' => 'form-control',
+															'label' => false,
+															'type' => 'select',
+					  										'empty' => array(
+																	        '' => array(
+																	            'name' => 'Elija una opción..',
+																	            'value' => '',
+																	            'disabled' => true,
+																	            'selected' => true
+																	        )),
+					  										'options' => array(
+															            '1'=>'Sí',
+														    			'2'=>'No'
+														    )
+				)); ?>
+
 			</div>
 		</div>
 	</div>
@@ -688,20 +859,35 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 col-md-5 col-sm-6 control-label" for="select_pregunta_26"> 26) Cuando necesitas atención médica o queres saber algo sobre la salud, cuidado del cuerpo, vas al... </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_26"> 26) Cuando necesitas atención médica o queres saber algo sobre la salud, cuidado del cuerpo, vas al... </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_26" name="data[Encuesta][pregunta_26]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> Centro de Salud </option>
-					<option value="2"> Hospital </option>
-					<option value="3"> Clínica o consultorio privado </option>
-					<option value="4"> Consulta con un familiar/amigo </option>
-					<option value="5"> Busco soluciones en la Web </option>
-					<option value="6"> Ningun lado, me quedo en casa </option>
-				</select>
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+				<?php echo $form->input('pregunta_26', array(
+															'id' => 'select_pregunta_26',
+															'class' => 'form-control',
+															'label' => false,
+															'type' => 'select',
+					  										'empty' => array(
+																	        '' => array(
+																	            'name' => 'Elija una opción..',
+																	            'value' => '',
+																	            'disabled' => true,
+																	            'selected' => true
+																	        )),
+					  										'options' => array(
+															            '1'=>'Centro de Salud',
+														    			'2'=>'Hospital',
+														    			'3'=>'Clínica o consultorio privado',
+														    			'4'=>'Consulta con un familiar/amigo',
+														    			'5'=>'Busco soluciones en la Web',
+														    			'6'=>'Ningun lado, me quedo en casa'
+
+														    )
+				)); ?>
+
 			</div>
 		</div>
 	</div>
@@ -711,11 +897,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 col-md-5 col-sm-6 control-label" for="select_pregunta_27"> 27) Has participado o recibido información  en talleres o charlas relacionadas a tu salud en los últimos 6 meses? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_27"> 27) ¿Has participado o recibido información en talleres o charlas relacionadas a tu salud en los últimos 6 meses? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_27" name="data[Encuesta][pregunta_27]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
 					<option value="Si"> Sí </option>
@@ -728,7 +914,7 @@
 	<div class="form-group has-feedback" id="opciones_si_pregunta_27" style="display:none">
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 
 				<div class="opciones_checkbox">
 
@@ -749,7 +935,7 @@
 		</div>
 
 		<div class="row">
-			<div id="mensaje_alerta_pregunta_27" class="col-xs-12 col-md-5 col-sm-6"></div>
+			<div id="mensaje_alerta_pregunta_27" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6"></div>
 		</div>
 	</div>
 
@@ -758,11 +944,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 col-md-5 col-sm-6 control-label" for="select_pregunta_28"> 28) Considerias que es importante que existieran talleres o charlas relacionadas con tu salud? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_28"> 28) ¿Considerias que es importante que existieran talleres o charlas relacionadas con tu salud? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_28" name="data[Encuesta][pregunta_28]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
 					<option value="Si"> Sí </option>
@@ -775,7 +961,7 @@
 	<div class="form-group has-feedback" id="opciones_si_pregunta_28" style="display:none">
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 
 				<div class="opciones_checkbox">
 
@@ -796,7 +982,7 @@
 		</div>
 
 		<div class="row">
-			<div id="mensaje_alerta_pregunta_28" class="col-xs-12 col-md-5 col-sm-6"></div>
+			<div id="mensaje_alerta_pregunta_28" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6"></div>
 		</div>
 	</div>
 
@@ -805,21 +991,35 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 col-md-5 col-sm-6 control-label" for="select_pregunta_29"> 29) A que edad tuviste tu primer relación sexual? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_29"> 29) ¿A que edad tuviste tu primer relación sexual? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_29" name="data[Encuesta][pregunta_29]" class="form-control">
-					<option selected disabled value=""> Elija una opción </option>
-					<option value="1"> Nunca </option>
-					<option value="1"> 13 </option>
-					<option value="2"> 14 </option>
-					<option value="3"> 15 </option>
-					<option value="4"> 16 </option>
-					<option value="5"> 17 </option>
-					<option value="6"> 18 o más </option>
-				</select>
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+				<?php echo $form->input('pregunta_29', array(
+															'id' => 'select_pregunta_29',
+															'class' => 'form-control',
+															'label' => false,
+															'type' => 'select',
+					  										'empty' => array(
+																	        '' => array(
+																	            'name' => 'Elija una opción..',
+																	            'value' => '',
+																	            'disabled' => true,
+																	            'selected' => true
+																	        )),
+					  										'options' => array(
+															            '1'=>'Nunca',
+														    			'2'=>'13 años',
+														    			'3'=>'14 años',
+														    			'4'=>'15 años',
+														    			'5'=>'16 años',
+														    			'6'=>'17 años',
+														    			'7'=>'18 años o más',
+														    )
+				)); ?>
+
 			</div>
 		</div>
 	</div>
@@ -829,11 +1029,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label id="label_pregunta_30" class="col-xs-12 control-label" for="select_pregunta_30"> 30) Cuales de los siguientes métodos anticonceptivos crees que son eficientes? </label>
+			<label id="label_pregunta_30" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_30"> 30) ¿Cuales de los siguientes métodos anticonceptivos crees que son eficientes? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<ul class="checkbox">
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_30" name="data[Encuesta][pregunta_30][]" value="1" />  Método del calendario </li>
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_30" name="data[Encuesta][pregunta_30][]" value="2" />  Coito interrumpido </li>
@@ -847,7 +1047,7 @@
 		</div>
 
 		<div class="row">
-			<div id="mensaje_alerta_pregunta_30" class="col-xs-12 col-md-5 col-sm-6"></div>
+			<div id="mensaje_alerta_pregunta_30" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6"></div>
 		</div>
 	</div>
 
@@ -856,11 +1056,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label id="label_pregunta_31" class="col-xs-12 control-label" for="select_pregunta_31"> 31) Cual utilizás frecuentemente? </label>
+			<label id="label_pregunta_31" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_31"> 31) ¿Cual utilizás frecuentemente? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<ul class="checkbox">
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_31" name="data[Encuesta][pregunta_31][]" value="1" />  Pastillas anticonceptivas </li>
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_31" name="data[Encuesta][pregunta_31][]" value="2" />  Coito interrumpido </li>
@@ -875,7 +1075,7 @@
 		</div>
 
 		<div class="row">
-			<div id="mensaje_alerta_pregunta_31" class="col-xs-12 col-md-5 col-sm-6"></div>
+			<div id="mensaje_alerta_pregunta_31" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6"></div>
 		</div>
 	</div>
 
@@ -884,11 +1084,11 @@
 	<div class="form-group has-feedback" id="pregunta_32" style="display:none">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_32"> 32) Durante el embarazo te hiciste los chequeos correspondientes? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_32"> 32) ¿Durante el embarazo te hiciste los chequeos correspondientes? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_32" name="data[Encuesta][pregunta_32]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
 					<option value="1"> Sí </option>
@@ -904,18 +1104,32 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_33"> 33) Cuando comienza la paternidad? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_33"> 33) ¿Cuando comienza la paternidad? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_33" name="data[Encuesta][pregunta_33]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> Cuando se concibe al bebe </option>
-					<option value="2"> Durante el embarazo </option>
-					<option value="3"> Cuando nace </option>
-					<option value="4"> Cuando la mama lo decide </option>
-				</select>
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+				<?php echo $form->input('pregunta_33', array(
+															'id' => 'select_pregunta_33',
+															'class' => 'form-control',
+															'label' => false,
+															'type' => 'select',
+					  										'empty' => array(
+																	        '' => array(
+																	            'name' => 'Elija una opción..',
+																	            'value' => '',
+																	            'disabled' => true,
+																	            'selected' => true
+																	        )),
+					  										'options' => array(
+															            '1'=>'Cuando se concibe al bebe',
+														    			'2'=>'Durante el embarazo',
+														    			'3'=>'Cuando nace',
+														    			'4'=>'Cuando la mama lo decide',
+														    )
+				)); ?>
+
 			</div>
 		</div>
 	</div>
@@ -925,11 +1139,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label id="label_pregunta_34" class="col-xs-12 control-label" for="select_pregunta_34"> 34) Que considerás como drogas? </label>
+			<label id="label_pregunta_34" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_34"> 34) ¿Que considerás como drogas? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<ul class="checkbox">
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_34" name="data[Encuesta][pregunta_34][]" value="1"/>  Cocaina </li>
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_34" name="data[Encuesta][pregunta_34][]" value="2" />  Metanfetaminas </li>
@@ -943,7 +1157,7 @@
 		</div>
 
 		<div class="row">
-			<div id="mensaje_alerta_pregunta_34" class="col-xs-12 col-md-5 col-sm-6"></div>
+			<div id="mensaje_alerta_pregunta_34" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6"></div>
 		</div>
 	</div>
 
@@ -952,11 +1166,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_35"> 35) Consumís alguna de las anteriores? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_35"> 35) ¿Consumís alguna de las anteriores? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_35" name="data[Encuesta][pregunta_35]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
 					<option value="Si"> Sí </option>
@@ -969,7 +1183,7 @@
 	<div class="form-group has-feedback" id="opciones_si_pregunta_35" style="display:none">
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 
 				<div class="opciones_radios">
 
@@ -991,16 +1205,16 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label class="col-xs-12 control-label" for="select_pregunta_36"> 36) A que edad comenzaste a consumir? </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_36"> 36) ¿A que edad comenzaste a consumir? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<select id="select_pregunta_36" name="data[Encuesta][pregunta_36]" class="form-control">
 						<option selected disabled value=""> Elija una opcion </option>
-						<option value="1"> 15 a 18 </option>
-						<option value="2"> 19 a 24 </option>
-						<option value="3"> 25 a 29 </option>
+						<option value="1"> 15 a 18 años </option>
+						<option value="2"> 19 a 24 años </option>
+						<option value="3"> 25 a 29 años </option>
 					</select>
 				</div>
 			</div>
@@ -1011,11 +1225,11 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label class="col-xs-12 control-label" for="select_pregunta_37"> 37) En que lugar fue tu primer consumo? </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_37"> 37) ¿En que lugar fue tu primer consumo? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<select id="select_pregunta_37" name="data[Encuesta][pregunta_37]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
 						<option value="1"> Sólo en casa </option>
@@ -1032,11 +1246,11 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label class="col-xs-12 control-label" for="select_pregunta_38"> 38) Cual droga probaste por primera vez? </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_38"> 38) ¿Cual droga probaste por primera vez? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<select id="select_pregunta_38" name="data[Encuesta][pregunta_38]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
 						<option value="1"> Cocaina </option>
@@ -1056,11 +1270,11 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label class="col-xs-12 control-label" for="select_pregunta_39"> 39) Dónde y con quienes consumís? </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_39"> 39) ¿Dónde y con quienes consumís? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<select id="select_pregunta_39" name="data[Encuesta][pregunta_39]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
 						<option value="1"> Solo en casa </option>
@@ -1080,16 +1294,30 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_40"> 40) Pensas que es un problema el consumo de drogas? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_40"> 40) ¿Pensas que es un problema el consumo de drogas? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_40" name="data[Encuesta][pregunta_40]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> Sí </option>
-					<option value="2"> No </option>
-				</select>
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+				<?php echo $form->input('pregunta_40', array(
+															'id' => 'select_pregunta_40',
+															'class' => 'form-control',
+															'label' => false,
+															'type' => 'select',
+					  										'empty' => array(
+																	        '' => array(
+																	            'name' => 'Elija una opción..',
+																	            'value' => '',
+																	            'disabled' => true,
+																	            'selected' => true
+																	        )),
+					  										'options' => array(
+															            '1'=>'Sí',
+														    			'2'=>'No'
+														    )
+				)); ?>
+
 			</div>
 		</div>
 	</div>
@@ -1099,11 +1327,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label id="label_pregunta_41" class="col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_41"> 41) Considerás que pasaste por alguna situación de violencia física o psicologica? Seleccionar aquellas que creas más relevante </label>
+			<label id="label_pregunta_41" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_41"> 41) ¿Considerás que pasaste por alguna situación de violencia física o psicologica? Seleccionar aquellas que creas más relevante </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<select id="select_pregunta_41" name="data[Encuesta][pregunta_41]" class="form-control">
 					<option selected disabled value=""> Elija una opción.. </option>
 					<option value="1"> Nunca </option>
@@ -1126,11 +1354,11 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label class="col-xs-12 control-label" for="select_pregunta_42"> 42) Con que frecuencia? </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_42"> 42) ¿Con que frecuencia? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<select id="select_pregunta_42" name="data[Encuesta][pregunta_42]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
 						<option value="1"> Al menos una vez </option>
@@ -1146,11 +1374,11 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label class="col-xs-12 control-label" for="select_pregunta_43"> 43) Considerás que es necesario hacer la denuncia? </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_43"> 43) ¿Considerás que es necesario hacer la denuncia? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<select id="select_pregunta_43" name="data[Encuesta][pregunta_43]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
 						<option value="1"> Sí </option>
@@ -1165,11 +1393,11 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label class="col-xs-12 control-label" for="select_pregunta_44"> 44) Lo has denunciado? </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_44"> 44) ¿Lo has denunciado? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<select id="select_pregunta_44" name="data[Encuesta][pregunta_44]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
 						<option value="1"> Sí </option>
@@ -1184,11 +1412,11 @@
 		<div class="form-group has-feedback">
 
 			<div class="row">
-				<label class="col-xs-12 control-label" for="select_pregunta_45"> 45) Crees que es una problematica a tratar en ambas partes? </label>
+				<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_45"> 45) ¿Crees que es una problematica a tratar en ambas partes? </label>
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-md-5 col-sm-6">
+				<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 					<select id="select_pregunta_45" name="data[Encuesta][pregunta_45]" class="form-control">
 						<option selected disabled value=""> Elija una opción.. </option>
 						<option value="1"> Sí </option>
@@ -1206,17 +1434,31 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-xs-12 control-label" for="select_pregunta_46"> 46) Cual es el número a llamar en caso de violencia de género? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_46"> 46) ¿Cual es el número a llamar en caso de violencia de género? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
-				<select id="select_pregunta_46" name="data[Encuesta][pregunta_46]" class="form-control">
-					<option selected disabled value=""> Elija una opción.. </option>
-					<option value="1"> 144 </option>
-					<option value="2"> 111 </option>
-					<option value="3"> 110 </option>
-				</select>
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+				<?php echo $form->input('pregunta_46', array(
+															'id' => 'select_pregunta_46',
+															'class' => 'form-control',
+															'label' => false,
+															'type' => 'select',
+					  										'empty' => array(
+																	        '' => array(
+																	            'name' => 'Elija una opción..',
+																	            'value' => '',
+																	            'disabled' => true,
+																	            'selected' => true
+																	        )),
+					  										'options' => array(
+															            '1'=>'144',
+														    			'2'=>'111',
+														    			'3'=>'110'
+														    )
+				)); ?>
+
 			</div>
 		</div>
 	</div>
@@ -1226,11 +1468,11 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label id="label_pregunta_47" class="col-xs-12 control-label" for="select_pregunta_47"> 47) Cuales consideras que son problemas de los jovenes? </label>
+			<label id="label_pregunta_47" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_47"> 47) ¿Cuales consideras que son problemas de los jovenes? </label>
 		</div>
 
 		<div class="row">
-			<div class="col-xs-12 col-md-5 col-sm-6">
+			<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
 				<ul class="checkbox">
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_47" name="data[Encuesta][pregunta_47][Si][]" value="1" />  Adicciones </li>
 					<li><input type ="checkbox"  data-pregunta= "check_pregunta_47" name="data[Encuesta][pregunta_47][Si][]" value="2" />  Primer empleo </li>
@@ -1248,26 +1490,67 @@
 		</div>
 
 		<div class="row">
-			<div id="mensaje_alerta_pregunta_47" class="col-xs-12 col-md-5 col-sm-6"></div>
+			<div id="mensaje_alerta_pregunta_47" class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6"></div>
 		</div>
 	</div>
 
 	<!-- ////////////////////////////////      FINAL DEL FORMULARIO   ///////////////////////////////////////////////// -->
 
-	<?php echo $form->submit('Guardar', array('class' => 'btn btn-sm btn-primary')); ?>
+
+	<div class="row boton_enviar">
+		<div class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6">
+
+			<?php echo $this->Form->button('<span class="glyphicon glyphicon-send"></span> &nbsp; ENVIAR',
+
+															    			 array('type' => 'submit',
+										    										'escape' => false,
+										    										'class'=>'btn btn-lg btn-primary',
+																		));
+									  		?>
+		</div>
+	</div>
+
 
 	<?php echo $form->end();?>
 
-	<br /><br />
+
+	<div class="row boton_estadisticas">
+		<div class="col-sm-offset-10 col-md-offset-10 col-xs-10 col-sm-2 col-md-2">
+
+		<!-- link para poder llamar al VENTANA MODAL -->
+		<?php echo $this->Html->link('<i class="glyphicon glyphicon-alert"></i> &nbsp; Estadisticas', array('controller' => '#', 'action' => '#'),
+                                                  array('type' => 'button',
+                                                        'class' => 'btn btn-warning btn-md',
+
+                                                        'data-toggle' => 'modal',
+                                                        'data-target' => '#ventana_modal',
+                                                        'escape' => false));  ?>
+
+		</div>
+	</div>
+
 
 </div> <!-- Cierra CONTAINER -->
 
 
+<!-- ///////////////////////////////////////////////////     FOOTER   /////////////////////////////////////////////////////////// -->
+
+
+<section id="footer">
+	<div class="inner">
+		<p class="zeromargin" style="width:100%;">
+			<a href="http://www.entrerios.gob.ar/juventud"><img src="http://entrerios.gob.ar/juventud/images/juventudes-entrerrianas.png" alt="Secretaria de la Juventud Entre Ríos"/></a><br>Los contenidos de este sitio están licenciados bajo <a href="https://creativecommons.org/licenses/by/2.5/ar/" style="color:rgb(215, 215, 215); ">Creative Commons Reconocimiento 2.5 Licencia Argentina</a>.</p>
+	</div>
+</section>
+
+
+<!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////77 -->
+
 
 <script type="text/javascript">
 
-$(function () {
-	$('[data-toggle="tooltip"]').tooltip()
-})
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+	})
 
 </script>
