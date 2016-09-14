@@ -14,9 +14,11 @@
 
 <section id="Uno" class="wrapper">
 	<div class="inner">
+
 		<div class="logo">
 			<a href='http://www.entrerios.gob.ar/juventud/'>
 				<img src="http://entrerios.gob.ar/juventud/images/juventudes-entrerrianas.png"/>
+				<?php echo $this->Html->image('cti_final.jpg', $options = array('class' => 'imagen_cti'));  ?>
 			</a>
 		</div>
 	</div>

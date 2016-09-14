@@ -1,5 +1,12 @@
 /*///////////////////////////////////////////   GENERALES    //////////////////////////////////////////////////////////////*/
 
+body{
+  background: white;
+  background-image: url("../img/fondo3.jpg");
+  color: black;
+  background-attachment: fixed;
+}
+
 
 h2.titulo_principal{
   background: -webkit-linear-gradient(#C00AE1,black);
@@ -107,6 +114,28 @@ section {
   transform: scaleY(-1) scaleX(-1);
 }
 
+
+/*/////////////////////////    IMAGEN CTI ////////////////////////////////*/
+
+.imagen_cti{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px){
+  .imagen_cti{
+    width: 150px;
+    height: 52px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .imagen_cti{
+    width: 120px;
+    height: 42px;
+  }
+}
 
 
 /*/////////////////////////////////////     VALIDACIONES CLIENT-SIDE  ////////////////////////////////////////////////////////////////////////*/
