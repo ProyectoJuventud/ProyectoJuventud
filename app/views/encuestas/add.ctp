@@ -9,6 +9,29 @@
 <?php echo $this->Html->script('codigoJquery_add', array('inline' => false, 'defer' => true)); ?>
 
 
+<?php $this->Html->meta(array('property' => 'og:title', 'type' => 'meta', 'content' => 'Encuesta sobre las #JuventudesEntrerrianas'), NULL, array('inline' => false)); ?>
+
+<?php $this->Html->meta(array('property' => 'og:site_name', 'type' => 'meta', 'content' => 'Secretaria de la Juventud del Gobierno de Entre Rios'), NULL, array('inline' => false)); ?>
+
+<?php $this->Html->meta(array('property' => 'og:description', 'type' => 'meta', 'content' => 'Entrá y completá la encuesta sobre las #JuventudesEntrerrianas.'), NULL, array('inline' => false)); ?>
+
+<?php $this->Html->meta(array('property' => 'og:image', 'type' => 'meta', 'content' => 'http://entrerios.gob.ar/juventud/images/diagnostico-juventudes-entrerrianas.png'), NULL, array('inline' => false)); ?>
+
+<?php $this->Html->meta(array('property' => 'og:author', 'type' => 'meta', 'content' => 'https://www.facebook.com/JuventudesEntrerrianas'), NULL, array('inline' => false)); ?>
+
+
+<?php $this->Html->meta(array('property' => 'twitter:card', 'type' => 'meta', 'content' => 'summary_large_image'), NULL, array('inline' => false)); ?>
+
+<?php $this->Html->meta(array('property' => 'twitter:site', 'type' => 'meta', 'content' => '@juventudeser'), NULL, array('inline' => false)); ?>
+
+<?php $this->Html->meta(array('property' => 'twitter:title', 'type' => 'meta', 'content' => 'Encuesta sobre las #JuventudesEntrerrianas'), NULL, array('inline' => false)); ?>
+
+
+<?php $this->Html->meta(array('property' => 'twitter:description', 'type' => 'meta', 'content' => 'Entrá y completá la encuesta sobre las #JuventudesEntrerrianas.'), NULL, array('inline' => false)); ?>
+
+<?php $this->Html->meta(array('property' => 'twitter:image:src', 'type' => 'meta', 'content' => 'http://entrerios.gob.ar/juventud/images/diagnostico-juventudes-entrerrianas.png'), NULL, array('inline' => false)); ?>
+
+
 
 <!-- ///////////////////////////    HEADER   /////////////////////// -->
 
@@ -28,8 +51,8 @@
 
 <div class="container">
 
-	<!-- ////////////////////////////////////   CONFIGURACION VENTANA MODAL ///////////////////////////////////////////////////// -->
-	<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+	<!-- /////////////////////////////   CONFIGURACION VENTANA MODAL ///////////////////////////////////////////////////// -->
+	<!-- /////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
     <div class="modal fade" id="ventana_modal" tabindex="1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
 
@@ -80,8 +103,8 @@
     </div> <!-- Cierro el "modal"-->
 
 
-    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
-    <!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
 	<h2 class="text-center titulo_principal animated flipInX"> GRACIAS </h2>
 	<h2 class="text-center subtitulo_principal animated slideInUp"> Por formar parte del diagnóstico de juventudes! </h2>
@@ -1533,6 +1556,7 @@
 
 
 </div> <!-- Cierra CONTAINER -->
+
 
 
 <!-- ///////////////////////////////////////////////////     FOOTER   /////////////////////////////////////////////////////////// -->

@@ -5,10 +5,11 @@
 
 <div class="container">
 
+
 	<div class="row boton_cerrar_sesion ">
 		<div class="text-right">
 
-			<?php echo $this->Html->link('Cerrar Sesion / Volver' , array('controller' => 'encuestas', 'action' => 'cerrar_sesion'),
+			<?php echo $this->Html->link('Cerrar Sesión / Volver' , array('controller' => 'encuestas', 'action' => 'cerrar_sesion'),
 			 											   array('type' => 'button',
 		                                                         'class' => 'btn btn-primary btn-md')
 		    ); ?>
@@ -100,23 +101,22 @@
 			</div>
 		</div>
 
-    <?php echo $this->Form->button('<span class="glyphicon glyphicon-search"></span> &nbsp; Buscar',
+    <?php echo $this->Form->button('<span class="glyphicon glyphicon-search"></span> &nbsp; <b>Buscar</b>',
 
 															    			 array('type' => 'submit',
 										    									   'escape' => false,
-										    									   'class'=>'btn btn-sm btn-info',
+										    									   'class'=>'boton_buscar btn btn-sm btn-info',
 																		));
 	?>
 
 	<?php echo $form->end();?>
 
 
-
 	<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 	<!-- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 	<!-- ////////////////////////////////////////////     RESULTADO ESTADISTICAS   ///////////////////////////////////////// -->
 
-	<br /><br />
+	<br />
 
 	<?php if($cantidadEncuestas == 0){ ?>
 

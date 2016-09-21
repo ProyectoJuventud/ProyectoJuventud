@@ -6,21 +6,23 @@
 	<title>
 		<?php echo $title_for_layout; ?>
 	</title>
-    <?php
-        echo $this->Html->css(array('bootstrap.min','bootstrap-theme.min'));
 
-        echo $this->Html->script(array('jquery.min-1.11','bootstrap.min'));
+	<?php
+		echo $this->Html->css(array('bootstrap.min','bootstrap-theme.min'));
+
+		echo $this->Html->script(array('jquery.min-1.11','bootstrap.min'));
 
 		echo $this->Html->meta('icon',$this->Html->url('/img/favicon.png'));
-        echo $scripts_for_layout;
-    ?>
+
+		echo $scripts_for_layout;
+	?>
 </head>
 
 <body>
 	<?php echo $this->Session->flash(); ?>
 	<div id="container">
 		<div id="content">
-				<?php echo $content_for_layout ?>
+			<?php echo $content_for_layout ?>
 		</div>
 	</div>
 </body>

@@ -15,7 +15,16 @@
 
 
 
-  //1st row for columns name
+  $xls->openRow();
+    $xls->writeString('ESTADISTICAS DE ACUERDO A LOS FILTROS SELECCIONADOS');
+  $xls->closeRow();
+
+  $xls->openRow();
+    $xls->writeString('');
+  $xls->closeRow();
+
+  ///////////
+
   $xls->openRow();
     $xls->writeString('Cantidad de encuestas:');
     $xls->writeNumber($cantidadEncuestas);
