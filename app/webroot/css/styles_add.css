@@ -1,22 +1,22 @@
 /*///////////////////////////////////////////   GENERALES    //////////////////////////////////////////////////////////////*/
 
 body{
-  background: white;
+ /* background: white;
   background-image: url("../img/fondo33.jpg");
-  background-attachment: fixed;
+  background-attachment: fixed;*/
 }
 
 
 h2.titulo_principal{
-  background: -webkit-linear-gradient(#C00AE1,black);
+ /* background: -webkit-linear-gradient(#C00AE1,black);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;*/
 }
 
 h2.subtitulo_principal{
-  margin-bottom: 30px;
+ /* margin-bottom: 30px;*/
 }
 
 /* Acomodan el bloque de radios emergentes */

@@ -1387,7 +1387,6 @@
 											$pregunta27_Si_opc6++;
 											break ;
 										case '7':
-											$pregunta27_Si++;
 											$pregunta27_Si_opc7++;
 											break ;
 										default:
@@ -3120,7 +3119,6 @@
 										$pregunta27_Si_opc6++;
 										break ;
 									case '7':
-										$pregunta27_Si++;
 										$pregunta27_Si_opc7++;
 										break ;
 									default:

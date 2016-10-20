@@ -9,43 +9,45 @@
 <?php echo $this->Html->script('codigoJquery_add', array('inline' => false, 'defer' => true)); ?>
 
 
-<?php $this->Html->meta(array('property' => 'og:title', 'type' => 'meta', 'content' => 'Encuesta sobre las #JuventudesEntrerrianas'), NULL, array('inline' => false)); ?>
+<?php
 
-<?php $this->Html->meta(array('property' => 'og:site_name', 'type' => 'meta', 'content' => 'Secretaria de la Juventud del Gobierno de Entre Rios'), NULL, array('inline' => false)); ?>
+// $this->Html->meta(array('property' => 'og:title', 'type' => 'meta', 'content' => 'Encuesta sobre las #JuventudesEntrerrianas'), NULL, array('inline' => false));
 
-<?php $this->Html->meta(array('property' => 'og:description', 'type' => 'meta', 'content' => 'Entrá y completá la encuesta sobre las #JuventudesEntrerrianas.'), NULL, array('inline' => false)); ?>
+// $this->Html->meta(array('property' => 'og:site_name', 'type' => 'meta', 'content' => 'Secretaria de la Juventud del Gobierno de Entre Rios'), NULL, array('inline' => false));
 
-<?php $this->Html->meta(array('property' => 'og:image', 'type' => 'meta', 'content' => 'http://entrerios.gob.ar/juventud/images/diagnostico-juventudes-entrerrianas.png'), NULL, array('inline' => false)); ?>
+// $this->Html->meta(array('property' => 'og:description', 'type' => 'meta', 'content' => 'Entrá y completá la encuesta sobre las #JuventudesEntrerrianas.'), NULL, array('inline' => false));
 
-<?php $this->Html->meta(array('property' => 'og:author', 'type' => 'meta', 'content' => 'https://www.facebook.com/JuventudesEntrerrianas'), NULL, array('inline' => false)); ?>
+// $this->Html->meta(array('property' => 'og:image', 'type' => 'meta', 'content' => 'http://entrerios.gob.ar/juventud/images/diagnostico-juventudes-entrerrianas.png'), NULL, array('inline' => false));
 
-
-<?php $this->Html->meta(array('property' => 'twitter:card', 'type' => 'meta', 'content' => 'summary_large_image'), NULL, array('inline' => false)); ?>
-
-<?php $this->Html->meta(array('property' => 'twitter:site', 'type' => 'meta', 'content' => '@juventudeser'), NULL, array('inline' => false)); ?>
-
-<?php $this->Html->meta(array('property' => 'twitter:title', 'type' => 'meta', 'content' => 'Encuesta sobre las #JuventudesEntrerrianas'), NULL, array('inline' => false)); ?>
+// $this->Html->meta(array('property' => 'og:author', 'type' => 'meta', 'content' => 'https://www.facebook.com/JuventudesEntrerrianas'), NULL, array('inline' => false));
 
 
-<?php $this->Html->meta(array('property' => 'twitter:description', 'type' => 'meta', 'content' => 'Entrá y completá la encuesta sobre las #JuventudesEntrerrianas.'), NULL, array('inline' => false)); ?>
+// $this->Html->meta(array('property' => 'twitter:card', 'type' => 'meta', 'content' => 'summary_large_image'), NULL, array('inline' => false));
 
-<?php $this->Html->meta(array('property' => 'twitter:image:src', 'type' => 'meta', 'content' => 'http://entrerios.gob.ar/juventud/images/diagnostico-juventudes-entrerrianas.png'), NULL, array('inline' => false)); ?>
+// $this->Html->meta(array('property' => 'twitter:site', 'type' => 'meta', 'content' => '@juventudeser'), NULL, array('inline' => false));
+
+// $this->Html->meta(array('property' => 'twitter:title', 'type' => 'meta', 'content' => 'Encuesta sobre las #JuventudesEntrerrianas'), NULL, array('inline' => false));
 
 
+// $this->Html->meta(array('property' => 'twitter:description', 'type' => 'meta', 'content' => 'Entrá y completá la encuesta sobre las #JuventudesEntrerrianas.'), NULL, array('inline' => false));
+
+// $this->Html->meta(array('property' => 'twitter:image:src', 'type' => 'meta', 'content' => 'http://entrerios.gob.ar/juventud/images/diagnostico-juventudes-entrerrianas.png'), NULL, array('inline' => false));
+
+?>
 
 <!-- ///////////////////////////    HEADER   /////////////////////// -->
 
-<section id="Uno" class="wrapper">
+<!-- <section id="Uno" class="wrapper">
 	<div class="inner">
 
 		<div class="logo">
 			<a href='http://www.entrerios.gob.ar/juventud/'>
 				<img src="http://entrerios.gob.ar/juventud/images/juventudes-entrerrianas.png"/>
-				<?php echo $this->Html->image('cti_final.jpg', $options = array('class' => 'imagen_cti'));  ?>
+				<?php //echo $this->Html->image('cti_final.jpg', $options = array('class' => 'imagen_cti'));  ?>
 			</a>
 		</div>
 	</div>
-</section>
+</section> -->
 
 <!-- ///////////////////////////////////////////////////////////////////// -->
 
@@ -79,7 +81,9 @@
 
             		<?php echo $this->Form->input('pass', array('label' => 'Contraseña',
             												    'class' => 'form-control',
-            												    'id' => 'campo_pass'
+            												    'id' => 'campo_pass',
+            												    'type' => 'password',
+            												    'autocomplete' => 'off'
             												)
 					); ?>
 
@@ -106,9 +110,10 @@
     <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
     <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 
-	<h2 class="text-center titulo_principal animated flipInX"> GRACIAS </h2>
-	<h2 class="text-center subtitulo_principal animated slideInUp"> Por formar parte del diagnóstico de juventudes! </h2>
+	<!-- <h2 class="text-center titulo_principal animated flipInX"> GRACIAS </h2> -->
+	<!-- <h2 class="text-center subtitulo_principal animated slideInUp"> Por formar parte del diagnóstico de juventudes! </h2> -->
 
+	<br />
 
 	<?php echo $form->create('Encuesta', array('id' => 'form_encuesta')); ?>
 
@@ -969,7 +974,7 @@
 	<div class="form-group has-feedback">
 
 		<div class="row">
-			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_28"> 28) ¿Considerias que es importante que existieran talleres o charlas relacionadas con tu salud? </label>
+			<label class="col-sm-offset-2 col-md-offset-3 col-xs-12 col-sm-8 col-md-6 control-label" for="select_pregunta_28"> 28) ¿Consideras que es importante que existan talleres o charlas relacionadas con tu salud? </label>
 		</div>
 
 		<div class="row">
@@ -1562,13 +1567,13 @@
 <!-- ///////////////////////////////////////////////////     FOOTER   /////////////////////////////////////////////////////////// -->
 
 
-<section id="footer">
+<!-- <section id="footer">
 	<div class="inner">
 		<p class="zeromargin" style="width:100%;">
 			<a href="http://www.entrerios.gob.ar/juventud"><img src="http://entrerios.gob.ar/juventud/images/juventudes-entrerrianas.png" alt="Secretaria de la Juventud Entre Ríos"/></a><br>Los contenidos de este sitio están licenciados bajo <a href="https://creativecommons.org/licenses/by/2.5/ar/" style="color:rgb(215, 215, 215); ">Creative Commons Reconocimiento 2.5 Licencia Argentina</a>.</p>
 	</div>
 </section>
-
+ -->
 
 <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////77 -->
 
