@@ -58,7 +58,7 @@
 
     <div class="modal fade" id="ventana_modal" tabindex="1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
 
-        <div class="modal-dialog modal-md">
+        <div class="modal-dialog modal-sm">
 
           <div class="modal-content">
 

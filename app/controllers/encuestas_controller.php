@@ -290,7 +290,7 @@
 
 			if ($this->RequestHandler->isPost()) {
 
-				if ($this->data['Acceso']['pass'] == 'Juventudes3510') {
+				if ($this->data['Acceso']['pass'] == Configure::read('passwordEstadisticas')) {
 
 					$this->Session->delete('clave');
 					$this->Session->write("clave", $this->data['Acceso']['pass'] );
@@ -327,7 +327,7 @@
 
 			$clave = $this->Session->read('clave');
 
-			if($clave === 'Juventudes3510'){
+			if($clave === Configure::read('passwordEstadisticas')){
 
 				if ($this->RequestHandler->isPost()) {
 
@@ -2116,7 +2116,7 @@
 
 			$clave = $this->Session->read('clave');
 
-			if($clave === 'Juventudes3510'){
+			if($clave === Configure::read('passwordEstadisticas')){
 
 				// Leo las variables de session para saber que tienen los filtros
 				$condicion_edad = $this->Session->read('condicion_edad');
