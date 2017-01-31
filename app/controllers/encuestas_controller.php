@@ -47,6 +47,16 @@
 
 			if ($this->RequestHandler->isPost()) {
 
+				////////////////////////////   PREGUNTA 5 /////////////////////////////
+
+				if(isset($this->data['Encuesta']['pregunta_5']) && ($this->data['Encuesta']['pregunta_5'] != '')){
+
+					$this->data['Encuesta']['pregunta_5'] = $this->data['Encuesta']['pregunta_5'];
+				}
+				else{
+					$this->Session->setFlash('Se ha producido un error en el servidor, intente nuevamente.', 'flash_failure');
+					return;
+				}
 
 				////////////////////////////   PREGUNTA 9 /////////////////////////////
 
